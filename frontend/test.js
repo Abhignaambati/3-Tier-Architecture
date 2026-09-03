@@ -1,5 +1,5 @@
 const assert = require("assert");
 
-assert.strictEqual(2 + 2, 4);
+assert.strictEqual(2 + 2, 5);
 
 console.log("Unit test passed");
