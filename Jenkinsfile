@@ -54,7 +54,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'harbor',
+                        credentialsId: 'harbour',
                         usernameVariable: 'HARBOR_USER',
                         passwordVariable: 'HARBOR_PASS'
                     )
