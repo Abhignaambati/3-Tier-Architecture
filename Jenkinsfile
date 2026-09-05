@@ -64,10 +64,10 @@ pipeline {
                           -u "$HARBOR_USER" --password-stdin
 
                         docker tag 3-tier-app:${IMAGE_TAG} \
-                          192.168.1.121:80/3-tier/3-tier-app:${IMAGE_TAG}
+                          192.168.1.130:80/3-tier/3-tier-app:${IMAGE_TAG}
 
                         docker push \
-                          192.168.1.121:80/3-tier/3-tier-app:${IMAGE_TAG}
+                          192.168.1.130:80/3-tier/3-tier-app:${IMAGE_TAG}
                     '''
                 }
             }
