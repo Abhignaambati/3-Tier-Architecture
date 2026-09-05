@@ -60,7 +60,7 @@ pipeline {
                     )
                 ]) {
                     sh '''
-                        echo "$HARBOR_PASS" | docker login 192.168.1.121:80 \
+                        echo "$HARBOR_PASS" | docker login 192.168.1.130:80 \
                           -u "$HARBOR_USER" --password-stdin
 
                         docker tag 3-tier-app:${IMAGE_TAG} \
