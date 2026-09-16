@@ -1,0 +1,65 @@
+Name:             claims-app-db7c96965-m29cb
+Namespace:        stage
+Priority:         0
+Service Account:  claims-app
+Node:             desktop-control-plane/172.20.0.3
+Start Time:       Wed, 16 Sep 2026 09:46:52 +0530
+Labels:           app.kubernetes.io/instance=claims-app
+                  app.kubernetes.io/managed-by=Helm
+                  app.kubernetes.io/name=claims-app
+                  app.kubernetes.io/version=1.16.0
+                  helm.sh/chart=claims-app-0.1.0
+                  pod-template-hash=db7c96965
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.10
+IPs:
+  IP:           10.244.0.10
+Controlled By:  ReplicaSet/claims-app-db7c96965
+Containers:
+  claims-app:
+    Container ID:   containerd://80c2183ba612cb5a718a08783bf1d6300eca63d4166932955c93a562ff6591bb
+    Image:          192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+    Image ID:       192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+    Port:           5000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Wed, 16 Sep 2026 09:46:52 +0530
+    Ready:          False
+    Restart Count:  0
+    Liveness:       http-get http://:http/api/health delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:      http-get http://:http/api/wrong-health delay=5s timeout=1s period=10s #success=1 #failure=3
+    Environment:
+      DB_HOST:      host.docker.internal
+      DB_PORT:      15432
+      DB_NAME:      claimsdb
+      DB_USER:      claimsuser
+      DB_PASSWORD:  <set to the key 'DB_PASSWORD' in secret 'claims-db'>  Optional: false
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4cb4r (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-4cb4r:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  2m51s                default-scheduler  Successfully assigned stage/claims-app-db7c96965-m29cb to desktop-control-plane
+  Normal   Pulled     2m51s                kubelet            spec.containers{claims-app}: Container image "192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764" already present on machine and can be accessed by the pod
+  Normal   Created    2m51s                kubelet            spec.containers{claims-app}: Container created
+  Normal   Started    2m51s                kubelet            spec.containers{claims-app}: Container started
+  Warning  Unhealthy  1s (x18 over 2m41s)  kubelet            spec.containers{claims-app}: Readiness probe failed: HTTP probe failed with statuscode: 404
