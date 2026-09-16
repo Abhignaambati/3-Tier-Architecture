@@ -1,0 +1,10 @@
+HTTP/1.1 500 INTERNAL SERVER ERROR
+Server: Werkzeug/3.1.8 Python/3.12.14
+Date: Wed, 16 Sep 2026 08:55:43 GMT
+Content-Type: application/json
+Content-Length: 168
+Access-Control-Allow-Origin: http://127.0.0.1:5173
+Vary: Origin
+Connection: close
+
+{"error":"connection to server at \"db\" (172.19.0.2), port 5999 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n"}

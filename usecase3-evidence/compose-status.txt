@@ -1,0 +1,4 @@
+NAME                      IMAGE                   COMMAND                  SERVICE    CREATED              STATUS                   PORTS
+claims-local-backend-1    claims-backend:local    "python app.py"          backend    About a minute ago   Up About a minute        127.0.0.1:5000->5000/tcp
+claims-local-db-1         postgres:16-alpine      "docker-entrypoint.s…"   db         4 minutes ago        Up 4 minutes (healthy)   127.0.0.1:15432->5432/tcp
+claims-local-frontend-1   claims-frontend:local   "docker-entrypoint.s…"   frontend   4 minutes ago        Up 4 minutes             127.0.0.1:5173->5173/tcp
