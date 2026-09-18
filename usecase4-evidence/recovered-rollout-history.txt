@@ -1,0 +1,4 @@
+deployment.apps/claims-backend
+REVISION  CHANGE-CAUSE
+2         Controlled failure: incorrect readiness path
+3         <none>

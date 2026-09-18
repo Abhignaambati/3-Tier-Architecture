@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claims-backend
+  namespace: claims-k8s
+  labels:
+    app: claims-backend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: claims-backend
+  template:
+    metadata:
+      labels:
+        app: claims-backend
+    spec:
+      imagePullSecrets:
+        - name: harbor-pull
+      containers:
+        - name: backend
+          image: 192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: claims-backend-config
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: claims-db
+                  key: DB_PASSWORD
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3

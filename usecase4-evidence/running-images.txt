@@ -1,0 +1,7 @@
+claims-backend-6595f99ff9-z8w59
+Configured image: 192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+Running image: 192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+
+claims-frontend-59cfbcd5b4-tjpwk
+Configured image: 192.168.1.121:80/3-tier/claims-frontend@sha256:8990a0e0fcb3a2107de0e28eb10049dbd1a6dd0b582556b847ff72b20456d455
+Running image: 192.168.1.121:80/3-tier/claims-frontend@sha256:8990a0e0fcb3a2107de0e28eb10049dbd1a6dd0b582556b847ff72b20456d455

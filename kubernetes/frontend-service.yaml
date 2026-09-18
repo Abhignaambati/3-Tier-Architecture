@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: claims-frontend
+  namespace: claims-k8s
+  labels:
+    app: claims-frontend
+spec:
+  selector:
+    app: claims-frontend
+  ports:
+    - name: http
+      port: 5173
+      targetPort: http
+  type: ClusterIP

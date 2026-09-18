@@ -1,0 +1,10 @@
+Backend rollout history
+deployment.apps/claims-backend
+REVISION  CHANGE-CAUSE
+1         <none>
+
+
+Frontend rollout history
+deployment.apps/claims-frontend
+REVISION  CHANGE-CAUSE
+1         <none>
