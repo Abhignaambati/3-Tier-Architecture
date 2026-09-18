@@ -1,0 +1,61 @@
+Name:                      claims-backend-7f584ffc79-84kv7
+Namespace:                 claims-k8s
+Priority:                  0
+Service Account:           default
+Node:                      desktop-control-plane/172.20.0.3
+Start Time:                Fri, 18 Sep 2026 15:17:57 +0530
+Labels:                    app=claims-backend
+                           pod-template-hash=7f584ffc79
+Annotations:               <none>
+Status:                    Terminating (lasts <invalid>)
+Termination Grace Period:  30s
+IP:                        10.244.0.11
+IPs:
+  IP:           10.244.0.11
+Controlled By:  ReplicaSet/claims-backend-7f584ffc79
+Containers:
+  backend:
+    Container ID:   containerd://48df80ba0157a17ca733513c160b185d501f81a40d5b2481fec9c8f124c180c7
+    Image:          192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+    Image ID:       192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+    Port:           5000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Running
+      Started:      Fri, 18 Sep 2026 15:17:58 +0530
+    Ready:          False
+    Restart Count:  0
+    Liveness:       http-get http://:http/api/health delay=10s timeout=2s period=10s #success=1 #failure=3
+    Readiness:      http-get http://:http/api/wrong-health delay=5s timeout=2s period=10s #success=1 #failure=3
+    Environment Variables from:
+      claims-backend-config  ConfigMap  Optional: false
+    Environment:
+      DB_PASSWORD:  <set to the key 'DB_PASSWORD' in secret 'claims-db'>  Optional: false
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hfdr2 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       False
+  ContainersReady             False
+  PodScheduled                True
+Volumes:
+  kube-api-access-hfdr2:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  6m                    default-scheduler  Successfully assigned claims-k8s/claims-backend-7f584ffc79-84kv7 to desktop-control-plane
+  Normal   Pulled     6m                    kubelet            spec.containers{backend}: Container image "192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764" already present on machine and can be accessed by the pod
+  Normal   Created    6m                    kubelet            spec.containers{backend}: Container created
+  Normal   Started    6m                    kubelet            spec.containers{backend}: Container started
+  Warning  Unhealthy  44s (x35 over 5m50s)  kubelet            spec.containers{backend}: Readiness probe failed: HTTP probe failed with statuscode: 404
+  Normal   Killing    14s                   kubelet            spec.containers{backend}: Stopping container backend

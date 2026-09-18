@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: claims-backend-config
+  namespace: claims-k8s
+data:
+  DB_HOST: host.docker.internal
+  DB_PORT: "15432"
+  DB_NAME: claimsdb
+  DB_USER: claimsuser
