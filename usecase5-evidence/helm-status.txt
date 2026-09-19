@@ -1,0 +1,30 @@
+NAME: claims-app-helm
+LAST DEPLOYED: Sat Sep 19 11:12:59 2026
+NAMESPACE: helm-dev
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+RESOURCES:
+==> v1/ServiceAccount
+NAME              AGE
+claims-app-helm   44s
+
+==> v1/Service
+NAME              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+claims-app-helm   ClusterIP   10.96.104.30   <none>        5000/TCP   44s
+
+==> v1/Deployment
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+claims-app-helm   1/1     1            1           44s
+
+==> v1/Pod(related)
+NAME                               READY   STATUS    RESTARTS   AGE
+claims-app-helm-766fc8668d-xxx86   1/1     Running   0          44s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace helm-dev -l "app.kubernetes.io/name=claims-app,app.kubernetes.io/instance=claims-app-helm" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace helm-dev $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl --namespace helm-dev port-forward $POD_NAME 8080:$CONTAINER_PORT

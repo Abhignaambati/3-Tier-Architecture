@@ -1,0 +1,5 @@
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/claims-app-helm-766fc8668d-xxx86   1/1     Running   0          44s
+
+NAME                      TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/claims-app-helm   ClusterIP   10.96.104.30   <none>        5000/TCP   44s

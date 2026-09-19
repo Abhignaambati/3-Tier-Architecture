@@ -1,0 +1,43 @@
+replicaCount: 1
+
+image:
+  repository: 192.168.1.121:80/3-tier/3-tier-app
+  pullPolicy: IfNotPresent
+  digest: "sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764"
+
+imagePullSecrets:
+  - name: harbor-pull
+
+service:
+  type: ClusterIP
+  port: 5000
+
+ingress:
+  enabled: false
+
+livenessProbe:
+  httpGet:
+    path: /api/health
+    port: http
+  initialDelaySeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /api/health
+    port: http
+  initialDelaySeconds: 5
+
+env:
+  - name: DB_HOST
+    value: host.docker.internal
+  - name: DB_PORT
+    value: "15432"
+  - name: DB_NAME
+    value: claimsdb
+  - name: DB_USER
+    value: claimsuser
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: claims-db
+        key: DB_PASSWORD
