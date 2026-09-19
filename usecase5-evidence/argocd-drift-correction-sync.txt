@@ -1,0 +1,35 @@
+TIMESTAMP                  GROUP        KIND       NAMESPACE                  NAME    STATUS    HEALTH        HOOK  MESSAGE
+2026-09-19T11:46:21+05:30            Service      gitops-dev     claims-app-gitops    Synced   Healthy              
+2026-09-19T11:46:21+05:30         ServiceAccount  gitops-dev     claims-app-gitops    Synced                        
+2026-09-19T11:46:21+05:30   apps  Deployment      gitops-dev     claims-app-gitops  OutOfSync  Healthy              
+2026-09-19T11:46:21+05:30         ServiceAccount  gitops-dev     claims-app-gitops    Synced                        serviceaccount/claims-app-gitops unchanged
+2026-09-19T11:46:21+05:30            Service      gitops-dev     claims-app-gitops    Synced   Healthy              service/claims-app-gitops unchanged
+2026-09-19T11:46:21+05:30   apps  Deployment      gitops-dev     claims-app-gitops  OutOfSync  Healthy              deployment.apps/claims-app-gitops configured
+
+Name:               argocd/claims-app-dev
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          gitops-dev
+URL:                https://127.0.0.1:8081/applications/claims-app-dev
+Source:
+- Repo:             https://gitlab.com/midhtech-group2/3-tier-architecture.git
+  Target:           main
+  Path:             helm/claims-app
+  Helm Values:      values-dev.yaml
+SyncWindow:         Sync Allowed
+Sync Policy:        Manual
+Sync Status:        Synced to main (8afcb7a)
+Health Status:      Healthy
+
+Operation:          Sync
+Sync Revision:      8afcb7ab3e7b41371311ce7b250055e1d2aa87a8
+Phase:              Succeeded
+Start:              2026-09-19 11:46:21 +0530 IST
+Finished:           2026-09-19 11:46:21 +0530 IST
+Duration:           0s
+Message:            successfully synced (all tasks run)
+
+GROUP  KIND            NAMESPACE   NAME               STATUS  HEALTH   HOOK  MESSAGE
+       ServiceAccount  gitops-dev  claims-app-gitops  Synced                 serviceaccount/claims-app-gitops unchanged
+       Service         gitops-dev  claims-app-gitops  Synced  Healthy        service/claims-app-gitops unchanged
+apps   Deployment      gitops-dev  claims-app-gitops  Synced  Healthy        deployment.apps/claims-app-gitops configured

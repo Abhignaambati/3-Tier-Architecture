@@ -1,0 +1,6 @@
+
+===== apps/Deployment gitops-dev/claims-app-gitops ======
+178c178
+<   replicas: 2
+---
+>   replicas: 1

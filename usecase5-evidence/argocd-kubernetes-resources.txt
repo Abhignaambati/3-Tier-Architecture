@@ -1,0 +1,5 @@
+NAME                                     READY   STATUS    RESTARTS   AGE
+pod/claims-app-gitops-766cd887b8-kp7c6   1/1     Running   0          34s
+
+NAME                        TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/claims-app-gitops   ClusterIP   10.96.45.211   <none>        5000/TCP   34s

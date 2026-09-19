@@ -1,0 +1,2 @@
+Desired replicas: 1
+Ready replicas: 1

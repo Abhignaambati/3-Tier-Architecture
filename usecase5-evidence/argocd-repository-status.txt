@@ -1,0 +1,2 @@
+TYPE  NAME  REPO                                                        INSECURE  OCI    LFS    CREDS  STATUS      MESSAGE  PROJECT
+git         https://gitlab.com/midhtech-group2/3-tier-architecture.git  false     false  false  false  Successful           
