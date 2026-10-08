@@ -1,0 +1,2 @@
+SERVER                          NAME        VERSION  STATUS   MESSAGE                                                  PROJECT
+https://kubernetes.default.svc  in-cluster  1.36.1   Unknown  Cluster has no applications and is not being monitored.  

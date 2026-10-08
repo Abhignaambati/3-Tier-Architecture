@@ -1,0 +1,4 @@
+Logged In: true
+Username: admin
+Issuer: argocd
+Groups: 

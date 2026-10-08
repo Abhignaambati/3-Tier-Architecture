@@ -1,0 +1,2 @@
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+claims-app-gitops   2/2     2            2           9m18s

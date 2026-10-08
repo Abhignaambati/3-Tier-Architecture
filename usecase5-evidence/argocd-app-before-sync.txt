@@ -1,0 +1,19 @@
+Name:               argocd/claims-app-dev
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          gitops-dev
+URL:                https://127.0.0.1:8081/applications/claims-app-dev
+Source:
+- Repo:             https://gitlab.com/midhtech-group2/3-tier-architecture.git
+  Target:           main
+  Path:             helm/claims-app
+  Helm Values:      values-dev.yaml
+SyncWindow:         Sync Allowed
+Sync Policy:        Manual
+Sync Status:        OutOfSync from main (8afcb7a)
+Health Status:      Missing
+
+GROUP  KIND            NAMESPACE   NAME               STATUS     HEALTH   HOOK  MESSAGE
+       Service         gitops-dev  claims-app-gitops  OutOfSync  Missing        
+       ServiceAccount  gitops-dev  claims-app-gitops  OutOfSync  Missing        
+apps   Deployment      gitops-dev  claims-app-gitops  OutOfSync  Missing        
