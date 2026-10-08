@@ -6,3 +6,6 @@ crash.log
 crash.*.log
 terraform.tfvars
 usecase6-evidence/
+
+# Terraform saved plan files
+tfplan*

@@ -147,9 +147,9 @@ resource "aws_iam_role_policy" "app" {
         Resource = "${aws_s3_bucket.artifacts.arn}/*"
       },
       {
-        Sid    = "AuthenticateToEcr"
-        Effect = "Allow"
-        Action = ["ecr:GetAuthorizationToken"]
+        Sid      = "AuthenticateToEcr"
+        Effect   = "Allow"
+        Action   = ["ecr:GetAuthorizationToken"]
         Resource = "*"
       },
       {
