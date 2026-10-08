@@ -1,0 +1,4 @@
+ current_user | current_database
+--------------+------------------
+ claimsuser   | claimsdb
+(1 row)
