@@ -1,0 +1,7 @@
+aws_region         = "ap-south-1"
+aws_profile        = null
+project_name       = "claims-usecase6"
+environment        = "lab"
+vpc_cidr           = "10.60.0.0/16"
+budget_email       = "replace-with-your-email@example.com"
+monthly_budget_usd = 5
