@@ -3,3 +3,11 @@ node_modules/
 venv/
 __pycache__/
 *.pyc
+# Local environment values and secrets
+.env
+
+# Frontend build output
+frontend/dist/
+
+# Local Harbor database backup containing sensitive data
+harbor-registry-backup.sql

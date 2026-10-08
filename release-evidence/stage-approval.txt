@@ -1,0 +1,7 @@
+Approval type: simulated manual approval
+Approved by: Abhigna Reddy
+Promotion: dev to stage
+Dev Helm revision: 1
+Image: 192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764
+Dev verification: health and claims endpoints returned HTTP 200
+Approved at: 2026-09-16T04:14:20Z
