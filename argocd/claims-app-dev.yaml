@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://gitlab.com/midhtech-group2/3-tier-architecture.git
-    targetRevision: main
+    targetRevision: usecase/05-helm-argocd
     path: helm/claims-app
     helm:
       releaseName: claims-app-gitops
