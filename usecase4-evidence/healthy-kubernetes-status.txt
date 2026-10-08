@@ -1,0 +1,11 @@
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                                                                                            SELECTOR
+deployment.apps/claims-backend    1/1     1            1           23h   backend      192.168.1.121:80/3-tier/3-tier-app@sha256:0795d970f8f6f2ec26f180cc844e60fef949168917bb364ce2af7656cc41f764        app=claims-backend
+deployment.apps/claims-frontend   1/1     1            1           20h   frontend     192.168.1.121:80/3-tier/claims-frontend@sha256:8990a0e0fcb3a2107de0e28eb10049dbd1a6dd0b582556b847ff72b20456d455   app=claims-frontend
+
+NAME                                   READY   STATUS    RESTARTS        AGE   IP           NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-backend-6595f99ff9-z8w59    1/1     Running   1 (4h49m ago)   23h   10.244.0.3   desktop-control-plane   <none>           <none>
+pod/claims-frontend-59cfbcd5b4-tjpwk   1/1     Running   1 (4h49m ago)   20h   10.244.0.2   desktop-control-plane   <none>           <none>
+
+NAME                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/claims-backend    ClusterIP   10.96.133.169   <none>        5000/TCP   23h   app=claims-backend
+service/claims-frontend   ClusterIP   10.96.11.61     <none>        5173/TCP   20h   app=claims-frontend

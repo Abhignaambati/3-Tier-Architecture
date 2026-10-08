@@ -1,0 +1,11 @@
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/claims-backend    1/1     1            1           18h
+deployment.apps/claims-frontend   1/1     1            1           15h
+
+NAME                                   READY   STATUS    RESTARTS        AGE
+pod/claims-backend-6595f99ff9-z8w59    1/1     Running   1 (9m41s ago)   18h
+pod/claims-frontend-59cfbcd5b4-tjpwk   1/1     Running   1 (9m41s ago)   15h
+
+NAME                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/claims-backend    ClusterIP   10.96.133.169   <none>        5000/TCP   18h
+service/claims-frontend   ClusterIP   10.96.11.61     <none>        5173/TCP   15h

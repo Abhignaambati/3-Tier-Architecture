@@ -1,0 +1,2 @@
+Image: 192.168.1.121:80/3-tier/claims-frontend:d694583-frontend
+Digest: 192.168.1.121:80/3-tier/claims-frontend@sha256:8990a0e0fcb3a2107de0e28eb10049dbd1a6dd0b582556b847ff72b20456d455

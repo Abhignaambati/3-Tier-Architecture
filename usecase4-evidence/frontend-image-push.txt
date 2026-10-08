@@ -1,0 +1,29 @@
+The push refers to repository [192.168.1.121:80/3-tier/claims-frontend]
+ddea32ef3eac: Waiting
+44136fa355b3: Waiting
+b05773cc67e1: Waiting
+5de55e5ef9c0: Waiting
+ddea32ef3eac: Waiting
+44136fa355b3: Waiting
+b05773cc67e1: Waiting
+5de55e5ef9c0: Waiting
+ddea32ef3eac: Waiting
+44136fa355b3: Waiting
+b05773cc67e1: Waiting
+5de55e5ef9c0: Waiting
+5de55e5ef9c0: Waiting
+ddea32ef3eac: Waiting
+44136fa355b3: Waiting
+b05773cc67e1: Waiting
+5de55e5ef9c0: Layer already exists
+2b8c8ae4a685: Layer already exists
+4b52d2c1b07b: Layer already exists
+8338c2d3fe04: Layer already exists
+5e275a5205a0: Layer already exists
+c908b74c6af1: Layer already exists
+2f5eca6308ef: Layer already exists
+f2a9ab5ce23a: Layer already exists
+ddea32ef3eac: Already exists
+44136fa355b3: Already exists
+b05773cc67e1: Layer already exists
+d694583-frontend: digest: sha256:8990a0e0fcb3a2107de0e28eb10049dbd1a6dd0b582556b847ff72b20456d455 size: 856

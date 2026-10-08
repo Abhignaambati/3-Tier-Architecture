@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.8 Python/3.12.14
+Date: Fri, 18 Sep 2026 09:44:59 GMT
+Content-Type: application/json
+Content-Length: 348
+Access-Control-Allow-Origin: http://127.0.0.1:5173
+Vary: Origin
+Connection: close
+
+[{"amount":"15000.00","claim_number":"CLM-0002","created_at":"Tue, 08 Sep 2026 05:30:03 GMT","customer_name":"kumar","description":"Insurance","id":2,"status":"Approved"},{"amount":"20000.00","claim_number":"CLM-0001","created_at":"Tue, 08 Sep 2026 05:29:43 GMT","customer_name":"Abhigna Reddy","description":"Hospital","id":1,"status":"Pending"}]

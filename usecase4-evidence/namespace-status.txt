@@ -1,0 +1,2 @@
+NAME         STATUS   AGE
+claims-k8s   Active   5s
