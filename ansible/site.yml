@@ -1,0 +1,20 @@
+---
+- name: Configure the Use Case 7 Linux host
+  hosts: lab
+  gather_facts: true
+
+  tasks:
+    - name: Create the claims application configuration
+      ansible.builtin.copy:
+        dest: /tmp/claims-agent.conf
+        content: |
+          application=claims-app
+          environment=lab
+          managed_by=ansible
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Confirm the operation completed
+      ansible.builtin.debug:
+        msg: "The claims application configuration is present."

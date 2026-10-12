@@ -1,0 +1,2 @@
+
+playbook: ansible/site.yml

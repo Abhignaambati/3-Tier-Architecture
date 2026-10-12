@@ -1,0 +1,4 @@
+usecase7-host | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}

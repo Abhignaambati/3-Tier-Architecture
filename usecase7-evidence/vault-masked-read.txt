@@ -1,0 +1,2 @@
+Secret path: secret/midhlab/app
+Username: claims-appPassword: MASKED

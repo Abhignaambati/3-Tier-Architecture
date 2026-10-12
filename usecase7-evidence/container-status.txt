@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE              COMMAND            CREATED          STATUS          PORTS     NAMES
+71b010361963   python:3.12-slim   "sleep infinity"   16 seconds ago   Up 15 seconds             usecase7-host

@@ -3,3 +3,6 @@ node_modules/
 venv/
 __pycache__/
 *.pyc
+# Use Case 7 local secret files
+.vault-token
+*.retry

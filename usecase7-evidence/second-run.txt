@@ -1,0 +1,17 @@
+
+PLAY [Configure the Use Case 7 Linux host] *************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [usecase7-host]
+
+TASK [Create the claims application configuration] *****************************
+ok: [usecase7-host]
+
+TASK [Confirm the operation completed] *****************************************
+ok: [usecase7-host] => {
+    "msg": "The claims application configuration is present."
+}
+
+PLAY RECAP *********************************************************************
+usecase7-host              : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

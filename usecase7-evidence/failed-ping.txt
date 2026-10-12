@@ -1,0 +1,10 @@
+[ERROR]: Task failed: Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in "/tmp", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p "` echo ~/.ansible/tmp `"&& mkdir "` echo ~/.ansible/tmp/ansible-tmp-1791540968.835646-10522-200686008370429 `" && echo ansible-tmp-1791540968.835646-10522-200686008370429="` echo ~/.ansible/tmp/ansible-tmp-1791540968.835646-10522-200686008370429 `" ), exited with result 1
+Origin: <adhoc 'ping' task>
+
+{'action': 'ping', 'args': {}, 'timeout': 0, 'async_val': 0, 'poll': 15}
+
+wrong-usecase7-host | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo ~/.ansible/tmp `\"&& mkdir \"` echo ~/.ansible/tmp/ansible-tmp-1791540968.835646-10522-200686008370429 `\" && echo ansible-tmp-1791540968.835646-10522-200686008370429=\"` echo ~/.ansible/tmp/ansible-tmp-1791540968.835646-10522-200686008370429 `\" ), exited with result 1",
+    "unreachable": true
+}

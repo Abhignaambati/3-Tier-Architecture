@@ -1,0 +1,11 @@
+===== Secret Path =====
+secret/data/midhlab/app
+
+======= Metadata =======
+Key                Value
+---                -----
+created_time       2026-10-12T08:58:36.400352509Z
+custom_metadata    <nil>
+deletion_time      n/a
+destroyed          false
+version            1
