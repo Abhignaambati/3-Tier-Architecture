@@ -1,0 +1,312 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "streams",
+        "result": [
+            {
+                "stream": {
+                    "container": "claims-usecase8-backend",
+                    "detected_level": "unknown",
+                    "environment": "lab",
+                    "service": "backend",
+                    "service_name": "backend",
+                    "version": "1.0.0"
+                },
+                "values": [
+                    [
+                        "1791967094055750834",
+                        "172.22.0.7 - - [14/Oct/2026 08:38:14] \"GET /metrics HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967091667109666",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:11] \"\u001b[33mGET /api/not-found HTTP/1.1\u001b[0m\" 404 -"
+                    ],
+                    [
+                        "1791967090351894555",
+                        "127.0.0.1 - - [14/Oct/2026 08:38:10] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967087194972387",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:07] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967087185233220",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:07] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967087175366887",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:07] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967087163820637",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:07] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967087150730553",
+                        "192.168.65.1 - - [14/Oct/2026 08:38:07] \"GET /api/health HTTP/1.1\" 200 -"
+                    ],
+                    [
+                        "1791967084055582760",
+                        "172.22.0.7 - - [14/Oct/2026 08:38:04] \"GET /metrics HTTP/1.1\" 200 -"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "container": "claims-usecase8-loki",
+                    "detected_level": "info",
+                    "environment": "lab",
+                    "service": "loki",
+                    "service_name": "loki",
+                    "version": "1.0.0"
+                },
+                "values": [
+                    [
+                        "1791967082643535801",
+                        "level=info ts=2026-10-14T08:38:02.546800343Z caller=metrics.go:340 component=frontend org_id=fake latency=fast query_type=labels splits=0 start=2026-10-14T07:38:02.543815134Z end=2026-10-14T08:38:02.543815134Z start_delta=1h0m0.002982417s end_delta=2.9825ms length=1h0m0s duration=2.799959ms status=200 label=container query= query_hash=2166136261 total_entries=6 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s"
+                    ],
+                    [
+                        "1791967082643532885",
+                        "level=info ts=2026-10-14T08:38:02.546307926Z caller=metrics.go:340 org_id=fake latency=fast query_type=labels splits=0 start=2026-10-14T07:38:02.543815134Z end=2026-10-14T08:38:02.543815134Z start_delta=1h0m0.002489792s end_delta=2.490042ms length=1h0m0s duration=1.103084ms status=200 label=container query= query_hash=2166136261 total_entries=6 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s"
+                    ],
+                    [
+                        "1791967082643528551",
+                        "level=info ts=2026-10-14T08:38:02.545870718Z caller=table_manager.go:195 index-store=tsdb-2024-01-01 msg=\"get or create table\" found=true table=index_20740 wait_for_lock=5\u00b5s"
+                    ],
+                    [
+                        "1791967082643481260",
+                        "level=info ts=2026-10-14T08:38:02.543841634Z caller=roundtrip.go:412 org_id=fake msg=\"executing query\" type=labels label=container length=1h0m0s query="
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "container": "kind-registry-mirror",
+                    "detected_level": "debug",
+                    "environment": "lab",
+                    "service_name": "kind-registry-mirror",
+                    "version": "1.0.0"
+                },
+                "values": [
+                    [
+                        "1791967092105555500",
+                        "time=\"2026-10-14T08:38:12Z\" level=debug msg=\"version negotiation\""
+                    ],
+                    [
+                        "1791967092105530708",
+                        "time=\"2026-10-14T08:38:12Z\" level=debug msg=request method=GET url=/v2/"
+                    ],
+                    [
+                        "1791967092104927833",
+                        "time=\"2026-10-14T08:38:12Z\" level=debug msg=\"  -----  \""
+                    ],
+                    [
+                        "1791967087072362928",
+                        "time=\"2026-10-14T08:38:07Z\" level=debug msg=\"version negotiation\""
+                    ],
+                    [
+                        "1791967087072352428",
+                        "time=\"2026-10-14T08:38:07Z\" level=debug msg=request method=GET url=/v2/"
+                    ],
+                    [
+                        "1791967087072256470",
+                        "time=\"2026-10-14T08:38:07Z\" level=debug msg=\"  -----  \""
+                    ],
+                    [
+                        "1791967082040995301",
+                        "time=\"2026-10-14T08:38:02Z\" level=debug msg=\"version negotiation\""
+                    ]
+                ]
+            }
+        ],
+        "stats": {
+            "summary": {
+                "bytesProcessedPerSecond": 22824023,
+                "linesProcessedPerSecond": 101201,
+                "totalBytesProcessed": 208390,
+                "totalLinesProcessed": 924,
+                "execTime": 0.00913,
+                "queueTime": 0.000272,
+                "subqueries": 0,
+                "totalEntriesReturned": 20,
+                "splits": 1,
+                "shards": 1,
+                "totalPostFilterLines": 924,
+                "totalStructuredMetadataBytesProcessed": 8932
+            },
+            "querier": {
+                "store": {
+                    "totalChunksRef": 0,
+                    "totalChunksDownloaded": 0,
+                    "chunksDownloadTime": 0,
+                    "queryReferencedStructuredMetadata": false,
+                    "queryUsedV2Engine": false,
+                    "chunk": {
+                        "headChunkBytes": 0,
+                        "headChunkLines": 0,
+                        "decompressedBytes": 0,
+                        "decompressedLines": 0,
+                        "compressedBytes": 0,
+                        "totalDuplicates": 0,
+                        "postFilterLines": 0,
+                        "headChunkStructuredMetadataBytes": 0,
+                        "decompressedStructuredMetadataBytes": 0
+                    },
+                    "chunkRefsFetchTime": 0,
+                    "congestionControlLatency": 0,
+                    "pipelineWrapperFilteredLines": 0,
+                    "dataobj": {
+                        "prePredicateDecompressedRows": 0,
+                        "prePredicateDecompressedBytes": 0,
+                        "prePredicateDecompressedStructuredMetadataBytes": 0,
+                        "postPredicateRows": 0,
+                        "postPredicateDecompressedBytes": 0,
+                        "postPredicateStructuredMetadataBytes": 0,
+                        "postFilterRows": 0,
+                        "pagesScanned": 0,
+                        "pagesDownloaded": 0,
+                        "pagesDownloadedBytes": 0,
+                        "pageBatches": 0,
+                        "totalRowsAvailable": 0,
+                        "totalPageDownloadTime": 0
+                    }
+                },
+                "querierExecTime": 0.00978
+            },
+            "ingester": {
+                "totalReached": 1,
+                "totalChunksMatched": 5,
+                "totalBatches": 1,
+                "totalLinesSent": 20,
+                "store": {
+                    "totalChunksRef": 1,
+                    "totalChunksDownloaded": 1,
+                    "chunksDownloadTime": 418000,
+                    "queryReferencedStructuredMetadata": false,
+                    "queryUsedV2Engine": false,
+                    "chunk": {
+                        "headChunkBytes": 187659,
+                        "headChunkLines": 854,
+                        "decompressedBytes": 20731,
+                        "decompressedLines": 70,
+                        "compressedBytes": 3356,
+                        "totalDuplicates": 0,
+                        "postFilterLines": 924,
+                        "headChunkStructuredMetadataBytes": 6832,
+                        "decompressedStructuredMetadataBytes": 2100
+                    },
+                    "chunkRefsFetchTime": 324042,
+                    "congestionControlLatency": 0,
+                    "pipelineWrapperFilteredLines": 0,
+                    "dataobj": {
+                        "prePredicateDecompressedRows": 0,
+                        "prePredicateDecompressedBytes": 0,
+                        "prePredicateDecompressedStructuredMetadataBytes": 0,
+                        "postPredicateRows": 0,
+                        "postPredicateDecompressedBytes": 0,
+                        "postPredicateStructuredMetadataBytes": 0,
+                        "postFilterRows": 0,
+                        "pagesScanned": 0,
+                        "pagesDownloaded": 0,
+                        "pagesDownloadedBytes": 0,
+                        "pageBatches": 0,
+                        "totalRowsAvailable": 0,
+                        "totalPageDownloadTime": 0
+                    }
+                },
+                "recvWaitTime": 0.003429
+            },
+            "cache": {
+                "chunk": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "index": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "result": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "statsResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "volumeResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "seriesResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "labelResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "instantMetricResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                }
+            },
+            "index": {
+                "totalChunks": 0,
+                "postFilterChunks": 0,
+                "shardsDuration": 0,
+                "usedBloomFilters": false,
+                "totalStreams": 0,
+                "chunkRefsLookupTime": 0,
+                "bloomFilterTime": 0
+            }
+        }
+    }
+}

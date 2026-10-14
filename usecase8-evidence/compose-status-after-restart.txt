@@ -1,0 +1,8 @@
+NAME                           IMAGE                                                                     COMMAND                  SERVICE        CREATED        STATUS                    PORTS
+claims-usecase8-alertmanager   prom/alertmanager:latest                                                  "/bin/alertmanager -…"   alertmanager   20 hours ago   Up 38 seconds             0.0.0.0:9093->9093/tcp, [::]:9093->9093/tcp
+claims-usecase8-alloy          grafana/alloy:latest                                                      "/bin/alloy run --se…"   alloy          20 hours ago   Up 38 seconds             0.0.0.0:12345->12345/tcp, [::]:12345->12345/tcp
+claims-usecase8-backend        sha256:a57db1eb6e0bb19f3432a6bc28df1ee940a78498e6107487aadb584072f61aa6   "python app.py"          backend        20 hours ago   Up 32 seconds (healthy)   0.0.0.0:5009->5000/tcp, [::]:5009->5000/tcp
+claims-usecase8-db             postgres:16-alpine                                                        "docker-entrypoint.s…"   db             20 hours ago   Up 38 seconds (healthy)   5432/tcp
+claims-usecase8-grafana        grafana/grafana:latest                                                    "/run.sh"                grafana        20 hours ago   Up 32 seconds             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+claims-usecase8-loki           grafana/loki:latest                                                       "/usr/bin/loki -conf…"   loki           20 hours ago   Up 38 seconds             0.0.0.0:3100->3100/tcp, [::]:3100->3100/tcp
+claims-usecase8-prometheus     prom/prometheus:latest                                                    "/bin/prometheus --c…"   prometheus     20 hours ago   Up 32 seconds             0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
