@@ -1,0 +1,13 @@
+groups:
+  - name: claims-application-alerts
+    rules:
+      - alert: ClaimsBackendUnavailable
+        expr: up{job="claims-backend"} == 0
+        for: 30s
+        labels:
+          severity: critical
+          service: claims-backend
+          environment: lab
+        annotations:
+          summary: Claims backend is unavailable
+          description: Prometheus has been unable to scrape the claims backend for more than 30 seconds.

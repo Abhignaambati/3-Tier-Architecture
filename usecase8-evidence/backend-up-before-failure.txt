@@ -1,0 +1,22 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "environment": "lab",
+                    "instance": "backend:5000",
+                    "job": "claims-backend",
+                    "service": "claims-backend",
+                    "version": "1.0.0"
+                },
+                "value": [
+                    1791967201.464,
+                    "1"
+                ]
+            }
+        ]
+    }
+}
