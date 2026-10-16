@@ -1,0 +1,9 @@
+NAME                              READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-app-6c68c9b4d6-8pxgl   1/1     Running   0          24s   10.244.0.21   desktop-control-plane   <none>           <none>
+pod/claims-app-6c68c9b4d6-gqgtb   1/1     Running   0          24s   10.244.0.20   desktop-control-plane   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-app   ClusterIP   10.96.218.197   <none>        80/TCP    24s   app=claims-app
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/claims-app   2/2     2            2           24s   claims-app   nginx:1.27-alpine   app=claims-app

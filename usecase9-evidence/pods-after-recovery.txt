@@ -1,0 +1,3 @@
+NAME                          READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-app-6c68c9b4d6-drrxq   1/1     Running   0          12s   10.244.0.24   desktop-control-plane   <none>           <none>
+claims-app-6c68c9b4d6-nvtgs   1/1     Running   0          12s   10.244.0.25   desktop-control-plane   <none>           <none>

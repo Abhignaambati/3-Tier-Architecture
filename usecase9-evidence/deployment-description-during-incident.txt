@@ -1,0 +1,42 @@
+Name:               claims-app
+Namespace:          incident-lab
+CreationTimestamp:  Fri, 16 Oct 2026 15:10:38 +0530
+Labels:             app=claims-app
+Annotations:        deployment.kubernetes.io/revision: 2
+Selector:           app=claims-app
+Replicas:           2 desired | 2 updated | 2 total | 0 available | 2 unavailable
+StrategyType:       Recreate
+MinReadySeconds:    0
+Pod Template:
+  Labels:  app=claims-app
+           environment=incident-lab
+  Containers:
+   claims-app:
+    Image:        nginx:usecase9-image-does-not-exist
+    Port:         80/TCP (http)
+    Host Port:    0/TCP (http)
+    Liveness:     http-get http://:http/health delay=5s timeout=1s period=10s #success=1 #failure=3
+    Readiness:    http-get http://:http/health delay=3s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /usr/share/nginx/html from application-content (ro)
+  Volumes:
+   application-content:
+    Type:          ConfigMap (a volume populated by a ConfigMap)
+    Name:          claims-app-content
+    Optional:      false
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      False   MinimumReplicasUnavailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  claims-app-6c68c9b4d6 (0/0 replicas created)
+NewReplicaSet:   claims-app-69fc47cc48 (2/2 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  9m15s  deployment-controller  Scaled up replica set claims-app-6c68c9b4d6 from 0 to 2
+  Normal  ScalingReplicaSet  2m3s   deployment-controller  Scaled down replica set claims-app-6c68c9b4d6 from 2 to 0
+  Normal  ScalingReplicaSet  2m3s   deployment-controller  Scaled up replica set claims-app-69fc47cc48 from 0 to 2
