@@ -1,0 +1,68 @@
+pipeline {
+    agent {
+        label 'usecase10-agent'
+    }
+
+    options {
+        timestamps()
+    }
+
+    stages {
+        stage('Agent Check') {
+            steps {
+                sh '''
+                    echo "Agent name: $NODE_NAME"
+                    echo "Workspace: $WORKSPACE"
+                    hostname
+                    whoami
+                    java -version
+                '''
+            }
+        }
+
+        stage('Docker Check') {
+            steps {
+                sh '''
+                    docker version
+                    docker info
+                '''
+            }
+        }
+
+        stage('Registry Network Check') {
+            steps {
+                script {
+                    def status = sh(
+                        script: "curl -sS -o /dev/null -w '%{http_code}' https://registry-1.docker.io/v2/",
+                        returnStdout: true
+                    ).trim()
+
+                    echo "Docker registry HTTP status: ${status}"
+
+                    if (status != '401') {
+                        error("Unexpected registry response: ${status}")
+                    }
+                }
+            }
+        }
+
+        stage('Application Code Check') {
+            steps {
+                sh '''
+                    git status --short
+                    echo "Application code reached the CI agent successfully."
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Use Case 10 agent checks completed successfully.'
+        }
+
+        failure {
+            echo 'The pipeline failed because the CI agent environment requires investigation.'
+        }
+    }
+}
