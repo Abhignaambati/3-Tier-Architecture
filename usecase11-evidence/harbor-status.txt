@@ -1,0 +1,10 @@
+NAME                IMAGE                                 COMMAND                  SERVICE       CREATED       STATUS                    PORTS
+harbor-core         goharbor/harbor-core:v2.15.2          "/harbor/entrypoint.…"   core          2 weeks ago   Up 4 minutes (healthy)    
+harbor-db           goharbor/harbor-db:v2.15.2            "/docker-entrypoint.…"   postgresql    6 weeks ago   Up 4 minutes (healthy)    
+harbor-jobservice   goharbor/harbor-jobservice:v2.15.2    "/harbor/entrypoint.…"   jobservice    2 weeks ago   Up 4 minutes (healthy)    
+harbor-log          goharbor/harbor-log:v2.15.2           "/bin/sh -c /usr/loc…"   log           6 weeks ago   Up 28 minutes (healthy)   127.0.0.1:1514->10514/tcp
+harbor-portal       goharbor/harbor-portal:v2.15.2        "nginx -g 'daemon of…"   portal        6 weeks ago   Up 4 minutes (healthy)    
+nginx               goharbor/nginx-photon:v2.15.2         "nginx -g 'daemon of…"   proxy         6 weeks ago   Up 4 minutes (healthy)    0.0.0.0:80->8080/tcp, [::]:80->8080/tcp
+redis               goharbor/valkey-photon:v2.15.2        "valkey-server /etc/…"   redis         6 weeks ago   Up 4 minutes (healthy)    
+registry            goharbor/registry-photon:v2.15.2      "/home/harbor/entryp…"   registry      6 weeks ago   Up 4 minutes (healthy)    
+registryctl         goharbor/harbor-registryctl:v2.15.2   "/home/harbor/start.…"   registryctl   2 weeks ago   Up 4 minutes (healthy)    

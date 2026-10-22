@@ -1,0 +1,4 @@
+NAME                          READY   STATUS         RESTARTS   AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-app-6cc749985-jbklv    1/1     Running        0          3m2s   10.244.0.21   desktop-control-plane   <none>           <none>
+claims-app-6cc749985-zwzfb    1/1     Running        0          3m2s   10.244.0.20   desktop-control-plane   <none>           <none>
+claims-app-6d74657d85-bkwfg   0/1     ErrImagePull   0          15s    10.244.0.23   desktop-control-plane   <none>           <none>

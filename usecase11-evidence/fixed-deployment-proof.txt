@@ -1,0 +1,2 @@
+Image: harbor.example.com:80/usecase11/claims-app:1.0
+Pull secret: harborpull

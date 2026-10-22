@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claims-app
+  namespace: imagepull-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: claims-app
+  template:
+    metadata:
+      labels:
+        app: claims-app
+        environment: lab
+    spec:
+      imagePullSecrets:
+        - name: harborpull
+      containers:
+        - name: claims-app
+          image: harbor.example.com:80/usecase11/claims-app:1.0
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          volumeMounts:
+            - name: application-content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+      volumes:
+        - name: application-content
+          configMap:
+            name: claims-app-content

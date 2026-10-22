@@ -1,0 +1,37 @@
+Name:                   claims-app
+Namespace:              imagepull-lab
+CreationTimestamp:      Thu, 22 Oct 2026 12:30:32 +0530
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 5
+Selector:               app=claims-app
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=claims-app
+           environment=lab
+  Containers:
+   claims-app:
+    Image:        harbor.example.com:80/usecase11/claims-app:1.0
+    Port:         80/TCP (http)
+    Host Port:    0/TCP (http)
+    Readiness:    http-get http://:http/health delay=3s timeout=1s period=5s #success=1 #failure=3
+    Environment:  <none>
+    Mounts:
+      /usr/share/nginx/html from application-content (ro)
+  Volumes:
+   application-content:
+    Type:          ConfigMap (a volume populated by a ConfigMap)
+    Name:          claims-app-content
+    Optional:      false
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  claims-app-6cc749985 (0/0 replicas created), claims-app-6d74657d85 (0/0 replicas created), claims-app-587f5cfddc (0/0 replicas created)
+NewReplicaSet:   claims-app-79868d48dd (2/2 replicas created)
+Events:          <none>

@@ -1,0 +1,3 @@
+healthy
+healthy
+pod "health-check-after-tag-fix" deleted from imagepull-lab namespace

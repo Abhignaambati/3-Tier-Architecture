@@ -1,0 +1,4 @@
+namespace/imagepull-lab created
+configmap/claims-app-content created
+deployment.apps/claims-app created
+service/claims-app created

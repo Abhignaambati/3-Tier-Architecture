@@ -1,0 +1,9 @@
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                           SELECTOR
+deployment.apps/claims-app   2/2     2            2           3h29m   claims-app   harbor.example.com:80/usecase11/claims-app:1.0   app=claims-app
+
+NAME                              READY   STATUS    RESTARTS   AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-app-79868d48dd-57rlt   1/1     Running   0          101m   10.244.0.24   desktop-control-plane   <none>           <none>
+pod/claims-app-79868d48dd-kszwf   1/1     Running   0          101m   10.244.0.23   desktop-control-plane   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE     SELECTOR
+service/claims-app   ClusterIP   10.96.44.60   <none>        80/TCP    3h29m   app=claims-app

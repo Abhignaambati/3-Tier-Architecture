@@ -3,3 +3,7 @@ node_modules/
 venv/
 __pycache__/
 *.pyc
+# Use Case 11 local registry credentials
+*.dockerconfigjson
+harbor-secret.yaml
+secret-*.yaml

@@ -1,0 +1,5 @@
+NAMES                   STATUS                    PORTS
+harbor-log              Up 20 minutes (healthy)   127.0.0.1:1514->10514/tcp
+kind-cloud-provider     Up 20 minutes             2375-2376/tcp
+kind-registry-mirror    Up 20 minutes (healthy)   
+desktop-control-plane   Up 20 minutes             127.0.0.1:63582->6443/tcp

@@ -1,0 +1,1 @@
+no such manifest: docker.io/library/nginx:usecase11-tag-does-not-exist

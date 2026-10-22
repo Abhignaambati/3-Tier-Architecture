@@ -1,0 +1,25 @@
+LAST SEEN   TYPE      REASON              OBJECT                             MESSAGE
+5m15s       Normal    SuccessfulCreate    replicaset/claims-app-6cc749985    Created pod: claims-app-6cc749985-jbklv
+5m15s       Normal    SuccessfulCreate    replicaset/claims-app-6cc749985    Created pod: claims-app-6cc749985-zwzfb
+5m15s       Normal    Created             pod/claims-app-6cc749985-jbklv     Container created
+5m15s       Normal    Started             pod/claims-app-6cc749985-jbklv     Container started
+5m15s       Normal    Scheduled           pod/claims-app-6cc749985-zwzfb     Successfully assigned imagepull-lab/claims-app-6cc749985-zwzfb to desktop-control-plane
+5m15s       Normal    Pulled              pod/claims-app-6cc749985-zwzfb     Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+5m15s       Normal    Pulled              pod/claims-app-6cc749985-jbklv     Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+5m15s       Normal    Created             pod/claims-app-6cc749985-zwzfb     Container created
+5m15s       Normal    ScalingReplicaSet   deployment/claims-app              Scaled up replica set claims-app-6cc749985 from 0 to 2
+5m15s       Normal    Started             pod/claims-app-6cc749985-zwzfb     Container started
+5m15s       Normal    Scheduled           pod/claims-app-6cc749985-jbklv     Successfully assigned imagepull-lab/claims-app-6cc749985-jbklv to desktop-control-plane
+4m46s       Normal    Pulling             pod/health-check                   Pulling image "curlimages/curl:latest"
+4m46s       Normal    Scheduled           pod/health-check                   Successfully assigned imagepull-lab/health-check to desktop-control-plane
+4m35s       Normal    Created             pod/health-check                   Container created
+4m35s       Normal    Pulled              pod/health-check                   Successfully pulled image "curlimages/curl:latest" in 11.34s (11.34s including waiting). Image size: 11116554 bytes.
+4m35s       Normal    Started             pod/health-check                   Container started
+2m28s       Normal    ScalingReplicaSet   deployment/claims-app              Scaled up replica set claims-app-6d74657d85 from 0 to 1
+2m28s       Normal    SuccessfulCreate    replicaset/claims-app-6d74657d85   Created pod: claims-app-6d74657d85-bkwfg
+2m28s       Normal    Scheduled           pod/claims-app-6d74657d85-bkwfg    Successfully assigned imagepull-lab/claims-app-6d74657d85-bkwfg to desktop-control-plane
+55s         Normal    Pulling             pod/claims-app-6d74657d85-bkwfg    Pulling image "nginx:usecase11-tag-does-not-exist"
+52s         Warning   Failed              pod/claims-app-6d74657d85-bkwfg    Error: ErrImagePull
+52s         Warning   Failed              pod/claims-app-6d74657d85-bkwfg    Failed to pull image "nginx:usecase11-tag-does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:usecase11-tag-does-not-exist": failed to resolve reference "docker.io/library/nginx:usecase11-tag-does-not-exist": docker.io/library/nginx:usecase11-tag-does-not-exist: not found
+3s          Warning   Failed              pod/claims-app-6d74657d85-bkwfg    Error: ImagePullBackOff
+3s          Normal    BackOff             pod/claims-app-6d74657d85-bkwfg    Back-off pulling image "nginx:usecase11-tag-does-not-exist"
