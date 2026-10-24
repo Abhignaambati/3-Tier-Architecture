@@ -1,0 +1,4 @@
+Controlled invalid rotation evidence
+      SECRET_VERSION:  2
+29m         Warning   Unhealthy        pod/claims-secret-app-76d46c64cd-4f8ww   Readiness probe failed: HTTP probe failed with statuscode: 503
+[pod/claims-secret-app-5767d954f-prfp2/app] request=10.244.0.1 path=/health message="GET /health HTTP/1.1" 503 -
