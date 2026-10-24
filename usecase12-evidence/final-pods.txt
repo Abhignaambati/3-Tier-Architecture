@@ -1,0 +1,5 @@
+NAME                                 READY   STATUS        RESTARTS   AGE     IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-secret-app-5767d954f-4h8nr    1/1     Terminating   0          7m59s   10.244.0.26   desktop-control-plane   <none>           <none>
+claims-secret-app-5767d954f-pqwgf    1/1     Terminating   0          7m59s   10.244.0.25   desktop-control-plane   <none>           <none>
+claims-secret-app-7b8b8648cf-b4dz9   1/1     Running       0          13s     10.244.0.31   desktop-control-plane   <none>           <none>
+claims-secret-app-7b8b8648cf-dvkgh   1/1     Running       0          8s      10.244.0.32   desktop-control-plane   <none>           <none>

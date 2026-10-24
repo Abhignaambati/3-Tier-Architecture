@@ -1,0 +1,4 @@
+namespace/secret-rotation-lab configured
+configmap/claims-secret-app-code unchanged
+deployment.apps/claims-secret-app configured
+service/claims-secret-app unchanged

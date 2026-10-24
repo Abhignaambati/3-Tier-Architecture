@@ -1,0 +1,1 @@
+{"status": "healthy", "secret_version": "3"}pod "final-health-check" deleted from secret-rotation-lab namespace

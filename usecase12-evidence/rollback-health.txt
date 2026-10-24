@@ -1,0 +1,1 @@
+{"status": "healthy", "secret_version": "1"}{"status": "healthy", "secret_version": "1"}pod "rollback-health-check" deleted from secret-rotation-lab namespace

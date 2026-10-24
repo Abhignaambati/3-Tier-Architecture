@@ -1,0 +1,17 @@
+LAST SEEN   TYPE      REASON           OBJECT                                   MESSAGE
+29m         Warning   Unhealthy        pod/claims-secret-app-76d46c64cd-4f8ww   Readiness probe failed: HTTP probe failed with statuscode: 503
+18m         Normal    Pulled           pod/claims-secret-app-76d46c64cd-4f8ww   Container image "python:3.12-slim" already present on machine and can be accessed by the pod
+18m         Normal    SandboxChanged   pod/claims-secret-app-76d46c64cd-4f8ww   Pod sandbox changed, it will be killed and re-created.
+18m         Normal    Started          pod/claims-secret-app-5767d954f-4gh58    Container started
+18m         Normal    Started          pod/claims-secret-app-76d46c64cd-4f8ww   Container started
+18m         Normal    SandboxChanged   pod/claims-secret-app-5767d954f-prfp2    Pod sandbox changed, it will be killed and re-created.
+18m         Normal    Pulled           pod/claims-secret-app-5767d954f-prfp2    Container image "python:3.12-slim" already present on machine and can be accessed by the pod
+18m         Normal    Created          pod/claims-secret-app-5767d954f-4gh58    Container created
+18m         Normal    Created          pod/claims-secret-app-76d46c64cd-4f8ww   Container created
+18m         Normal    Created          pod/claims-secret-app-5767d954f-prfp2    Container created
+18m         Normal    Pulled           pod/claims-secret-app-5767d954f-4gh58    Container image "python:3.12-slim" already present on machine and can be accessed by the pod
+18m         Normal    Started          pod/claims-secret-app-5767d954f-prfp2    Container started
+18m         Normal    SandboxChanged   pod/claims-secret-app-5767d954f-4gh58    Pod sandbox changed, it will be killed and re-created.
+3m43s       Warning   Unhealthy        pod/claims-secret-app-5767d954f-prfp2    Readiness probe failed: HTTP probe failed with statuscode: 503
+3m43s       Warning   Unhealthy        pod/claims-secret-app-76d46c64cd-4f8ww   Readiness probe failed: HTTP probe failed with statuscode: 503
+3m41s       Warning   Unhealthy        pod/claims-secret-app-5767d954f-4gh58    Readiness probe failed: HTTP probe failed with statuscode: 503
