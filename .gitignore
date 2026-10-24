@@ -3,3 +3,8 @@ node_modules/
 venv/
 __pycache__/
 *.pyc
+# Use Case 12 local secrets
+.env
+*.secret
+secret-*.yaml
+vault-token*

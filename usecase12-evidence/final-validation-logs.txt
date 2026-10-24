@@ -1,0 +1,2 @@
+pod/claims-secret-app-7b8b8648cf-b4dz9 Secret validation passed; version=3
+pod/claims-secret-app-7b8b8648cf-dvkgh Secret validation passed; version=3

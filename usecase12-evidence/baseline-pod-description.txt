@@ -1,0 +1,196 @@
+Name:             claims-secret-app-5767d954f-4gh58
+Namespace:        secret-rotation-lab
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.4
+Start Time:       Sat, 24 Oct 2026 10:28:14 +0530
+Labels:           app=claims-secret-app
+                  environment=lab
+                  pod-template-hash=5767d954f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.7
+IPs:
+  IP:           10.244.0.7
+Controlled By:  ReplicaSet/claims-secret-app-5767d954f
+Containers:
+  app:
+    Container ID:  containerd://6dee92ce4d23d427703d5c6340bd6c56f93fc4d21bc39962b34d2501ca0c8ec9
+    Image:         python:3.12-slim
+    Image ID:      docker.io/library/python@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+    Port:          8080/TCP (http)
+    Host Port:     0/TCP (http)
+    Command:
+      python
+      -u
+      /app/app.py
+    State:          Running
+      Started:      Sat, 24 Oct 2026 15:19:07 +0530
+    Last State:     Terminated
+      Reason:       Unknown
+      Exit Code:    255
+      Started:      Sat, 24 Oct 2026 10:28:16 +0530
+      Finished:     Sat, 24 Oct 2026 15:19:02 +0530
+    Ready:          False
+    Restart Count:  1
+    Readiness:      http-get http://:http/health delay=2s timeout=1s period=3s #success=1 #failure=2
+    Environment:
+      APP_SECRET:      <set to the key 'app-token' in secret 'app-credentials'>  Optional: false
+      SECRET_VERSION:  1
+    Mounts:
+      /app from application-code (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-6wfnf (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  application-code:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      claims-secret-app-code
+    Optional:  false
+  kube-api-access-6wfnf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+
+Name:             claims-secret-app-5767d954f-prfp2
+Namespace:        secret-rotation-lab
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.4
+Start Time:       Sat, 24 Oct 2026 10:28:14 +0530
+Labels:           app=claims-secret-app
+                  environment=lab
+                  pod-template-hash=5767d954f
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.10
+IPs:
+  IP:           10.244.0.10
+Controlled By:  ReplicaSet/claims-secret-app-5767d954f
+Containers:
+  app:
+    Container ID:  containerd://c86bcf7cf14b245962a674cb338de307f8232faaa336a9be261b7aff0a636be8
+    Image:         python:3.12-slim
+    Image ID:      docker.io/library/python@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+    Port:          8080/TCP (http)
+    Host Port:     0/TCP (http)
+    Command:
+      python
+      -u
+      /app/app.py
+    State:          Running
+      Started:      Sat, 24 Oct 2026 15:19:07 +0530
+    Last State:     Terminated
+      Reason:       Unknown
+      Exit Code:    255
+      Started:      Sat, 24 Oct 2026 10:28:16 +0530
+      Finished:     Sat, 24 Oct 2026 15:19:02 +0530
+    Ready:          False
+    Restart Count:  1
+    Readiness:      http-get http://:http/health delay=2s timeout=1s period=3s #success=1 #failure=2
+    Environment:
+      APP_SECRET:      <set to the key 'app-token' in secret 'app-credentials'>  Optional: false
+      SECRET_VERSION:  1
+    Mounts:
+      /app from application-code (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-9fj42 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  application-code:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      claims-secret-app-code
+    Optional:  false
+  kube-api-access-9fj42:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+
+
+Name:             claims-secret-app-76d46c64cd-4f8ww
+Namespace:        secret-rotation-lab
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.4
+Start Time:       Sat, 24 Oct 2026 10:29:41 +0530
+Labels:           app=claims-secret-app
+                  environment=lab
+                  pod-template-hash=76d46c64cd
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.8
+IPs:
+  IP:           10.244.0.8
+Controlled By:  ReplicaSet/claims-secret-app-76d46c64cd
+Containers:
+  app:
+    Container ID:  containerd://2c3936a8e437ade24894b346a40d755e359d849ed1c6ca40c878166324611c62
+    Image:         python:3.12-slim
+    Image ID:      docker.io/library/python@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+    Port:          8080/TCP (http)
+    Host Port:     0/TCP (http)
+    Command:
+      python
+      -u
+      /app/app.py
+    State:          Running
+      Started:      Sat, 24 Oct 2026 15:19:07 +0530
+    Last State:     Terminated
+      Reason:       Unknown
+      Exit Code:    255
+      Started:      Sat, 24 Oct 2026 10:29:41 +0530
+      Finished:     Sat, 24 Oct 2026 15:19:02 +0530
+    Ready:          False
+    Restart Count:  1
+    Readiness:      http-get http://:http/health delay=2s timeout=1s period=3s #success=1 #failure=2
+    Environment:
+      APP_SECRET:      <set to the key 'app-token' in secret 'app-credentials'>  Optional: false
+      SECRET_VERSION:  2
+    Mounts:
+      /app from application-code (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-pnrl9 (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  application-code:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      claims-secret-app-code
+    Optional:  false
+  kube-api-access-pnrl9:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
