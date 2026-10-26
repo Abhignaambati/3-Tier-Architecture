@@ -1,0 +1,10 @@
+Branch:
+usecase/13-kubernetes-policy-as-code
+
+Conftest:
+Conftest: 0.71.1
+OPA: 1.21.1
+
+Kubernetes:
+NAME                    STATUS   ROLES           AGE   VERSION
+desktop-control-plane   Ready    control-plane   47d   v1.36.1

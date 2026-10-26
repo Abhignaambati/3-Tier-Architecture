@@ -1,0 +1,2 @@
+deployment.apps/claims-policy-demo created (server dry run)
+service/claims-policy-demo created (server dry run)

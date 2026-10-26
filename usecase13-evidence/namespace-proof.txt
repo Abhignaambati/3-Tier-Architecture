@@ -1,0 +1,2 @@
+NAME         STATUS   AGE   LABELS
+policy-lab   Active   4s    environment=lab,kubernetes.io/metadata.name=policy-lab,usecase=13

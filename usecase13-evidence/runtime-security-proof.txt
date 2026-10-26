@@ -1,0 +1,1 @@
+container=web runAsNonRoot=true runAsUser=101 allowPrivilegeEscalation=false

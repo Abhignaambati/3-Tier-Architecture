@@ -1,0 +1,2 @@
+deployment.apps/claims-policy-demo created
+service/claims-policy-demo created

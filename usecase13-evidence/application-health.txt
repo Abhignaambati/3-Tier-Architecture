@@ -1,0 +1,3 @@
+HTTP status: 200
+HTTP status: 200
+pod "policy-health-check" deleted from policy-lab namespace

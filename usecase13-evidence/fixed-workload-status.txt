@@ -1,0 +1,9 @@
+NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                    SELECTOR
+deployment.apps/claims-policy-demo   2/2     2            2           18s   web          nginxinc/nginx-unprivileged:1.27-alpine   app=claims-policy-demo
+
+NAME                                      READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-policy-demo-86d775c4dd-nb6tv   1/1     Running   0          18s   10.244.0.25   desktop-control-plane   <none>           <none>
+pod/claims-policy-demo-86d775c4dd-rq896   1/1     Running   0          18s   10.244.0.24   desktop-control-plane   <none>           <none>
+
+NAME                         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-policy-demo   ClusterIP   10.96.231.205   <none>        80/TCP    18s   app=claims-policy-demo

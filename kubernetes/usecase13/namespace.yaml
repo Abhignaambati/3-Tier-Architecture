@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: policy-lab
+  labels:
+    environment: lab
+    usecase: "13"

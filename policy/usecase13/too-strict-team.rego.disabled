@@ -1,0 +1,13 @@
+package main
+
+import rego.v1
+
+deny contains message if {
+    input.kind == "Deployment"
+    input.metadata.labels.team != "platform-core"
+
+    message := sprintf(
+        "Deployment %q must use the team label platform-core",
+        [input.metadata.name],
+    )
+}

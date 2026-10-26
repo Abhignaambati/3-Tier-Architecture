@@ -1,0 +1,15 @@
+USE CASE 13 FINAL PROOF
+
+Active policy:
+policy/usecase13/deployment-security.rego
+
+Disabled noisy policy:
+policy/usecase13/too-strict-team.rego.disabled
+
+Final Conftest result:
+
+[32m2 tests, 2 passed, 0 warnings, 0 failures, 0 exceptions[0m
+
+Kubernetes workload:
+
+Runtime security configuration:
