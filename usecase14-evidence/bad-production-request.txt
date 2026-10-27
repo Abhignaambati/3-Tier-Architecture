@@ -1,0 +1,2 @@
+curl: (7) Failed to connect to claims-app:80 after 0 ms: Could not connect to server
+command terminated with exit code 7

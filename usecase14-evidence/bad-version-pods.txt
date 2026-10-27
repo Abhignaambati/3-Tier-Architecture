@@ -1,0 +1,3 @@
+NAME                          READY   STATUS         RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-bad-79c69974f7-tct8j   0/1     ErrImagePull   0          13s   10.244.0.33   desktop-control-plane   <none>           <none>
+claims-bad-79c69974f7-z8wpr   0/1     ErrImagePull   0          13s   10.244.0.32   desktop-control-plane   <none>           <none>

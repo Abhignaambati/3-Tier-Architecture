@@ -1,0 +1,48 @@
+LAST SEEN   TYPE      REASON              OBJECT                               MESSAGE
+6m48s       Normal    Scheduled           pod/claims-blue-677b4fddd8-9n7h2     Successfully assigned blue-green-lab/claims-blue-677b4fddd8-9n7h2 to desktop-control-plane
+5m41s       Normal    Scheduled           pod/traffic-tester                   Successfully assigned blue-green-lab/traffic-tester to desktop-control-plane
+6m26s       Normal    Scheduled           pod/production-blue-check            Successfully assigned blue-green-lab/production-blue-check to desktop-control-plane
+51s         Normal    Scheduled           pod/claims-bad-79c69974f7-tct8j      Successfully assigned blue-green-lab/claims-bad-79c69974f7-tct8j to desktop-control-plane
+6m48s       Normal    Scheduled           pod/claims-green-6697bb7f6d-p7fht    Successfully assigned blue-green-lab/claims-green-6697bb7f6d-p7fht to desktop-control-plane
+6m48s       Normal    Scheduled           pod/claims-green-6697bb7f6d-8nthk    Successfully assigned blue-green-lab/claims-green-6697bb7f6d-8nthk to desktop-control-plane
+51s         Normal    Scheduled           pod/claims-bad-79c69974f7-z8wpr      Successfully assigned blue-green-lab/claims-bad-79c69974f7-z8wpr to desktop-control-plane
+6m48s       Normal    Scheduled           pod/claims-blue-677b4fddd8-k768m     Successfully assigned blue-green-lab/claims-blue-677b4fddd8-k768m to desktop-control-plane
+6m48s       Normal    Started             pod/claims-green-6697bb7f6d-p7fht    Container started
+6m48s       Normal    Pulled              pod/claims-green-6697bb7f6d-8nthk    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+6m48s       Normal    ScalingReplicaSet   deployment/claims-green              Scaled up replica set claims-green-6697bb7f6d from 0 to 2
+6m48s       Normal    SuccessfulCreate    replicaset/claims-green-6697bb7f6d   Created pod: claims-green-6697bb7f6d-8nthk
+6m48s       Normal    SuccessfulCreate    replicaset/claims-green-6697bb7f6d   Created pod: claims-green-6697bb7f6d-p7fht
+6m48s       Normal    Created             pod/claims-green-6697bb7f6d-p7fht    Container created
+6m48s       Normal    Pulled              pod/claims-green-6697bb7f6d-p7fht    Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+6m48s       Normal    Started             pod/claims-green-6697bb7f6d-8nthk    Container started
+6m48s       Normal    Pulled              pod/claims-blue-677b4fddd8-9n7h2     Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+6m48s       Normal    Created             pod/claims-blue-677b4fddd8-9n7h2     Container created
+6m48s       Normal    Started             pod/claims-blue-677b4fddd8-9n7h2     Container started
+6m48s       Normal    Created             pod/claims-green-6697bb7f6d-8nthk    Container created
+6m48s       Normal    Pulled              pod/claims-blue-677b4fddd8-k768m     Container image "nginx:1.27-alpine" already present on machine and can be accessed by the pod
+6m48s       Normal    Created             pod/claims-blue-677b4fddd8-k768m     Container created
+6m48s       Normal    Started             pod/claims-blue-677b4fddd8-k768m     Container started
+6m48s       Normal    SuccessfulCreate    replicaset/claims-blue-677b4fddd8    Created pod: claims-blue-677b4fddd8-k768m
+6m48s       Normal    SuccessfulCreate    replicaset/claims-blue-677b4fddd8    Created pod: claims-blue-677b4fddd8-9n7h2
+6m48s       Normal    ScalingReplicaSet   deployment/claims-blue               Scaled up replica set claims-blue-677b4fddd8 from 0 to 2
+6m26s       Normal    Pulling             pod/production-blue-check            Pulling image "curlimages/curl:latest"
+6m23s       Normal    Started             pod/production-blue-check            Container started
+6m23s       Normal    Created             pod/production-blue-check            Container created
+6m23s       Normal    Pulled              pod/production-blue-check            Successfully pulled image "curlimages/curl:latest" in 2.97s (2.97s including waiting). Image size: 11116554 bytes.
+5m41s       Normal    Pulling             pod/traffic-tester                   Pulling image "curlimages/curl:latest"
+5m38s       Normal    Started             pod/traffic-tester                   Container started
+5m38s       Normal    Created             pod/traffic-tester                   Container created
+5m38s       Normal    Pulled              pod/traffic-tester                   Successfully pulled image "curlimages/curl:latest" in 2.311s (2.311s including waiting). Image size: 11116554 bytes.
+51s         Normal    ScalingReplicaSet   deployment/claims-bad                Scaled up replica set claims-bad-79c69974f7 from 0 to 2
+51s         Normal    SuccessfulCreate    replicaset/claims-bad-79c69974f7     Created pod: claims-bad-79c69974f7-tct8j
+51s         Normal    SuccessfulCreate    replicaset/claims-bad-79c69974f7     Created pod: claims-bad-79c69974f7-z8wpr
+20s         Warning   Failed              pod/claims-bad-79c69974f7-tct8j      Error: ImagePullBackOff
+20s         Normal    BackOff             pod/claims-bad-79c69974f7-tct8j      Back-off pulling image "nginx:usecase14-image-does-not-exist"
+18s         Warning   Failed              pod/claims-bad-79c69974f7-z8wpr      Error: ImagePullBackOff
+18s         Normal    BackOff             pod/claims-bad-79c69974f7-z8wpr      Back-off pulling image "nginx:usecase14-image-does-not-exist"
+6s          Normal    Pulling             pod/claims-bad-79c69974f7-tct8j      Pulling image "nginx:usecase14-image-does-not-exist"
+5s          Normal    Pulling             pod/claims-bad-79c69974f7-z8wpr      Pulling image "nginx:usecase14-image-does-not-exist"
+3s          Warning   Failed              pod/claims-bad-79c69974f7-tct8j      Failed to pull image "nginx:usecase14-image-does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:usecase14-image-does-not-exist": failed to resolve reference "docker.io/library/nginx:usecase14-image-does-not-exist": docker.io/library/nginx:usecase14-image-does-not-exist: not found
+3s          Warning   Failed              pod/claims-bad-79c69974f7-tct8j      Error: ErrImagePull
+1s          Warning   Failed              pod/claims-bad-79c69974f7-z8wpr      Failed to pull image "nginx:usecase14-image-does-not-exist": rpc error: code = NotFound desc = failed to pull and unpack image "docker.io/library/nginx:usecase14-image-does-not-exist": failed to resolve reference "docker.io/library/nginx:usecase14-image-does-not-exist": docker.io/library/nginx:usecase14-image-does-not-exist: not found
+1s          Warning   Failed              pod/claims-bad-79c69974f7-z8wpr      Error: ErrImagePull

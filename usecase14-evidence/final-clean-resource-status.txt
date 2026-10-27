@@ -1,0 +1,17 @@
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES              SELECTOR
+deployment.apps/claims-blue    2/2     2            2           89m   claims-app   nginx:1.27-alpine   app=claims-app,version=blue
+deployment.apps/claims-green   2/2     2            2           89m   claims-app   nginx:1.27-alpine   app=claims-app,version=green
+
+NAME                                READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-blue-677b4fddd8-9n7h2    1/1     Running   0          89m   10.244.0.29   desktop-control-plane   <none>           <none>
+pod/claims-blue-677b4fddd8-k768m    1/1     Running   0          89m   10.244.0.26   desktop-control-plane   <none>           <none>
+pod/claims-green-6697bb7f6d-8nthk   1/1     Running   0          89m   10.244.0.28   desktop-control-plane   <none>           <none>
+pod/claims-green-6697bb7f6d-p7fht   1/1     Running   0          89m   10.244.0.27   desktop-control-plane   <none>           <none>
+
+NAME                         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-app           ClusterIP   10.96.83.192    <none>        80/TCP    89m   app=claims-app,version=blue
+service/claims-app-preview   ClusterIP   10.96.141.132   <none>        80/TCP    89m   app=claims-app,version=green
+
+NAME                           ENDPOINTS                       AGE
+endpoints/claims-app           10.244.0.26:80,10.244.0.29:80   89m
+endpoints/claims-app-preview   10.244.0.27:80,10.244.0.28:80   89m

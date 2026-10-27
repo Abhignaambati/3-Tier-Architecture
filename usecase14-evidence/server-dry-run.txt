@@ -1,0 +1,6 @@
+configmap/claims-blue-content created (server dry run)
+configmap/claims-green-content created (server dry run)
+deployment.apps/claims-blue created (server dry run)
+deployment.apps/claims-green created (server dry run)
+service/claims-app created (server dry run)
+service/claims-app-preview created (server dry run)

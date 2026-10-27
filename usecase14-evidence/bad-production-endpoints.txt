@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  annotations:
+    endpoints.kubernetes.io/last-change-trigger-time: "2026-10-27T10:05:26Z"
+  creationTimestamp: "2026-10-27T09:59:29Z"
+  labels:
+    endpoints.kubernetes.io/managed-by: endpoint-controller
+    purpose: production-like
+  name: claims-app
+  namespace: blue-green-lab
+  resourceVersion: "488552"
+  uid: 7b35dc95-c044-4f52-876a-308fd1d16091
+subsets:
+- notReadyAddresses:
+  - ip: 10.244.0.32
+    nodeName: desktop-control-plane
+    targetRef:
+      kind: Pod
+      name: claims-bad-79c69974f7-z8wpr
+      namespace: blue-green-lab
+      uid: b815ae77-a75b-44d1-bf68-6c6ccc71d555
+  - ip: 10.244.0.33
+    nodeName: desktop-control-plane
+    targetRef:
+      kind: Pod
+      name: claims-bad-79c69974f7-tct8j
+      namespace: blue-green-lab
+      uid: 04fc0e92-08e9-4333-9c5a-9dee40bf27cb
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP

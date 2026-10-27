@@ -1,0 +1,2 @@
+NAME         ENDPOINTS                       AGE
+claims-app   10.244.0.27:80,10.244.0.28:80   2m17s

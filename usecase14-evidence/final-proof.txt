@@ -1,0 +1,24 @@
+Use Case 14: Blue-Green Deployment Final Proof
+
+Production selector:
+blue
+
+Deployments:
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+claims-blue    2/2     2            2           88m
+claims-green   2/2     2            2           88m
+
+Versioned pods:
+NAME                            READY   STATUS    RESTARTS   AGE   VERSION
+claims-blue-677b4fddd8-9n7h2    1/1     Running   0          88m   blue
+claims-blue-677b4fddd8-k768m    1/1     Running   0          88m   blue
+claims-green-6697bb7f6d-8nthk   1/1     Running   0          88m   green
+claims-green-6697bb7f6d-p7fht   1/1     Running   0          88m   green
+
+Production version:
+blue-v1
+
+
+Production health:
+healthy
+

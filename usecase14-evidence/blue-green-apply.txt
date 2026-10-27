@@ -1,0 +1,6 @@
+configmap/claims-blue-content created
+configmap/claims-green-content created
+deployment.apps/claims-blue created
+deployment.apps/claims-green created
+service/claims-app created
+service/claims-app-preview created
