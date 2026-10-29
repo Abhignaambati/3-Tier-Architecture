@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        PATH = "/Users/midhtech_01/.docker/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
         HOME = "/Users/midhtech_01"
         KUBECONFIG = "/Users/midhtech_01/.kube/config"
         KUBE_CONTEXT = 'docker-desktop'
@@ -28,6 +28,12 @@ pipeline {
                     set -e
 
                     echo "Verifying Jenkins agent tools"
+
+                    echo "PATH="
+                    command -v kubectl
+                    command -v helm
+                    command -v argocd
+                    command -v vault
 
                     kubectl version --client
                     kubectl --context "$KUBE_CONTEXT" get nodes
