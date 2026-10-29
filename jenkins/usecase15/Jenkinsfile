@@ -156,10 +156,10 @@ pipeline {
                 sh '''
                     set -e
 
-                    argocd app sync claims-dev --core
+                    argocd app sync claims-dev --core --kube-context "$KUBE_CONTEXT"
 
                     argocd app wait claims-dev \
-                      --core \
+                      --core --kube-context "$KUBE_CONTEXT" \
                       --sync \
                       --health \
                       --timeout 180
@@ -177,10 +177,10 @@ pipeline {
                 sh '''
                     set -e
 
-                    argocd app sync claims-qa --core
+                    argocd app sync claims-qa --core --kube-context "$KUBE_CONTEXT"
 
                     argocd app wait claims-qa \
-                      --core \
+                      --core --kube-context "$KUBE_CONTEXT" \
                       --sync \
                       --health \
                       --timeout 180
@@ -225,10 +225,10 @@ pipeline {
                 sh '''
                     set -e
 
-                    argocd app sync claims-stage --core
+                    argocd app sync claims-stage --core --kube-context "$KUBE_CONTEXT"
 
                     argocd app wait claims-stage \
-                      --core \
+                      --core --kube-context "$KUBE_CONTEXT" \
                       --sync \
                       --health \
                       --timeout 180
@@ -273,10 +273,10 @@ pipeline {
                 sh '''
                     set -e
 
-                    argocd app sync claims-prod --core
+                    argocd app sync claims-prod --core --kube-context "$KUBE_CONTEXT"
 
                     argocd app wait claims-prod \
-                      --core \
+                      --core --kube-context "$KUBE_CONTEXT" \
                       --sync \
                       --health \
                       --timeout 180
