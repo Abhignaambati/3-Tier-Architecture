@@ -1,0 +1,323 @@
+pipeline {
+    agent any
+
+    environment {
+        KUBE_CONTEXT = 'docker-desktop'
+        VAULT_ADDR = 'http://127.0.0.1:8215'
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+                sh 'mkdir -p usecase15-evidence/jenkins/rendered'
+            }
+        }
+
+        stage('Verify Required Tools') {
+            steps {
+                sh '''
+                    set -e
+
+                    echo "Verifying Jenkins agent tools"
+
+                    kubectl version --client
+                    kubectl --context "$KUBE_CONTEXT" get nodes
+
+                    helm version
+                    argocd version --client
+                    vault version
+                '''
+            }
+        }
+
+        stage('Helm Lint') {
+            steps {
+                sh '''
+                    set -e
+
+                    helm lint helm/claims-app \
+                      -f helm/claims-app/values/values-common.yaml \
+                      -f helm/claims-app/values/values-dev.yaml \
+                      | tee usecase15-evidence/jenkins/helm-lint.txt
+                '''
+            }
+        }
+
+        stage('Render All Environments') {
+            steps {
+                sh '''
+                    set -e
+
+                    helm template claims-app helm/claims-app \
+                      --namespace claims-dev \
+                      -f helm/claims-app/values/values-common.yaml \
+                      -f helm/claims-app/values/values-dev.yaml \
+                      > usecase15-evidence/jenkins/rendered/dev.yaml
+
+                    helm template claims-app helm/claims-app \
+                      --namespace claims-qa \
+                      -f helm/claims-app/values/values-common.yaml \
+                      -f helm/claims-app/values/values-qa.yaml \
+                      > usecase15-evidence/jenkins/rendered/qa.yaml
+
+                    helm template claims-app helm/claims-app \
+                      --namespace claims-stage \
+                      -f helm/claims-app/values/values-common.yaml \
+                      -f helm/claims-app/values/values-stage.yaml \
+                      > usecase15-evidence/jenkins/rendered/stage.yaml
+
+                    helm template claims-app helm/claims-app \
+                      --namespace claims-prod \
+                      -f helm/claims-app/values/values-common.yaml \
+                      -f helm/claims-app/values/values-prod.yaml \
+                      > usecase15-evidence/jenkins/rendered/prod.yaml
+                '''
+            }
+        }
+
+        stage('Verify Immutable Image Promotion') {
+            steps {
+                sh '''
+                    set -e
+
+                    grep 'image:' \
+                      usecase15-evidence/jenkins/rendered/*.yaml \
+                      | tee usecase15-evidence/jenkins/image-digest-proof.txt
+
+                    DIGEST_COUNT=$(
+                      grep 'image:' \
+                        usecase15-evidence/jenkins/rendered/*.yaml \
+                        | awk '{print $2}' \
+                        | sort -u \
+                        | wc -l \
+                        | tr -d ' '
+                    )
+
+                    if [ "$DIGEST_COUNT" -ne 1 ]; then
+                      echo "FAIL: environments use different image digests"
+                      exit 1
+                    fi
+
+                    echo "PASS: every environment uses the same image digest"
+                '''
+            }
+        }
+
+        stage('Compare Dev and Stage') {
+            steps {
+                sh '''
+                    diff -u \
+                      usecase15-evidence/jenkins/rendered/dev.yaml \
+                      usecase15-evidence/jenkins/rendered/stage.yaml \
+                      > usecase15-evidence/jenkins/dev-stage-diff.txt \
+                      || true
+                '''
+            }
+        }
+
+        stage('Synchronize Dev and QA Secrets') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'vault-token-usecase15',
+                        variable: 'VAULT_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        set -e
+
+                        ./scripts/sync-vault-secret.sh \
+                          dev claims-dev secret/usecase15/dev/app
+
+                        ./scripts/sync-vault-secret.sh \
+                          qa claims-qa secret/usecase15/qa/app
+                    '''
+                }
+            }
+        }
+
+        stage('Promote Dev') {
+            steps {
+                sh '''
+                    set -e
+
+                    argocd app sync claims-dev --core
+
+                    argocd app wait claims-dev \
+                      --core \
+                      --sync \
+                      --health \
+                      --timeout 180
+
+                    kubectl --context "$KUBE_CONTEXT" \
+                      -n claims-dev \
+                      rollout status deployment/claims-app \
+                      --timeout=180s
+                '''
+            }
+        }
+
+        stage('Promote QA') {
+            steps {
+                sh '''
+                    set -e
+
+                    argocd app sync claims-qa --core
+
+                    argocd app wait claims-qa \
+                      --core \
+                      --sync \
+                      --health \
+                      --timeout 180
+
+                    kubectl --context "$KUBE_CONTEXT" \
+                      -n claims-qa \
+                      rollout status deployment/claims-app \
+                      --timeout=180s
+                '''
+            }
+        }
+
+        stage('Approve Stage Promotion') {
+            steps {
+                input(
+                    message: 'Approve promotion of the verified image digest to stage?',
+                    ok: 'Promote to Stage'
+                )
+            }
+        }
+
+        stage('Synchronize Stage Secret') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'vault-token-usecase15',
+                        variable: 'VAULT_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        set -e
+
+                        ./scripts/sync-vault-secret.sh \
+                          stage claims-stage secret/usecase15/stage/app
+                    '''
+                }
+            }
+        }
+
+        stage('Promote Stage') {
+            steps {
+                sh '''
+                    set -e
+
+                    argocd app sync claims-stage --core
+
+                    argocd app wait claims-stage \
+                      --core \
+                      --sync \
+                      --health \
+                      --timeout 180
+
+                    kubectl --context "$KUBE_CONTEXT" \
+                      -n claims-stage \
+                      rollout status deployment/claims-app \
+                      --timeout=180s
+                '''
+            }
+        }
+
+        stage('Approve Prod-like Promotion') {
+            steps {
+                input(
+                    message: 'Approve promotion of the same image digest to prod-like?',
+                    ok: 'Promote to Prod-like'
+                )
+            }
+        }
+
+        stage('Synchronize Prod-like Secret') {
+            steps {
+                withCredentials([
+                    string(
+                        credentialsId: 'vault-token-usecase15',
+                        variable: 'VAULT_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        set -e
+
+                        ./scripts/sync-vault-secret.sh \
+                          prod claims-prod secret/usecase15/prod/app
+                    '''
+                }
+            }
+        }
+
+        stage('Promote Prod-like') {
+            steps {
+                sh '''
+                    set -e
+
+                    argocd app sync claims-prod --core
+
+                    argocd app wait claims-prod \
+                      --core \
+                      --sync \
+                      --health \
+                      --timeout 180
+
+                    kubectl --context "$KUBE_CONTEXT" \
+                      -n claims-prod \
+                      rollout status deployment/claims-app \
+                      --timeout=180s
+                '''
+            }
+        }
+
+        stage('Final Promotion Proof') {
+            steps {
+                sh '''
+                    set -e
+
+                    kubectl --context "$KUBE_CONTEXT" \
+                      -n argocd \
+                      get applications \
+                      | tee usecase15-evidence/jenkins/final-argocd-status.txt
+
+                    for namespace in \
+                      claims-dev claims-qa claims-stage claims-prod
+                    do
+                      echo "Namespace: $namespace"
+
+                      kubectl --context "$KUBE_CONTEXT" \
+                        -n "$namespace" \
+                        get deployment,pods,service
+                    done | tee usecase15-evidence/jenkins/final-environment-status.txt
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts(
+                artifacts: 'usecase15-evidence/jenkins/**',
+                allowEmptyArchive: true
+            )
+        }
+
+        success {
+            echo 'Use Case 15 promotion completed successfully.'
+        }
+
+        failure {
+            echo 'Use Case 15 promotion failed. Review the stage output before changing application code.'
+        }
+    }
+}
