@@ -1,0 +1,29 @@
+replicaCount: 1
+
+environment: dev
+
+image:
+  repository: nginx
+  digest: ""
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+vault:
+  secretName: claims-app-secret
+  path: secret/usecase15/dev/app
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 64Mi
+
+promotion:
+  approvalRequired: false
+
+alerting:
+  level: basic

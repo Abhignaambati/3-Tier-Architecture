@@ -1,0 +1,8 @@
+argocd: v3.5.3+c9c369e.dirty
+  BuildDate: 2026-09-14T11:02:29Z
+  GitCommit: c9c369efcc5b2a0bd720803f8d14a1c3eaddf579
+  GitTreeState: dirty
+  GitTag: v3.5.3
+  GoVersion: go1.27.1
+  Compiler: gc
+  Platform: darwin/arm64

@@ -1,0 +1,4 @@
+namespace/claims-dev created
+namespace/claims-qa created
+namespace/claims-stage created
+namespace/claims-prod created

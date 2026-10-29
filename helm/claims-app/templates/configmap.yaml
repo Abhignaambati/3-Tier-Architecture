@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-content
+  labels:
+    app.kubernetes.io/name: claims-app
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    environment: {{ .Values.environment }}
+data:
+  index.html: |
+    Claims application
+    Environment: {{ .Values.environment }}
+    Chart version: {{ .Chart.Version }}
+  health: |
+    healthy
+  version: |
+    claims-app-1.0.0
+  default.conf: |
+    server {
+      listen 80;
+      server_name _;
+
+      location / {
+        root /usr/share/nginx/html;
+        index index.html;
+      }
+
+      location = /health {
+        default_type text/plain;
+        alias /usr/share/nginx/html/health;
+      }
+
+      location = /version {
+        default_type text/plain;
+        alias /usr/share/nginx/html/version;
+      }
+    }

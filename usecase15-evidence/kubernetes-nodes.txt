@@ -1,0 +1,2 @@
+NAME                    STATUS   ROLES           AGE   VERSION
+desktop-control-plane   Ready    control-plane   50d   v1.36.1

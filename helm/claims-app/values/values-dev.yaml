@@ -1,0 +1,20 @@
+environment: dev
+
+replicaCount: 1
+
+vault:
+  path: secret/usecase15/dev/app
+
+resources:
+  requests:
+    cpu: 25m
+    memory: 32Mi
+  limits:
+    cpu: 100m
+    memory: 64Mi
+
+promotion:
+  approvalRequired: false
+
+alerting:
+  level: basic

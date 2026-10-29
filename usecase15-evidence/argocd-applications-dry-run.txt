@@ -1,0 +1,4 @@
+application.argoproj.io/claims-dev created (dry run)
+application.argoproj.io/claims-prod created (dry run)
+application.argoproj.io/claims-qa created (dry run)
+application.argoproj.io/claims-stage created (dry run)

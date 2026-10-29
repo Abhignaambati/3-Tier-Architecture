@@ -1,0 +1,6 @@
+NAME           STATUS   AGE   LABELS
+claims-dev     Active   9s    app.kubernetes.io/part-of=claims-application,environment=dev,kubernetes.io/metadata.name=claims-dev
+claims-k8s     Active   41d   app.kubernetes.io/part-of=claims-application,environment=lab,kubernetes.io/metadata.name=claims-k8s
+claims-prod    Active   9s    app.kubernetes.io/part-of=claims-application,environment=prod,kubernetes.io/metadata.name=claims-prod
+claims-qa      Active   9s    app.kubernetes.io/part-of=claims-application,environment=qa,kubernetes.io/metadata.name=claims-qa
+claims-stage   Active   9s    app.kubernetes.io/part-of=claims-application,environment=stage,kubernetes.io/metadata.name=claims-stage

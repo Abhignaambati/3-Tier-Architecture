@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claims-qa
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Abhignaambati/3-Tier-Architecture.git
+    targetRevision: usecase/15-multi-environment-promotion
+    path: helm/claims-app
+    helm:
+      releaseName: claims-app
+      valueFiles:
+        - values/values-common.yaml
+        - values/values-qa.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: claims-qa
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false

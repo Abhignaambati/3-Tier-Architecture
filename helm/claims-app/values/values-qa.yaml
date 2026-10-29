@@ -1,0 +1,20 @@
+environment: qa
+
+replicaCount: 1
+
+vault:
+  path: secret/usecase15/qa/app
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 150m
+    memory: 128Mi
+
+promotion:
+  approvalRequired: false
+
+alerting:
+  level: basic

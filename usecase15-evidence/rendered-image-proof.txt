@@ -1,0 +1,4 @@
+usecase15-evidence/rendered/dev.yaml:          image: "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+usecase15-evidence/rendered/prod.yaml:          image: "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+usecase15-evidence/rendered/qa.yaml:          image: "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+usecase15-evidence/rendered/stage.yaml:          image: "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"

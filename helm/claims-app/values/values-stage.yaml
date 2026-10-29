@@ -1,0 +1,20 @@
+environment: stage
+
+replicaCount: 2
+
+vault:
+  path: secret/usecase15/stage/app
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+promotion:
+  approvalRequired: true
+
+alerting:
+  level: enabled

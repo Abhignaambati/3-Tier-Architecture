@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: claims-dev
+  labels:
+    app.kubernetes.io/part-of: claims-application
+    environment: dev
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: claims-qa
+  labels:
+    app.kubernetes.io/part-of: claims-application
+    environment: qa
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: claims-stage
+  labels:
+    app.kubernetes.io/part-of: claims-application
+    environment: stage
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: claims-prod
+  labels:
+    app.kubernetes.io/part-of: claims-application
+    environment: prod

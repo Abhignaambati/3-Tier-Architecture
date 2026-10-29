@@ -1,0 +1,4 @@
+namespace/claims-dev created (dry run)
+namespace/claims-qa created (dry run)
+namespace/claims-stage created (dry run)
+namespace/claims-prod created (dry run)

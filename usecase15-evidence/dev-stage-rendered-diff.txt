@@ -1,0 +1,78 @@
+--- usecase15-evidence/rendered/dev.yaml	2026-10-29 15:54:36
++++ usecase15-evidence/rendered/stage.yaml	2026-10-29 15:54:45
+@@ -7,11 +7,11 @@
+   labels:
+     app.kubernetes.io/name: claims-app
+     app.kubernetes.io/instance: claims-app
+-    environment: dev
++    environment: stage
+ data:
+   index.html: |
+     Claims application
+-    Environment: dev
++    Environment: stage
+     Chart version: 1.0.0
+   health: |
+     healthy
+@@ -47,7 +47,7 @@
+   labels:
+     app.kubernetes.io/name: claims-app
+     app.kubernetes.io/instance: claims-app
+-    environment: dev
++    environment: stage
+ spec:
+   selector:
+     app.kubernetes.io/name: claims-app
+@@ -66,9 +66,9 @@
+   labels:
+     app.kubernetes.io/name: claims-app
+     app.kubernetes.io/instance: claims-app
+-    environment: dev
++    environment: stage
+ spec:
+-  replicas: 1
++  replicas: 2
+   selector:
+     matchLabels:
+       app.kubernetes.io/name: claims-app
+@@ -78,11 +78,11 @@
+       labels:
+         app.kubernetes.io/name: claims-app
+         app.kubernetes.io/instance: claims-app
+-        environment: dev
++        environment: stage
+       annotations:
+-        usecase15.vault/path: "secret/usecase15/dev/app"
+-        usecase15.promotion/approval-required: "false"
+-        usecase15.alerting/level: "basic"
++        usecase15.vault/path: "secret/usecase15/stage/app"
++        usecase15.promotion/approval-required: "true"
++        usecase15.alerting/level: "enabled"
+     spec:
+       containers:
+         - name: claims-app
+@@ -93,7 +93,7 @@
+               containerPort: 80
+           env:
+             - name: APP_ENVIRONMENT
+-              value: "dev"
++              value: "stage"
+             - name: APP_USERNAME
+               valueFrom:
+                 secretKeyRef:
+@@ -118,11 +118,11 @@
+             periodSeconds: 10
+           resources:
+             limits:
+-              cpu: 100m
+-              memory: 64Mi
++              cpu: 250m
++              memory: 256Mi
+             requests:
+-              cpu: 25m
+-              memory: 32Mi
++              cpu: 100m
++              memory: 128Mi
+           volumeMounts:
+             - name: application-content
+               mountPath: /usr/share/nginx/html/index.html
