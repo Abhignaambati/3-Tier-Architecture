@@ -2,6 +2,9 @@ pipeline {
     agent any
 
     environment {
+        PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        HOME = "/Users/midhtech_01"
+        KUBECONFIG = "/Users/midhtech_01/.kube/config"
         KUBE_CONTEXT = 'docker-desktop'
         VAULT_ADDR = 'http://127.0.0.1:8215'
     }
