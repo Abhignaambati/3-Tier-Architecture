@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claims-drift
+  namespace: argocd
+  labels:
+    environment: lab
+    usecase: "16"
+spec:
+  project: default
+
+  source:
+    repoURL: https://gitlab.com/midhtech-group2/3-tier-architecture.git
+    targetRevision: usecase/16-configuration-drift
+    path: helm/claims-app
+    helm:
+      releaseName: claims-app
+      valueFiles:
+        - values/values-common.yaml
+        - values/values-dev.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: claims-drift
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
