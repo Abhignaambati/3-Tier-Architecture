@@ -1,0 +1,2 @@
+NAME                         READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-app-fc56dc6fb-wfpjr   1/1     Running   0          18m   10.244.0.40   desktop-control-plane   <none>           <none>

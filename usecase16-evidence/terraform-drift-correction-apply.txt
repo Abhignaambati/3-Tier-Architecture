@@ -1,0 +1,11 @@
+[0m[1maws_iam_role.drift_lab: Modifying... [id=claims-usecase16-drift-lab-role][0m[0m
+[0m[1maws_iam_role.drift_lab: Modifications complete after 4s [id=claims-usecase16-drift-lab-role][0m
+[0m[1m[32m
+Apply complete! Resources: 0 added, 1 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+[0maws_account_id = "003904518288"
+aws_region = "ap-south-1"
+iam_role_arn = "arn:aws:iam::003904518288:role/claims-usecase16-drift-lab-role"
+iam_role_name = "claims-usecase16-drift-lab-role"

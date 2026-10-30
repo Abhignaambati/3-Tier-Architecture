@@ -8,3 +8,11 @@ __pycache__/
 *.secret
 secret-*.yaml
 vault-token*
+
+# Terraform local files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+tfplan*
+crash.log
+*.tfvars.backup

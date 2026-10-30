@@ -1,0 +1,19 @@
+Name:               argocd/claims-drift
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          claims-drift
+URL:                http://localhost:49725/applications/claims-drift
+Source:
+- Repo:             https://github.com/Abhignaambati/3-Tier-Architecture.git
+  Target:           usecase/16-configuration-drift
+  Path:             helm/claims-app
+  Helm Values:      values/values-common.yaml,values/values-dev.yaml
+SyncWindow:         Sync Allowed
+Sync Policy:        Manual
+Sync Status:        OutOfSync from usecase/16-configuration-drift (8a6040c)
+Health Status:      Missing
+
+GROUP  KIND        NAMESPACE     NAME                STATUS     HEALTH   HOOK  MESSAGE
+       ConfigMap   claims-drift  claims-app-content  OutOfSync  Missing        
+       Service     claims-drift  claims-app          OutOfSync  Missing        
+apps   Deployment  claims-drift  claims-app          OutOfSync  Missing        

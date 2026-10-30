@@ -1,0 +1,5 @@
+FOUND: helm/claims-app/Chart.yaml
+FOUND: helm/claims-app/templates/deployment.yaml
+FOUND: helm/claims-app/templates/service.yaml
+FOUND: helm/claims-app/values/values-common.yaml
+FOUND: helm/claims-app/values/values-dev.yaml

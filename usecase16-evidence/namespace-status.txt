@@ -1,0 +1,2 @@
+NAME           STATUS   AGE   LABELS
+claims-drift   Active   4s    environment=lab,kubernetes.io/metadata.name=claims-drift,managed-by=argocd,usecase=16

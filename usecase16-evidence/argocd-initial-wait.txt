@@ -1,0 +1,4 @@
+TIMESTAMP                  GROUP        KIND   NAMESPACE                    NAME    STATUS   HEALTH            HOOK  MESSAGE
+2026-10-30T12:41:23+05:30          ConfigMap  claims-drift    claims-app-content    Synced                           configmap/claims-app-content created
+2026-10-30T12:41:23+05:30            Service  claims-drift            claims-app    Synced  Healthy                  service/claims-app created
+2026-10-30T12:41:23+05:30   apps  Deployment  claims-drift            claims-app    Synced  Progressing              deployment.apps/claims-app created

@@ -1,0 +1,4 @@
+aws_account_id = "003904518288"
+aws_region = "ap-south-1"
+iam_role_arn = "arn:aws:iam::003904518288:role/claims-usecase16-drift-lab-role"
+iam_role_name = "claims-usecase16-drift-lab-role"

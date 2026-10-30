@@ -1,0 +1,28 @@
+{
+    "Tags": [
+        {
+            "Key": "Environment",
+            "Value": "lab"
+        },
+        {
+            "Key": "Project",
+            "Value": "claims-application"
+        },
+        {
+            "Key": "UseCase",
+            "Value": "16"
+        },
+        {
+            "Key": "DriftStatus",
+            "Value": "ManagedByTerraform"
+        },
+        {
+            "Key": "Name",
+            "Value": "claims-usecase16-drift-lab-role"
+        },
+        {
+            "Key": "ManagedBy",
+            "Value": "Terraform"
+        }
+    ]
+}

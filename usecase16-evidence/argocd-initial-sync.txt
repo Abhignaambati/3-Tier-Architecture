@@ -1,0 +1,35 @@
+TIMESTAMP                  GROUP        KIND   NAMESPACE                    NAME    STATUS    HEALTH        HOOK  MESSAGE
+2026-10-30T12:41:20+05:30          ConfigMap  claims-drift    claims-app-content  OutOfSync  Missing              
+2026-10-30T12:41:20+05:30            Service  claims-drift            claims-app  OutOfSync  Missing              
+2026-10-30T12:41:20+05:30   apps  Deployment  claims-drift            claims-app  OutOfSync  Missing              
+2026-10-30T12:41:20+05:30   apps  Deployment  claims-drift            claims-app  OutOfSync  Missing              deployment.apps/claims-app created
+2026-10-30T12:41:20+05:30          ConfigMap  claims-drift    claims-app-content  OutOfSync  Missing              configmap/claims-app-content created
+2026-10-30T12:41:20+05:30            Service  claims-drift            claims-app  OutOfSync  Missing              service/claims-app created
+
+Name:               argocd/claims-drift
+Project:            default
+Server:             https://kubernetes.default.svc
+Namespace:          claims-drift
+URL:                http://localhost:49764/applications/claims-drift
+Source:
+- Repo:             https://github.com/Abhignaambati/3-Tier-Architecture.git
+  Target:           usecase/16-configuration-drift
+  Path:             helm/claims-app
+  Helm Values:      values/values-common.yaml,values/values-dev.yaml
+SyncWindow:         Sync Allowed
+Sync Policy:        Manual
+Sync Status:        Synced to usecase/16-configuration-drift (8a6040c)
+Health Status:      Progressing
+
+Operation:          Sync
+Sync Revision:      8a6040cfdb5be5a7931179b4ea9a491ba7a0c420
+Phase:              Succeeded
+Start:              2026-10-30 12:41:20 +0530 IST
+Finished:           2026-10-30 12:41:20 +0530 IST
+Duration:           0s
+Message:            successfully synced (all tasks run)
+
+GROUP  KIND        NAMESPACE     NAME                STATUS  HEALTH       HOOK  MESSAGE
+       ConfigMap   claims-drift  claims-app-content  Synced                     configmap/claims-app-content created
+       Service     claims-drift  claims-app          Synced  Healthy            service/claims-app created
+apps   Deployment  claims-drift  claims-app          Synced  Progressing        deployment.apps/claims-app created

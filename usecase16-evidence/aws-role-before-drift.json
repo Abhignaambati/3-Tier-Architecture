@@ -1,0 +1,51 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "claims-usecase16-drift-lab-role",
+        "RoleId": "AROAQB2F2HCIH77JFEQUX",
+        "Arn": "arn:aws:iam::003904518288:role/claims-usecase16-drift-lab-role",
+        "CreateDate": "2026-10-30T11:17:47+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "AllowEC2TrustForLab",
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "ec2.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "Description": "No-permission IAM role used only for the Use Case 16 drift lab",
+        "MaxSessionDuration": 3600,
+        "Tags": [
+            {
+                "Key": "Environment",
+                "Value": "lab"
+            },
+            {
+                "Key": "Project",
+                "Value": "claims-application"
+            },
+            {
+                "Key": "UseCase",
+                "Value": "16"
+            },
+            {
+                "Key": "DriftStatus",
+                "Value": "ManagedByTerraform"
+            },
+            {
+                "Key": "Name",
+                "Value": "claims-usecase16-drift-lab-role"
+            },
+            {
+                "Key": "ManagedBy",
+                "Value": "Terraform"
+            }
+        ],
+        "RoleLastUsed": {}
+    }
+}

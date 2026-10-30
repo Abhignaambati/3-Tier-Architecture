@@ -1,0 +1,75 @@
+Name:             claims-app-fc56dc6fb-wfpjr
+Namespace:        claims-drift
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.3
+Start Time:       Fri, 30 Oct 2026 12:41:20 +0530
+Labels:           app.kubernetes.io/instance=claims-app
+                  app.kubernetes.io/name=claims-app
+                  environment=dev
+                  pod-template-hash=fc56dc6fb
+Annotations:      usecase15.alerting/level: basic
+                  usecase15.promotion/approval-required: false
+                  usecase15.vault/path: secret/usecase15/dev/app
+Status:           Pending
+IP:               10.244.0.40
+IPs:
+  IP:           10.244.0.40
+Controlled By:  ReplicaSet/claims-app-fc56dc6fb
+Containers:
+  claims-app:
+    Container ID:   
+    Image:          nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+    Image ID:       
+    Port:           80/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Waiting
+      Reason:       CreateContainerConfigError
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     100m
+      memory:  64Mi
+    Requests:
+      cpu:      25m
+      memory:   32Mi
+    Liveness:   http-get http://:http/health delay=5s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/health delay=3s timeout=1s period=5s #success=1 #failure=3
+    Environment:
+      APP_ENVIRONMENT:  dev
+      APP_USERNAME:     <set to the key 'username' in secret 'claims-app-secret'>  Optional: false
+      APP_PASSWORD:     <set to the key 'password' in secret 'claims-app-secret'>  Optional: false
+    Mounts:
+      /etc/nginx/conf.d/default.conf from application-content (rw,path="default.conf")
+      /usr/share/nginx/html/health from application-content (rw,path="health")
+      /usr/share/nginx/html/index.html from application-content (rw,path="index.html")
+      /usr/share/nginx/html/version from application-content (rw,path="version")
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-5wqzq (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  application-content:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      claims-app-content
+    Optional:  false
+  kube-api-access-5wqzq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  13m                  default-scheduler  Successfully assigned claims-drift/claims-app-fc56dc6fb-wfpjr to desktop-control-plane
+  Normal   Pulled     3m9s (x50 over 13m)  kubelet            spec.containers{claims-app}: Container image "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10" already present on machine and can be accessed by the pod
+  Warning  Failed     3m9s (x50 over 13m)  kubelet            spec.containers{claims-app}: Error: secret "claims-app-secret" not found

@@ -1,0 +1,8 @@
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/claims-app   1/1     1            1           4h23m
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/claims-app-fc56dc6fb-wfpjr   1/1     Running   0          4h23m
+
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/claims-app   ClusterIP   10.96.137.57   <none>        80/TCP    4h23m

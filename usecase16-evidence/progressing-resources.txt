@@ -1,0 +1,8 @@
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                                          SELECTOR
+deployment.apps/claims-app   0/1     1            0           6m24s   claims-app   nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10   app.kubernetes.io/instance=claims-app,app.kubernetes.io/name=claims-app
+
+NAME                             READY   STATUS                       RESTARTS   AGE     IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-app-fc56dc6fb-wfpjr   0/1     CreateContainerConfigError   0          6m24s   10.244.0.40   desktop-control-plane   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE     SELECTOR
+service/claims-app   ClusterIP   10.96.137.57   <none>        80/TCP    6m24s   app.kubernetes.io/instance=claims-app,app.kubernetes.io/name=claims-app
