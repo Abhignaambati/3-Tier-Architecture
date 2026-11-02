@@ -1,0 +1,2 @@
+NAME                               READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+usecase17-minio-5dc49f64f8-s6qd9   1/1     Running   0          8s    10.244.0.46   desktop-control-plane   <none>           <none>

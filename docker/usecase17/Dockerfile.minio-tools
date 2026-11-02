@@ -1,0 +1,40 @@
+FROM golang:1.25-alpine AS builder
+
+RUN apk add --no-cache git ca-certificates build-base
+
+ENV CGO_ENABLED=0
+ENV GOPROXY=https://proxy.golang.org,direct
+ENV GODEBUG=http2client=0
+
+RUN mkdir -p /out
+
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    sh -c 'for attempt in 1 2 3; do \
+      echo "MinIO build attempt ${attempt}"; \
+      GOBIN=/out go install \
+        github.com/minio/minio@RELEASE.2025-10-15T17-29-55Z \
+        && exit 0; \
+      sleep 15; \
+    done; exit 1'
+
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    sh -c 'for attempt in 1 2 3; do \
+      echo "MinIO client build attempt ${attempt}"; \
+      GOBIN=/out go install \
+        github.com/minio/mc@RELEASE.2025-08-13T08-35-41Z \
+        && exit 0; \
+      sleep 15; \
+    done; exit 1'
+
+FROM alpine:3.20
+
+RUN apk add --no-cache ca-certificates && mkdir -p /data
+
+COPY --from=builder /out/minio /usr/local/bin/minio
+COPY --from=builder /out/mc /usr/local/bin/mc
+
+EXPOSE 9000 9001
+
+ENTRYPOINT ["/usr/local/bin/minio"]

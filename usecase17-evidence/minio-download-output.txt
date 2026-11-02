@@ -1,0 +1,8 @@
+Added `lab` successfully.
+`lab/usecase17-backups/recovery_claims-usecase17.sql` -> `/backup/restore-from-minio.sql`
+┌───────┬─────────────┬──────────┬──────────────┐
+│ Total │ Transferred │ Duration │ Speed        │
+│ 896 B │ 896 B       │ 00m00s   │ 113.06 KiB/s │
+└───────┴─────────────┴──────────┴──────────────┘
+Backup downloaded from MinIO
+-rw-r--r--    1 root     root         896 Nov  2 09:18 /backup/restore-from-minio.sql

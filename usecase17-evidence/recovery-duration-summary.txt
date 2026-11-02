@@ -1,0 +1,12 @@
+Use Case 17 duration evidence
+
+Backup:
+Backup duration: 0 seconds
+Backup duration: 0 seconds
+
+Restore:
+Restore duration: 0 seconds
+
+Incident timestamps:
+Mon Nov  2 14:48:31 IST 2026
+Mon Nov  2 15:03:28 IST 2026

@@ -1,0 +1,9 @@
+NAME                                      READY   STATUS             RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-reader-6dd7c49f8f-6l2ql        1/1     Running            0          24m   10.244.0.38   desktop-control-plane   <none>           <none>
+pod/usecase17-minio-867f7fbb4c-rnpw4      0/1     ImagePullBackOff   0          24m   10.244.0.42   desktop-control-plane   <none>           <none>
+pod/usecase17-postgres-76cb548cc4-mxkq8   1/1     Running            0          24m   10.244.0.41   desktop-control-plane   <none>           <none>
+
+NAME                                            STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/usecase17-backups         Pending                                                                        standard       <unset>                 24m   Filesystem
+persistentvolumeclaim/usecase17-minio-data      Bound     pvc-8b570652-57e1-4b00-814f-8cedc05d42ef   1Gi        RWO            standard       <unset>                 24m   Filesystem
+persistentvolumeclaim/usecase17-postgres-data   Bound     pvc-812499e0-7d07-4fa6-936b-40330376244c   1Gi        RWO            standard       <unset>                 24m   Filesystem

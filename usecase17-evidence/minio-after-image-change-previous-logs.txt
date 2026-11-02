@@ -1,0 +1,1 @@
+Error from server (BadRequest): previous terminated container "minio" in pod "usecase17-minio-598df75bc6-8vcbx" not found

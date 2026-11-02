@@ -1,0 +1,1 @@
+Error from server (BadRequest): container "minio" in pod "usecase17-minio-598df75bc6-8vcbx" is waiting to start: trying and failing to pull image

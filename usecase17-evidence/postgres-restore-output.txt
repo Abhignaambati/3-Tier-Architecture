@@ -1,0 +1,17 @@
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+INSERT 0 1
+Restore completed successfully
+Restore duration: 0 seconds

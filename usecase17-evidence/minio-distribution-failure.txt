@@ -1,0 +1,3 @@
+MinIO Docker images returned registry authorization errors.
+Legacy MinIO binary download endpoints returned HTTP 410.
+Recovery: build the pinned final community release from source.

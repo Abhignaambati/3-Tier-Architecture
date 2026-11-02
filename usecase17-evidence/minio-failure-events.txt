@@ -1,0 +1,30 @@
+24m         Normal    ExternalProvisioning    persistentvolumeclaim/usecase17-postgres-data   Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+24m         Normal    Scheduled               pod/claims-reader-6dd7c49f8f-6l2ql              Successfully assigned backup-restore-lab/claims-reader-6dd7c49f8f-6l2ql to desktop-control-plane
+24m         Normal    ScalingReplicaSet       deployment/usecase17-minio                      Scaled up replica set usecase17-minio-867f7fbb4c from 0 to 1
+24m         Normal    Provisioning            persistentvolumeclaim/usecase17-minio-data      External provisioner is provisioning volume for claim "backup-restore-lab/usecase17-minio-data"
+24m         Normal    ExternalProvisioning    persistentvolumeclaim/usecase17-minio-data      Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+24m         Normal    SuccessfulCreate        replicaset/claims-reader-6dd7c49f8f             Created pod: claims-reader-6dd7c49f8f-6l2ql
+24m         Normal    ScalingReplicaSet       deployment/claims-reader                        Scaled up replica set claims-reader-6dd7c49f8f from 0 to 1
+24m         Normal    ScalingReplicaSet       deployment/usecase17-postgres                   Scaled up replica set usecase17-postgres-76cb548cc4 from 0 to 1
+24m         Normal    Provisioning            persistentvolumeclaim/usecase17-postgres-data   External provisioner is provisioning volume for claim "backup-restore-lab/usecase17-postgres-data"
+24m         Normal    WaitForFirstConsumer    persistentvolumeclaim/usecase17-minio-data      waiting for first consumer to be created before binding
+24m         Normal    SuccessfulCreate        replicaset/usecase17-postgres-76cb548cc4        Created pod: usecase17-postgres-76cb548cc4-mxkq8
+24m         Normal    WaitForFirstConsumer    persistentvolumeclaim/usecase17-postgres-data   waiting for first consumer to be created before binding
+24m         Normal    SuccessfulCreate        replicaset/usecase17-minio-867f7fbb4c           Created pod: usecase17-minio-867f7fbb4c-rnpw4
+24m         Normal    Pulling                 pod/claims-reader-6dd7c49f8f-6l2ql              Pulling image "postgres:16-alpine"
+24m         Normal    ProvisioningSucceeded   persistentvolumeclaim/usecase17-postgres-data   Successfully provisioned volume pvc-812499e0-7d07-4fa6-936b-40330376244c
+24m         Normal    Started                 pod/claims-reader-6dd7c49f8f-6l2ql              Container started
+24m         Normal    Created                 pod/claims-reader-6dd7c49f8f-6l2ql              Container created
+24m         Normal    Pulled                  pod/claims-reader-6dd7c49f8f-6l2ql              Successfully pulled image "postgres:16-alpine" in 1.547s (1.547s including waiting). Image size: 113895262 bytes.
+24m         Normal    Scheduled               pod/usecase17-postgres-76cb548cc4-mxkq8         Successfully assigned backup-restore-lab/usecase17-postgres-76cb548cc4-mxkq8 to desktop-control-plane
+24m         Normal    ProvisioningSucceeded   persistentvolumeclaim/usecase17-minio-data      Successfully provisioned volume pvc-8b570652-57e1-4b00-814f-8cedc05d42ef
+24m         Normal    Pulled                  pod/usecase17-postgres-76cb548cc4-mxkq8         Container image "postgres:16-alpine" already present on machine and can be accessed by the pod
+24m         Normal    Created                 pod/usecase17-postgres-76cb548cc4-mxkq8         Container created
+24m         Normal    Started                 pod/usecase17-postgres-76cb548cc4-mxkq8         Container started
+24m         Normal    Scheduled               pod/usecase17-minio-867f7fbb4c-rnpw4            Successfully assigned backup-restore-lab/usecase17-minio-867f7fbb4c-rnpw4 to desktop-control-plane
+21m         Normal    Pulling                 pod/usecase17-minio-867f7fbb4c-rnpw4            Pulling image "quay.io/minio/minio:latest"
+20m         Warning   Failed                  pod/usecase17-minio-867f7fbb4c-rnpw4            Error: ErrImagePull
+20m         Warning   Failed                  pod/usecase17-minio-867f7fbb4c-rnpw4            Failed to pull image "quay.io/minio/minio:latest": failed to pull and unpack image "quay.io/minio/minio:latest": failed to resolve reference "quay.io/minio/minio:latest": unexpected status from HEAD request to http://registry-mirror:1273/v2/minio/minio/manifests/latest?ns=quay.io: 401 Unauthorized
+4m20s       Normal    BackOff                 pod/usecase17-minio-867f7fbb4c-rnpw4            Back-off pulling image "quay.io/minio/minio:latest"
+4m17s       Normal    WaitForFirstConsumer    persistentvolumeclaim/usecase17-backups         waiting for first consumer to be created before binding
+4m5s        Warning   Failed                  pod/usecase17-minio-867f7fbb4c-rnpw4            Error: ImagePullBackOff

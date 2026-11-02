@@ -1,0 +1,3 @@
+Restore-safe table backup completed
+Backup duration: 0 seconds
+-rw-r--r--    1 root     root         896 Nov  2 09:18 /backup/recovery_claims-usecase17.sql

@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: usecase17-minio-download
+  namespace: backup-restore-lab
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: downloader
+          image: usecase17-minio-tools:source
+          imagePullPolicy: Never
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -eu
+
+              mc alias set \
+                lab \
+                http://usecase17-minio:9000 \
+                "$MINIO_USER" \
+                "$MINIO_PASSWORD"
+
+              rm -f /backup/restore-from-minio.sql
+
+              mc cp \
+                lab/usecase17-backups/recovery_claims-usecase17.sql \
+                /backup/restore-from-minio.sql
+
+              test -s /backup/restore-from-minio.sql
+
+              echo "Backup downloaded from MinIO"
+              ls -lh /backup/restore-from-minio.sql
+          env:
+            - name: MINIO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-minio-secret
+                  key: root-user
+            - name: MINIO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-minio-secret
+                  key: root-password
+          volumeMounts:
+            - name: backups
+              mountPath: /backup
+      volumes:
+        - name: backups
+          persistentVolumeClaim:
+            claimName: usecase17-backups

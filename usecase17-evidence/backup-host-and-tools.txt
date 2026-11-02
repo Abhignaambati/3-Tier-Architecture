@@ -1,0 +1,11 @@
+Backup administration host
+Hostname: Abhignas-Mac-mini.local
+
+ProductName:		macOS
+ProductVersion:		27.0.1
+BuildVersion:		26A434
+
+Client Version: v1.36.1
+Kustomize Version: v5.8.1
+
+Docker client: 29.7.2

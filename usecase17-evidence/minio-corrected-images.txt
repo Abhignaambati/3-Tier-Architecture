@@ -1,0 +1,3 @@
+kubernetes/usecase17/lab.yaml:58:          image: postgres:16-alpine
+kubernetes/usecase17/lab.yaml:125:          image: minio/minio:latest
+kubernetes/usecase17/lab.yaml:196:          image: postgres:16-alpine

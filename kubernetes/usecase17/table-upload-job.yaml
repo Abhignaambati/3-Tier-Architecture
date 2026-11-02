@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: usecase17-table-upload
+  namespace: backup-restore-lab
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: uploader
+          image: usecase17-minio-tools:source
+          imagePullPolicy: Never
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -eu
+
+              test -s /backup/recovery_claims-usecase17.sql
+
+              mc alias set \
+                lab \
+                http://usecase17-minio:9000 \
+                "$MINIO_USER" \
+                "$MINIO_PASSWORD"
+
+              mc mb --ignore-existing lab/usecase17-backups
+
+              mc cp \
+                /backup/recovery_claims-usecase17.sql \
+                lab/usecase17-backups/recovery_claims-usecase17.sql
+
+              echo "Restore-safe backup uploaded"
+              mc stat \
+                lab/usecase17-backups/recovery_claims-usecase17.sql
+          env:
+            - name: MINIO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-minio-secret
+                  key: root-user
+            - name: MINIO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-minio-secret
+                  key: root-password
+          volumeMounts:
+            - name: backups
+              mountPath: /backup
+      volumes:
+        - name: backups
+          persistentVolumeClaim:
+            claimName: usecase17-backups

@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: usecase17-postgres-restore
+  namespace: backup-restore-lab
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: restore
+          image: postgres:16-alpine
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -eu
+              started_at="$(date +%s)"
+
+              test -s /backup/restore-from-minio.sql
+
+              psql \
+                --host="$PGHOST" \
+                --username="$PGUSER" \
+                --dbname="$PGDATABASE" \
+                --set=ON_ERROR_STOP=1 \
+                --file=/backup/restore-from-minio.sql
+
+              finished_at="$(date +%s)"
+              duration="$((finished_at - started_at))"
+
+              echo "$duration" > /backup/restore-duration-seconds.txt
+              echo "Restore completed successfully"
+              echo "Restore duration: ${duration} seconds"
+          env:
+            - name: PGHOST
+              value: usecase17-postgres
+            - name: PGDATABASE
+              value: claimsdb
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-db-secret
+                  key: username
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-db-secret
+                  key: password
+          volumeMounts:
+            - name: backups
+              mountPath: /backup
+      volumes:
+        - name: backups
+          persistentVolumeClaim:
+            claimName: usecase17-backups

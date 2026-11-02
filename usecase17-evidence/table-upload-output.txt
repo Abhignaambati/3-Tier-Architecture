@@ -1,0 +1,16 @@
+Added `lab` successfully.
+Bucket created successfully `lab/usecase17-backups`.
+`/backup/recovery_claims-usecase17.sql` -> `lab/usecase17-backups/recovery_claims-usecase17.sql`
+┌───────┬─────────────┬──────────┬──────────────┐
+│ Total │ Transferred │ Duration │ Speed        │
+│ 896 B │ 896 B       │ 00m00s   │ 153.54 KiB/s │
+└───────┴─────────────┴──────────┴──────────────┘
+Restore-safe backup uploaded
+Name      : recovery_claims-usecase17.sql
+Date      : 2026-11-02 09:18:24 UTC 
+Size      : 896 B  
+ETag      : ee93ac2b848fdba1038c9de47c2a7dbb 
+Type      : file 
+Metadata  :
+  Content-Type: application/x-sql 
+

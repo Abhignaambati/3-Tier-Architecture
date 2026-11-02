@@ -1,0 +1,2 @@
+NAME                               READY   STATUS             RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+usecase17-minio-598df75bc6-8vcbx   0/1     ImagePullBackOff   0          27m   10.244.0.43   desktop-control-plane   <none>           <none>

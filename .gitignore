@@ -8,3 +8,6 @@ __pycache__/
 *.secret
 secret-*.yaml
 vault-token*
+
+# Use Case 17 local backup artifacts
+usecase17-artifacts/

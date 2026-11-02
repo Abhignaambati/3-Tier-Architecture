@@ -1,0 +1,18 @@
+NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/claims-reader        1/1     1            1           16m
+deployment.apps/usecase17-minio      0/1     1            0           16m
+deployment.apps/usecase17-postgres   1/1     1            1           16m
+
+NAME                                      READY   STATUS             RESTARTS   AGE
+pod/claims-reader-6dd7c49f8f-6l2ql        1/1     Running            0          16m
+pod/usecase17-minio-867f7fbb4c-rnpw4      0/1     ImagePullBackOff   0          16m
+pod/usecase17-postgres-76cb548cc4-mxkq8   1/1     Running            0          16m
+
+NAME                         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE
+service/usecase17-minio      ClusterIP   10.96.149.87   <none>        9000/TCP,9001/TCP   16m
+service/usecase17-postgres   ClusterIP   10.96.25.34    <none>        5432/TCP            16m
+
+NAME                                            STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/usecase17-backups         Pending                                                                        standard       <unset>                 16m
+persistentvolumeclaim/usecase17-minio-data      Bound     pvc-8b570652-57e1-4b00-814f-8cedc05d42ef   1Gi        RWO            standard       <unset>                 16m
+persistentvolumeclaim/usecase17-postgres-data   Bound     pvc-812499e0-7d07-4fa6-936b-40330376244c   1Gi        RWO            standard       <unset>                 16m

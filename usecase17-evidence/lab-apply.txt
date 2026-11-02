@@ -1,0 +1,8 @@
+persistentvolumeclaim/usecase17-postgres-data created
+persistentvolumeclaim/usecase17-backups created
+persistentvolumeclaim/usecase17-minio-data created
+deployment.apps/usecase17-postgres created
+service/usecase17-postgres created
+deployment.apps/usecase17-minio created
+service/usecase17-minio created
+deployment.apps/claims-reader created

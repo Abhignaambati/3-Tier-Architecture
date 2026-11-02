@@ -1,0 +1,5 @@
+  id  |  claim_reference   |  customer_name  |      status      
+------+--------------------+-----------------+------------------
+ 1701 | UC17-RECOVERY-TEST | Use Case 17 Lab | READY_FOR_BACKUP
+(1 row)
+

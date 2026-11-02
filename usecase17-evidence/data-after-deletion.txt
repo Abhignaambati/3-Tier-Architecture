@@ -1,0 +1,4 @@
+ id | claim_reference | customer_name | status 
+----+-----------------+---------------+--------
+(0 rows)
+

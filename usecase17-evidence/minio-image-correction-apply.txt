@@ -1,0 +1,8 @@
+persistentvolumeclaim/usecase17-postgres-data unchanged
+persistentvolumeclaim/usecase17-backups unchanged
+persistentvolumeclaim/usecase17-minio-data unchanged
+deployment.apps/usecase17-postgres unchanged
+service/usecase17-postgres unchanged
+deployment.apps/usecase17-minio configured
+service/usecase17-minio unchanged
+deployment.apps/claims-reader unchanged

@@ -1,0 +1,28 @@
+NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/claims-reader        1/1     1            1           3h3m
+deployment.apps/usecase17-minio      1/1     1            1           3h3m
+deployment.apps/usecase17-postgres   1/1     1            1           3h3m
+
+NAME                                      READY   STATUS      RESTARTS   AGE
+pod/claims-reader-6dd7c49f8f-6l2ql        1/1     Running     0          3h3m
+pod/usecase17-minio-5dc49f64f8-s6qd9      1/1     Running     0          22m
+pod/usecase17-minio-download-8zhq9        0/1     Completed   0          14m
+pod/usecase17-minio-upload-76fz2          0/1     Completed   0          16m
+pod/usecase17-postgres-76cb548cc4-mxkq8   1/1     Running     0          3h3m
+pod/usecase17-postgres-backup-vxp77       0/1     Completed   0          16m
+pod/usecase17-postgres-restore-8fd8l      0/1     Completed   0          14m
+pod/usecase17-table-backup-d9l2d          0/1     Completed   0          15m
+pod/usecase17-table-upload-5fs5r          0/1     Completed   0          15m
+
+NAME                                   STATUS     COMPLETIONS   DURATION   AGE
+job.batch/usecase17-minio-download     Complete   1/1           3s         14m
+job.batch/usecase17-minio-upload       Complete   1/1           3s         16m
+job.batch/usecase17-postgres-backup    Complete   1/1           6s         16m
+job.batch/usecase17-postgres-restore   Complete   1/1           2s         14m
+job.batch/usecase17-table-backup       Complete   1/1           3s         15m
+job.batch/usecase17-table-upload       Complete   1/1           3s         15m
+
+NAME                                            STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/usecase17-backups         Bound    pvc-2d0b216f-ce46-4661-8f28-db34495e4d4d   1Gi        RWO            standard       <unset>                 3h3m
+persistentvolumeclaim/usecase17-minio-data      Bound    pvc-8b570652-57e1-4b00-814f-8cedc05d42ef   1Gi        RWO            standard       <unset>                 3h3m
+persistentvolumeclaim/usecase17-postgres-data   Bound    pvc-812499e0-7d07-4fa6-936b-40330376244c   1Gi        RWO            standard       <unset>                 3h3m

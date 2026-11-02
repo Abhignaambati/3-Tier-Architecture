@@ -1,0 +1,68 @@
+Name:             usecase17-minio-867f7fbb4c-rnpw4
+Namespace:        backup-restore-lab
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.3
+Start Time:       Mon, 02 Nov 2026 12:00:26 +0530
+Labels:           app=usecase17-minio
+                  pod-template-hash=867f7fbb4c
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.42
+IPs:
+  IP:           10.244.0.42
+Controlled By:  ReplicaSet/usecase17-minio-867f7fbb4c
+Containers:
+  minio:
+    Container ID:  
+    Image:         quay.io/minio/minio:latest
+    Image ID:      
+    Ports:         9000/TCP (api), 9001/TCP (console)
+    Host Ports:    0/TCP (api), 0/TCP (console)
+    Args:
+      server
+      /data
+      --console-address
+      :9001
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Readiness:      http-get http://:9000/minio/health/live delay=5s timeout=1s period=5s #success=1 #failure=3
+    Environment:
+      MINIO_ROOT_USER:      <set to the key 'root-user' in secret 'usecase17-minio-secret'>      Optional: false
+      MINIO_ROOT_PASSWORD:  <set to the key 'root-password' in secret 'usecase17-minio-secret'>  Optional: false
+    Mounts:
+      /data from minio-data (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-4kl7l (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  minio-data:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  usecase17-minio-data
+    ReadOnly:   false
+  kube-api-access-4kl7l:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  24m                   default-scheduler  Successfully assigned backup-restore-lab/usecase17-minio-867f7fbb4c-rnpw4 to desktop-control-plane
+  Normal   Pulling    21m (x5 over 24m)     kubelet            spec.containers{minio}: Pulling image "quay.io/minio/minio:latest"
+  Warning  Failed     20m (x5 over 24m)     kubelet            spec.containers{minio}: Failed to pull image "quay.io/minio/minio:latest": failed to pull and unpack image "quay.io/minio/minio:latest": failed to resolve reference "quay.io/minio/minio:latest": unexpected status from HEAD request to http://registry-mirror:1273/v2/minio/minio/manifests/latest?ns=quay.io: 401 Unauthorized
+  Warning  Failed     20m (x5 over 24m)     kubelet            spec.containers{minio}: Error: ErrImagePull
+  Normal   BackOff    4m20s (x85 over 24m)  kubelet            spec.containers{minio}: Back-off pulling image "quay.io/minio/minio:latest"
+  Warning  Failed     4m5s (x86 over 24m)   kubelet            spec.containers{minio}: Error: ImagePullBackOff

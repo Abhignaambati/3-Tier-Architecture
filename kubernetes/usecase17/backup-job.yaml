@@ -1,0 +1,66 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: usecase17-postgres-backup
+  namespace: backup-restore-lab
+  labels:
+    app: usecase17-postgres-backup
+spec:
+  backoffLimit: 2
+  template:
+    metadata:
+      labels:
+        app: usecase17-postgres-backup
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: backup
+          image: postgres:16-alpine
+          command:
+            - /bin/sh
+            - -c
+            - |
+              set -eu
+
+              started_at="$(date +%s)"
+
+              pg_dump \
+                --host="$PGHOST" \
+                --username="$PGUSER" \
+                --dbname="$PGDATABASE" \
+                --no-owner \
+                --no-privileges \
+                --file=/backup/claimsdb-usecase17.sql
+
+              finished_at="$(date +%s)"
+              duration="$((finished_at - started_at))"
+
+              test -s /backup/claimsdb-usecase17.sql
+
+              echo "$duration" > /backup/backup-duration-seconds.txt
+              echo "Backup completed successfully"
+              echo "Artifact: /backup/claimsdb-usecase17.sql"
+              echo "Backup duration: ${duration} seconds"
+              ls -lh /backup/claimsdb-usecase17.sql
+          env:
+            - name: PGHOST
+              value: usecase17-postgres
+            - name: PGDATABASE
+              value: claimsdb
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-db-secret
+                  key: username
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: usecase17-db-secret
+                  key: password
+          volumeMounts:
+            - name: backups
+              mountPath: /backup
+      volumes:
+        - name: backups
+          persistentVolumeClaim:
+            claimName: usecase17-backups
