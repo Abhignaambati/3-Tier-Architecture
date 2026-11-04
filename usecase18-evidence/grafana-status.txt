@@ -1,0 +1,8 @@
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                             SELECTOR
+deployment.apps/grafana   1/1     1            1           55s   grafana      docker.io/grafana/grafana:12.3.1   app.kubernetes.io/instance=grafana,app.kubernetes.io/name=grafana
+
+NAME                           READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/grafana-5454d85459-5h2vk   1/1     Running   0          55s   10.244.0.48   desktop-control-plane   <none>           <none>
+
+NAME              TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/grafana   ClusterIP   10.96.42.83   <none>        80/TCP    55s   app.kubernetes.io/instance=grafana,app.kubernetes.io/name=grafana

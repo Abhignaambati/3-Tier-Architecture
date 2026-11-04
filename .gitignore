@@ -8,3 +8,7 @@ __pycache__/
 *.secret
 secret-*.yaml
 vault-token*
+
+.env
+*.pid
+usecase18-evidence/*port-forward.log

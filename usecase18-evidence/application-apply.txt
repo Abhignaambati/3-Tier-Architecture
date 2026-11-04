@@ -1,0 +1,3 @@
+namespace/logging-lab created
+deployment.apps/claims-logger created
+service/claims-logger created

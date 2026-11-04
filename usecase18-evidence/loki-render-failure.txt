@@ -1,0 +1,3 @@
+Error: execution error at (loki/templates/validate.yaml:6:4): Helm test requires the Loki Canary to be enabled
+
+Use --debug flag to render out invalid YAML

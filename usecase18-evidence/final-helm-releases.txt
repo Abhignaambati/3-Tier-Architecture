@@ -1,0 +1,4 @@
+NAME   	NAMESPACE  	REVISION	UPDATED                             	STATUS  	CHART          	APP VERSION
+alloy  	logging-lab	1       	2026-11-04 10:35:41.766238 +0530 IST	deployed	alloy-1.15.0   	v1.21.3    
+grafana	logging-lab	1       	2026-11-04 17:48:47.339947 +0530 IST	deployed	grafana-10.5.15	12.3.1     
+loki   	logging-lab	1       	2026-11-04 10:33:29.128321 +0530 IST	deployed	loki-20.4.1    	3.7.9      

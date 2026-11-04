@@ -1,0 +1,115 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    config.alloy: |-
+      logging {
+        level  = "info"
+        format = "logfmt"
+      }
+
+      discovery.kubernetes "pods" {
+        role = "pod"
+      }
+
+      discovery.relabel "logging_lab_pods" {
+        targets = discovery.kubernetes.pods.targets
+
+        rule {
+          source_labels = ["__meta_kubernetes_namespace"]
+          regex         = "logging-lab"
+          action        = "keep"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_namespace"]
+          target_label  = "namespace"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_name"]
+          target_label  = "pod"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_name"]
+          target_label  = "container"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_label_app"]
+          target_label  = "app"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_label_service"]
+          target_label  = "service"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_label_environment"]
+          target_label  = "environment"
+        }
+
+        rule {
+          source_labels = ["__meta_kubernetes_pod_label_version"]
+          target_label  = "version"
+        }
+      }
+
+      loki.source.kubernetes "logging_lab" {
+        targets    = discovery.relabel.logging_lab_pods.output
+        forward_to = [loki.process.structured_logs.receiver]
+      }
+
+      loki.process "structured_logs" {
+        stage.json {
+          expressions = {
+            level       = "",
+            service     = "",
+            environment = "",
+            version     = "",
+            request_id  = "",
+            status      = "",
+            message     = "",
+          }
+        }
+
+        stage.labels {
+          values = {
+            level       = "",
+            service     = "",
+            environment = "",
+            version     = "",
+          }
+        }
+
+        forward_to = [loki.write.local.receiver]
+      }
+
+      loki.write "local" {
+        endpoint {
+          url = "http://loki-gateway.logging-lab.svc.cluster.local/loki/api/v1/push"
+        }
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: alloy
+      meta.helm.sh/release-namespace: logging-lab
+    creationTimestamp: "2026-11-04T05:05:41Z"
+    labels:
+      app.kubernetes.io/component: config
+      app.kubernetes.io/instance: alloy
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: alloy
+      app.kubernetes.io/part-of: alloy
+      app.kubernetes.io/version: v1.21.3
+      helm.sh/chart: alloy-1.15.0
+    name: alloy
+    namespace: logging-lab
+    resourceVersion: "611540"
+    uid: fb16fff5-bbfa-452e-b7f0-05c5a103cbcf
+kind: List
+metadata:
+  resourceVersion: ""

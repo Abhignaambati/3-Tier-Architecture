@@ -1,0 +1,22 @@
+* Host claims-logger:80 was resolved.
+* IPv6: (none)
+* IPv4: 10.96.105.19
+*   Trying 10.96.105.19:80...
+* Established connection to claims-logger (10.96.105.19 port 80) from 10.244.0.47 port 58388 
+* using HTTP/1.x
+> GET /generate-log?request_id=UC18-BASELINE-001&message=baseline-logging-pipeline-working HTTP/1.1
+> Host: claims-logger
+> User-Agent: curl/8.23.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: Werkzeug/3.1.9 Python/3.12.15
+< Date: Wed, 04 Nov 2026 05:21:12 GMT
+< Content-Type: application/json
+< Content-Length: 114
+< Connection: close
+< 
+{ [114 bytes data]
+* shutting down connection #0
+{"environment":"lab","logged":true,"request_id":"UC18-BASELINE-001","service":"claims-backend","version":"1.0.0"}

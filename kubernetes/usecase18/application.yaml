@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logging-lab
+  labels:
+    environment: lab
+    usecase: "18"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claims-logger
+  namespace: logging-lab
+  labels:
+    app: claims-logger
+    service: claims-backend
+    environment: lab
+    version: "1.0.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: claims-logger
+  template:
+    metadata:
+      labels:
+        app: claims-logger
+        service: claims-backend
+        environment: lab
+        version: "1.0.0"
+    spec:
+      containers:
+        - name: claims-logger
+          image: usecase18-claims-logger:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 5000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: claims-logger
+  namespace: logging-lab
+spec:
+  selector:
+    app: claims-logger
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

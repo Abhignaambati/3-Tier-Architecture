@@ -1,0 +1,2 @@
+10.244.0.50 - - [04/Nov/2026 12:47:24] "GET /generate-log?request_id=UC18-MISSING-001&message=log-created-while-collector-stopped HTTP/1.1" 200 -
+{"timestamp": "2026-11-04T12:47:24.875199+00:00", "level": "INFO", "service": "claims-backend", "environment": "lab", "version": "1.0.0", "request_id": "UC18-MISSING-001", "status": 200, "message": "log-created-while-collector-stopped"}

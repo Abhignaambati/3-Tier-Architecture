@@ -1,0 +1,72 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 205B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 2.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+#4 resolve docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.45kB done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt .
+#7 DONE 0.0s
+
+#8 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#8 1.844 Collecting Flask==3.1.2 (from -r requirements.txt (line 1))
+#8 3.524   Downloading flask-3.1.2-py3-none-any.whl.metadata (3.2 kB)
+#8 3.831 Collecting blinker>=1.9.0 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 4.359   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#8 4.748 Collecting click>=8.1.3 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 6.419   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#8 6.764 Collecting itsdangerous>=2.2.0 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 7.290   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#8 7.626 Collecting jinja2>=3.1.2 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 8.150   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#8 8.937 Collecting markupsafe>=2.1.1 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 9.510   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.7 kB)
+#8 9.834 Collecting werkzeug>=3.1.0 (from Flask==3.1.2->-r requirements.txt (line 1))
+#8 10.37   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+#8 10.97 Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+#8 13.20 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#8 13.72 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#8 14.77 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#8 15.31 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#8 15.98 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+#8 16.52 Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+#8 16.76 Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, Flask
+#8 16.92 Successfully installed Flask-3.1.2 blinker-1.9.0 click-8.5.0 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+#8 16.92 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 18.07 
+#8 18.07 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#8 18.07 [notice] To update, run: pip install --upgrade pip
+#8 DONE 18.1s
+
+#9 [5/5] COPY app.py .
+#9 DONE 0.0s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.3s done
+#10 exporting manifest sha256:1df1774f7ac3932179e01d45866c7357e7655b66f690ae2e38b9b8d8282764ce done
+#10 exporting config sha256:0710983dda1451f3d271f8ecbfab41b6f669b8403f53214cbf0e1bef52c2c667 done
+#10 exporting attestation manifest sha256:ab3ae92be0b89797c392c94e1db2976fe3b33e89114bd059694b23b73eac7e4e done
+#10 exporting manifest list sha256:db376edbcd4da3b717b7f3ca88b93e16570375cbd0888f8b528a7914de75279e done
+#10 naming to docker.io/library/usecase18-claims-logger:1.0.0 done
+#10 unpacking to docker.io/library/usecase18-claims-logger:1.0.0 0.1s done
+#10 DONE 0.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/oez5xbm7to0xwvemrrutfscl6

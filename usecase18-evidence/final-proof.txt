@@ -1,0 +1,11 @@
+Use Case 18 final proof
+
+Application log:
+10.244.0.52 - - [04/Nov/2026 12:53:27] "GET /generate-log?request_id=UC18-RECOVERED-001&message=logging-pipeline-recovered HTTP/1.1" 200 -
+
+Loki result:
+Recovered Loki streams: 1
+
+Collector status:
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+alloy   1/1     1            1           7h51m

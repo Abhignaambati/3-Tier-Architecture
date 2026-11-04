@@ -1,0 +1,8 @@
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS      IMAGES                          SELECTOR
+deployment.apps/claims-logger   1/1     1            1           8s    claims-logger   usecase18-claims-logger:1.0.0   app=claims-logger
+
+NAME                                 READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-logger-6bfb55b95b-rtqpn   1/1     Running   0          8s    10.244.0.41   desktop-control-plane   <none>           <none>
+
+NAME                    TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-logger   ClusterIP   10.96.105.19   <none>        80/TCP    8s    app=claims-logger

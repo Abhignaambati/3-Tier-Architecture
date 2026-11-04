@@ -1,0 +1,2 @@
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+alloy   1/1     1            1           8h

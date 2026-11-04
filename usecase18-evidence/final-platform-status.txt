@@ -1,0 +1,23 @@
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/alloy           1/1     1            1           7h51m
+deployment.apps/claims-logger   1/1     1            1           26h
+deployment.apps/grafana         1/1     1            1           38m
+deployment.apps/loki-gateway    1/1     1            1           7h53m
+
+NAME                                 READY   STATUS      RESTARTS     AGE
+pod/alloy-5bbbb47849-nnd5t           2/2     Running     0            6m16s
+pod/claims-logger-6bfb55b95b-rtqpn   1/1     Running     1 (8h ago)   26h
+pod/grafana-5454d85459-5h2vk         1/1     Running     0            38m
+pod/loki-0                           2/2     Running     0            7h53m
+pod/loki-gateway-6bb98ff98b-22r92    2/2     Running     0            7h53m
+pod/uc18-baseline-debug              0/1     Completed   0            7h35m
+
+NAME                            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+service/alloy                   ClusterIP   10.96.211.57    <none>        12345/TCP                    7h51m
+service/claims-logger           ClusterIP   10.96.105.19    <none>        80/TCP                       26h
+service/grafana                 ClusterIP   10.96.42.83     <none>        80/TCP                       38m
+service/loki                    ClusterIP   10.96.220.117   <none>        3100/TCP,9095/TCP,9096/TCP   7h53m
+service/loki-gateway            ClusterIP   10.96.75.190    <none>        80/TCP                       7h53m
+service/loki-gateway-exporter   ClusterIP   10.96.28.79     <none>        4040/TCP                     7h53m
+service/loki-headless           ClusterIP   None            <none>        3100/TCP,9095/TCP,9096/TCP   7h53m
+service/loki-memberlist         ClusterIP   None            <none>        7946/TCP                     7h53m

@@ -1,0 +1,4 @@
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "grafana" chart repository
+...Successfully got an update from the "grafana-community" chart repository
+Update Complete. ⎈Happy Helming!⎈

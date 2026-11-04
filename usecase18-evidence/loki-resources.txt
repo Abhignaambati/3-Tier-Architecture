@@ -1,0 +1,18 @@
+NAME                                 READY   STATUS              RESTARTS      AGE
+pod/claims-logger-6bfb55b95b-rtqpn   1/1     Running             1 (12m ago)   18h
+pod/loki-0                           0/2     ContainerCreating   0             11s
+pod/loki-gateway-6bb98ff98b-22r92    0/2     ContainerCreating   0             11s
+
+NAME                    READY   AGE
+statefulset.apps/loki   0/1     11s
+
+NAME                            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+service/claims-logger           ClusterIP   10.96.105.19    <none>        80/TCP                       18h
+service/loki                    ClusterIP   10.96.220.117   <none>        3100/TCP,9095/TCP,9096/TCP   11s
+service/loki-gateway            ClusterIP   10.96.75.190    <none>        80/TCP                       11s
+service/loki-gateway-exporter   ClusterIP   10.96.28.79     <none>        4040/TCP                     11s
+service/loki-headless           ClusterIP   None            <none>        3100/TCP,9095/TCP,9096/TCP   11s
+service/loki-memberlist         ClusterIP   None            <none>        7946/TCP                     11s
+
+NAME                                   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/storage-loki-0   Bound    pvc-576e624d-33a9-44b9-b86d-9100c8677b36   2Gi        RWO            standard       <unset>                 11s

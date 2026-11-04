@@ -1,0 +1,10 @@
+Release "alloy" does not exist. Installing it now.
+NAME: alloy
+LAST DEPLOYED: Wed Nov  4 10:35:41 2026
+NAMESPACE: logging-lab
+STATUS: deployed
+REVISION: 1
+DESCRIPTION: Install complete
+TEST SUITE: None
+NOTES:
+Welcome to Grafana Alloy!

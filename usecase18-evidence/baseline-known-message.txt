@@ -1,0 +1,4 @@
+{"timestamp": "2026-11-04T05:13:17.874713+00:00", "level": "INFO", "service": "claims-backend", "environment": "lab", "version": "1.0.0", "request_id": "UC18-BASELINE-001", "status": 200, "message": "baseline-logging-pipeline-working"}
+10.244.0.46 - - [04/Nov/2026 05:13:17] "GET /generate-log?request_id=UC18-BASELINE-001&message=baseline-logging-pipeline-working HTTP/1.1" 200 -
+{"timestamp": "2026-11-04T05:21:12.208009+00:00", "level": "INFO", "service": "claims-backend", "environment": "lab", "version": "1.0.0", "request_id": "UC18-BASELINE-001", "status": 200, "message": "baseline-logging-pipeline-working"}
+10.244.0.47 - - [04/Nov/2026 05:21:12] "GET /generate-log?request_id=UC18-BASELINE-001&message=baseline-logging-pipeline-working HTTP/1.1" 200 -
