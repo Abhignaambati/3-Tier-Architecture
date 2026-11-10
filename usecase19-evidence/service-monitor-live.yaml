@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"monitoring.coreos.com/v1","kind":"ServiceMonitor","metadata":{"annotations":{},"labels":{"app":"claims-slo-app","release":"monitoring"},"name":"claims-slo-app","namespace":"slo-lab"},"spec":{"endpoints":[{"interval":"15s","path":"/metrics","port":"http","scrapeTimeout":"10s"}],"namespaceSelector":{"matchNames":["slo-lab"]},"selector":{"matchLabels":{"app":"claims-slo-app"}}}}
+  creationTimestamp: "2026-11-05T12:46:22Z"
+  generation: 1
+  labels:
+    app: claims-slo-app
+    release: monitoring
+  name: claims-slo-app
+  namespace: slo-lab
+  resourceVersion: "666942"
+  uid: befdc36e-6640-41c7-a58b-2caa3ca10fcd
+spec:
+  endpoints:
+  - interval: 15s
+    path: /metrics
+    port: http
+    scrapeTimeout: 10s
+  namespaceSelector:
+    matchNames:
+    - slo-lab
+  selector:
+    matchLabels:
+      app: claims-slo-app

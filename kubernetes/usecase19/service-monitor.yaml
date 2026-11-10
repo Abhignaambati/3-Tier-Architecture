@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: claims-slo-app
+  namespace: slo-lab
+  labels:
+    app: claims-slo-app
+    release: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: claims-slo-app
+  namespaceSelector:
+    matchNames:
+      - slo-lab
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
+      scrapeTimeout: 10s

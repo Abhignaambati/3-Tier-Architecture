@@ -1,0 +1,2 @@
+NAME                             READY   STATUS              RESTARTS   AGE     IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-slo-app-8b64f9bdd-88fwp   0/1     ErrImageNeverPull   0          7m18s   10.244.0.46   desktop-control-plane   <none>           <none>

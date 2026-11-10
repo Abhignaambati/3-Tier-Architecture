@@ -1,0 +1,5 @@
+NAME                                                                         VERSION   REPLICAS   READY   RECONCILED   AVAILABLE   AGE
+alertmanager.monitoring.coreos.com/monitoring-kube-prometheus-alertmanager   v0.34.2   1          0       False        False       5m9s
+
+NAME                                                                READY   AGE
+statefulset.apps/prometheus-monitoring-kube-prometheus-prometheus   1/1     4m54s

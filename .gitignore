@@ -8,3 +8,8 @@ __pycache__/
 *.secret
 secret-*.yaml
 vault-token*
+
+# Use Case 19 local files
+.DS_Store
+*.tar
+*.log

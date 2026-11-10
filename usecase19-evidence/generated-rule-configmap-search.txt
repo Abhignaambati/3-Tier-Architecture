@@ -1,0 +1,21 @@
+3209-  data:
+3210-    slo-lab-claims-slo-alerts-c0dcb991-6714-44fe-ba2c-7a5a3f730d1d.yaml: |
+3211-      groups:
+3212-      - name: claims-slo-alerts
+3213-        rules:
+3214:        - alert: ClaimsApiHighErrorRate
+3215-          annotations:
+3216-            description: More than 5 percent of Claims API requests have failed for 30 seconds.
+3217-            runbook_url: runbooks/usecase19/claims-api-high-error-rate.md
+3218-            summary: Claims API has a high error rate
+3219-          expr: |
+3220-            (
+3221-              sum(
+3222-                rate(
+3223-                  claims_http_requests_total{
+3224-                    path="/api/claims",
+3225-                    status=~"5.."
+3226-                  }[1m]
+3227-                )
+3228-              )
+3229-              /

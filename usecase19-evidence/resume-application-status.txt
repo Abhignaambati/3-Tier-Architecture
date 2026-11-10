@@ -1,0 +1,11 @@
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/claims-slo-app   1/1     1            1           5d1h
+
+NAME                                  READY   STATUS    RESTARTS        AGE
+pod/claims-slo-app-7cf875ff77-2qnjp   1/1     Running   1 (3m40s ago)   5d1h
+
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/claims-slo-app   ClusterIP   10.96.177.124   <none>        80/TCP    5d1h
+
+NAME                       ENDPOINTS          AGE
+endpoints/claims-slo-app   10.244.0.39:5000   5d1h

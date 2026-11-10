@@ -1,0 +1,40 @@
+2m42s       Normal    Pulled              pod/monitoring-kube-prometheus-admission-create-6b2vt          Container image "ghcr.io/jkroepke/kube-webhook-certgen:1.11.0" already present on machine and can be accessed by the pod
+2m42s       Normal    Started             pod/monitoring-kube-prometheus-admission-create-6b2vt          Container started
+2m42s       Normal    SuccessfulCreate    job/monitoring-kube-prometheus-admission-create                Created pod: monitoring-kube-prometheus-admission-create-6b2vt
+2m39s       Normal    ScalingReplicaSet   deployment/monitoring-grafana                                  Scaled up replica set monitoring-grafana-7b98f69c58 from 0 to 1
+2m39s       Normal    SuccessfulCreate    replicaset/monitoring-grafana-7b98f69c58                       Created pod: monitoring-grafana-7b98f69c58-2pb2m
+2m39s       Normal    Scheduled           pod/monitoring-grafana-7b98f69c58-2pb2m                        Successfully assigned slo-monitoring/monitoring-grafana-7b98f69c58-2pb2m to desktop-control-plane
+2m39s       Normal    Completed           job/monitoring-kube-prometheus-admission-create                Job completed
+2m38s       Normal    Created             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container created
+2m38s       Normal    Created             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container created
+2m38s       Warning   Unhealthy           pod/monitoring-grafana-7b98f69c58-2pb2m                        Readiness probe failed: Get "http://10.244.0.59:3000/api/health": dial tcp 10.244.0.59:3000: connect: connection refused
+2m38s       Normal    Pulled              pod/monitoring-grafana-7b98f69c58-2pb2m                        Container image "docker.io/grafana/grafana:13.3.0-distroless" already present on machine and can be accessed by the pod
+2m38s       Normal    SuccessfulCreate    job/monitoring-kube-prometheus-admission-patch                 Created pod: monitoring-kube-prometheus-admission-patch-4h9qm
+2m38s       Normal    Started             pod/monitoring-kube-prometheus-admission-patch-4h9qm           Container started
+2m38s       Normal    Created             pod/monitoring-kube-prometheus-admission-patch-4h9qm           Container created
+2m38s       Normal    Pulled              pod/monitoring-kube-prometheus-admission-patch-4h9qm           Container image "ghcr.io/jkroepke/kube-webhook-certgen:1.11.0" already present on machine and can be accessed by the pod
+2m38s       Normal    Scheduled           pod/monitoring-kube-prometheus-admission-patch-4h9qm           Successfully assigned slo-monitoring/monitoring-kube-prometheus-admission-patch-4h9qm to desktop-control-plane
+2m38s       Normal    Started             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container started
+2m38s       Normal    Started             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container started
+2m38s       Normal    Pulled              pod/monitoring-grafana-7b98f69c58-2pb2m                        Container image "quay.io/kiwigrid/k8s-sidecar:2.14.3" already present on machine and can be accessed by the pod
+2m38s       Normal    Pulled              pod/monitoring-grafana-7b98f69c58-2pb2m                        Container image "quay.io/kiwigrid/k8s-sidecar:2.14.3" already present on machine and can be accessed by the pod
+2m38s       Normal    Created             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container created
+2m38s       Normal    Started             pod/monitoring-grafana-7b98f69c58-2pb2m                        Container started
+2m35s       Normal    Completed           job/monitoring-kube-prometheus-admission-patch                 Job completed
+2m28s       Normal    SuccessfulDelete    replicaset/monitoring-grafana-699d767c55                       Deleted pod: monitoring-grafana-699d767c55-b28qd
+2m28s       Normal    Killing             pod/monitoring-grafana-699d767c55-b28qd                        Stopping container grafana
+2m28s       Normal    Killing             pod/monitoring-grafana-699d767c55-b28qd                        Stopping container grafana-sc-datasources
+2m28s       Normal    ScalingReplicaSet   deployment/monitoring-grafana                                  Scaled down replica set monitoring-grafana-699d767c55 from 1 to 0
+2m28s       Normal    Killing             pod/monitoring-grafana-699d767c55-b28qd                        Stopping container grafana-sc-dashboard
+46s         Normal    Pulled              pod/monitoring-kube-prometheus-admission-create-n4qzl          Container image "ghcr.io/jkroepke/kube-webhook-certgen:1.11.0" already present on machine and can be accessed by the pod
+46s         Normal    Scheduled           pod/monitoring-kube-prometheus-admission-create-n4qzl          Successfully assigned slo-monitoring/monitoring-kube-prometheus-admission-create-n4qzl to desktop-control-plane
+46s         Normal    Created             pod/monitoring-kube-prometheus-admission-create-n4qzl          Container created
+46s         Normal    Started             pod/monitoring-kube-prometheus-admission-create-n4qzl          Container started
+46s         Normal    SuccessfulCreate    job/monitoring-kube-prometheus-admission-create                Created pod: monitoring-kube-prometheus-admission-create-n4qzl
+43s         Normal    Completed           job/monitoring-kube-prometheus-admission-create                Job completed
+41s         Normal    Scheduled           pod/monitoring-kube-prometheus-admission-patch-229hj           Successfully assigned slo-monitoring/monitoring-kube-prometheus-admission-patch-229hj to desktop-control-plane
+41s         Normal    SuccessfulCreate    job/monitoring-kube-prometheus-admission-patch                 Created pod: monitoring-kube-prometheus-admission-patch-229hj
+40s         Normal    Pulled              pod/monitoring-kube-prometheus-admission-patch-229hj           Container image "ghcr.io/jkroepke/kube-webhook-certgen:1.11.0" already present on machine and can be accessed by the pod
+40s         Normal    Created             pod/monitoring-kube-prometheus-admission-patch-229hj           Container created
+40s         Normal    Started             pod/monitoring-kube-prometheus-admission-patch-229hj           Container started
+38s         Normal    Completed           job/monitoring-kube-prometheus-admission-patch                 Job completed

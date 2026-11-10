@@ -1,0 +1,56 @@
+# HELP claims_http_requests_total Total Claims API requests
+# TYPE claims_http_requests_total counter
+claims_http_requests_total{method="GET",path="/api/claims",status="200"} 1.0
+# HELP claims_http_request_duration_seconds Claims API request latency
+# TYPE claims_http_request_duration_seconds histogram
+claims_http_request_duration_seconds_bucket{le="0.005",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.01",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.025",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.05",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.075",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.1",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.25",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.75",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="1.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="2.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="5.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="7.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="10.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="+Inf",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_count{method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_sum{method="GET",path="/api/claims"} 0.0004563331604003906
+# HELP claims_http_request_duration_seconds_created Claims API request latency
+# TYPE claims_http_request_duration_seconds_created gauge
+claims_http_request_duration_seconds_created{method="GET",path="/api/claims"} 1.7938717680212028e+09
+# HELP claims_application_start_total Claims application starts
+# TYPE claims_application_start_total counter
+claims_application_start_total{environment="lab",service="claims-slo-app",version="1.0.0"} 1.0
+# HELP claims_http_requests_total Total Claims API requests
+# TYPE claims_http_requests_total counter
+claims_http_requests_total{method="GET",path="/api/claims",status="200"} 1.0
+# HELP claims_http_request_duration_seconds Claims API request latency
+# TYPE claims_http_request_duration_seconds histogram
+claims_http_request_duration_seconds_bucket{le="0.005",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.01",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.025",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.05",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.075",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.1",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.25",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="0.75",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="1.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="2.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="5.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="7.5",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="10.0",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_bucket{le="+Inf",method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_count{method="GET",path="/api/claims"} 1.0
+claims_http_request_duration_seconds_sum{method="GET",path="/api/claims"} 0.0004563331604003906
+# HELP claims_http_request_duration_seconds_created Claims API request latency
+# TYPE claims_http_request_duration_seconds_created gauge
+claims_http_request_duration_seconds_created{method="GET",path="/api/claims"} 1.7938717680212028e+09
+# HELP claims_application_start_total Claims application starts
+# TYPE claims_application_start_total counter
+claims_application_start_total{environment="lab",service="claims-slo-app",version="1.0.0"} 1.0

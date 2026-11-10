@@ -1,0 +1,2 @@
+namespace/slo-lab created
+namespace/slo-monitoring created

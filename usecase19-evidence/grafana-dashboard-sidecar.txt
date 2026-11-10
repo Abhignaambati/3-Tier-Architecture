@@ -1,0 +1,12 @@
+{"time": "2026-11-10T11:20:56.272407+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:20:56.273878+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:21:56.286611+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:21:56.289186+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:22:56.303463+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:22:56.306000+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:23:56.322297+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:23:56.324348+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:24:56.337190+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:24:56.338618+00:00", "level": "INFO", "msg": "Loading incluster config..."}
+{"time": "2026-11-10T11:25:04.156714+00:00", "level": "INFO", "msg": "Writing /tmp/dashboards/claims-slo-dashboard.json (ascii)"}
+{"time": "2026-11-10T11:25:04.243823+00:00", "level": "INFO", "msg": "None sent to http://localhost:3000/api/admin/provisioning/dashboards/reload. Response: 200 OK {\"message\":\"Dashboards config reloaded\"}"}

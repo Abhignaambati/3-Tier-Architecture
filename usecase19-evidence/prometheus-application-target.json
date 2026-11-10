@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","container":"claims-slo-app","endpoint":"http","instance":"10.244.0.39:5000","job":"claims-slo-app","namespace":"slo-lab","pod":"claims-slo-app-7cf875ff77-2qnjp","service":"claims-slo-app"},"value":[1794308804.399,"1"]}]}}

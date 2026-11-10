@@ -1,0 +1,5 @@
+pod/monitoring-grafana-699d767c55-b28qd condition met
+pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh condition met
+pod/monitoring-kube-state-metrics-599b97c458-9sh7t condition met
+pod/monitoring-prometheus-node-exporter-jkk8r condition met
+pod/prometheus-monitoring-kube-prometheus-prometheus-0 condition met

@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claims-slo-app
+  namespace: slo-lab
+  labels:
+    app: claims-slo-app
+    service: claims-slo-app
+    environment: lab
+    version: 1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: claims-slo-app
+  template:
+    metadata:
+      labels:
+        app: claims-slo-app
+        service: claims-slo-app
+        environment: lab
+        version: 1.0.0
+    spec:
+      containers:
+        - name: claims-slo-app
+          image: claims-slo-app:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - name: http
+              containerPort: 5000
+          env:
+            - name: SERVICE_NAME
+              value: claims-slo-app
+            - name: ENVIRONMENT
+              value: lab
+            - name: APP_VERSION
+              value: 1.0.0
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: claims-slo-app
+  namespace: slo-lab
+  labels:
+    app: claims-slo-app
+    service: claims-slo-app
+    environment: lab
+spec:
+  selector:
+    app: claims-slo-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

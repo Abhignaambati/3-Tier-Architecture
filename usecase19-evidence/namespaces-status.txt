@@ -1,0 +1,3 @@
+NAME             STATUS   AGE
+slo-lab          Active   0s
+slo-monitoring   Active   0s

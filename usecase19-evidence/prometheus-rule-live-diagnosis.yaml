@@ -1,0 +1,53 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"monitoring.coreos.com/v1","kind":"PrometheusRule","metadata":{"annotations":{},"labels":{"release":"monitoring"},"name":"claims-slo-alerts","namespace":"slo-lab"},"spec":{"groups":[{"name":"claims-slo-alerts","rules":[{"alert":"ClaimsApiHighErrorRate","annotations":{"description":"More than 5 percent of Claims API requests have failed for 30 seconds.","runbook_url":"runbooks/usecase19/claims-api-high-error-rate.md","summary":"Claims API has a high error rate"},"expr":"(\n  sum(\n    rate(\n      claims_http_requests_total{\n        path=\"/api/claims\",\n        status=~\"5..\"\n      }[1m]\n    )\n  )\n  /\n  clamp_min(\n    sum(\n      rate(\n        claims_http_requests_total{\n          path=\"/api/claims\"\n        }[1m]\n      )\n    ),\n    0.001\n  )\n) \u003e 0.05\n","for":"30s","labels":{"environment":"lab","service":"claims-slo-app","severity":"critical","slo":"availability"}}]}]}}
+    prometheus-operator-validated: "true"
+  creationTimestamp: "2026-11-05T12:46:22Z"
+  generation: 1
+  labels:
+    release: monitoring
+  name: claims-slo-alerts
+  namespace: slo-lab
+  resourceVersion: "666943"
+  uid: c0dcb991-6714-44fe-ba2c-7a5a3f730d1d
+spec:
+  groups:
+  - name: claims-slo-alerts
+    rules:
+    - alert: ClaimsApiHighErrorRate
+      annotations:
+        description: More than 5 percent of Claims API requests have failed for 30
+          seconds.
+        runbook_url: runbooks/usecase19/claims-api-high-error-rate.md
+        summary: Claims API has a high error rate
+      expr: |
+        (
+          sum(
+            rate(
+              claims_http_requests_total{
+                path="/api/claims",
+                status=~"5.."
+              }[1m]
+            )
+          )
+          /
+          clamp_min(
+            sum(
+              rate(
+                claims_http_requests_total{
+                  path="/api/claims"
+                }[1m]
+              )
+            ),
+            0.001
+          )
+        ) > 0.05
+      for: 30s
+      labels:
+        environment: lab
+        service: claims-slo-app
+        severity: critical
+        slo: availability

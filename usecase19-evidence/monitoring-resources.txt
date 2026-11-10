@@ -1,0 +1,15 @@
+NAME                                                       READY   STATUS    RESTARTS   AGE
+pod/monitoring-grafana-699d767c55-b28qd                    3/3     Running   0          3m37s
+pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh   1/1     Running   0          3m37s
+pod/monitoring-kube-state-metrics-599b97c458-9sh7t         1/1     Running   0          3m37s
+pod/monitoring-prometheus-node-exporter-jkk8r              1/1     Running   0          3m37s
+pod/prometheus-monitoring-kube-prometheus-prometheus-0     2/2     Running   0          3m22s
+
+NAME                                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
+service/monitoring-grafana                        ClusterIP   10.96.11.133    <none>        80/TCP              3m37s
+service/monitoring-kube-prometheus-alertmanager   ClusterIP   10.96.106.195   <none>        9093/TCP,8080/TCP   3m37s
+service/monitoring-kube-prometheus-operator       ClusterIP   10.96.151.39    <none>        443/TCP             3m37s
+service/monitoring-kube-prometheus-prometheus     ClusterIP   10.96.169.185   <none>        9090/TCP,8080/TCP   3m37s
+service/monitoring-kube-state-metrics             ClusterIP   10.96.186.160   <none>        8080/TCP            3m37s
+service/monitoring-prometheus-node-exporter       ClusterIP   10.96.104.119   <none>        9100/TCP            3m37s
+service/prometheus-operated                       ClusterIP   None            <none>        9090/TCP            3m22s
