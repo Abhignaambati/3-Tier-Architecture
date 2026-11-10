@@ -1,0 +1,14 @@
+NAME                                                                         VERSION   REPLICAS   READY   RECONCILED   AVAILABLE   AGE
+alertmanager.monitoring.coreos.com/monitoring-kube-prometheus-alertmanager   v0.34.2   1          1       True         True        5d2h
+
+NAME                                                                    READY   AGE
+statefulset.apps/alertmanager-monitoring-kube-prometheus-alertmanager   1/1     5d1h
+statefulset.apps/prometheus-monitoring-kube-prometheus-prometheus       1/1     5d2h
+
+NAME                                                         READY   STATUS    RESTARTS      AGE
+pod/alertmanager-monitoring-kube-prometheus-alertmanager-0   2/2     Running   2 (70m ago)   5d1h
+pod/monitoring-grafana-7b98f69c58-2pb2m                      3/3     Running   3 (70m ago)   5d2h
+pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh     1/1     Running   2 (70m ago)   5d2h
+pod/monitoring-kube-state-metrics-599b97c458-9sh7t           1/1     Running   1 (70m ago)   5d2h
+pod/monitoring-prometheus-node-exporter-jkk8r                1/1     Running   1 (70m ago)   5d2h
+pod/prometheus-monitoring-kube-prometheus-prometheus-0       2/2     Running   2 (70m ago)   4d23h

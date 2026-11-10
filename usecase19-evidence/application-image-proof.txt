@@ -1,0 +1,1 @@
+Image=[claims-slo-app:1.0.0] ID=sha256:cecff7c94734b441bf6adfc4763c1ca155dd8cdc6f74d9a76b5760d555054db6

@@ -1,0 +1,1 @@
+configmap/prometheus-monitoring-kube-prometheus-prometheus-rulefiles-0   36     5d1h

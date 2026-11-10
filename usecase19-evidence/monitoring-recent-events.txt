@@ -1,0 +1,40 @@
+5m7s        Normal    Pulled              pod/monitoring-kube-prometheus-admission-patch-km82s           Container image "ghcr.io/jkroepke/kube-webhook-certgen:1.11.0" already present on machine and can be accessed by the pod
+5m7s        Normal    Created             pod/monitoring-kube-prometheus-admission-patch-km82s           Container created
+5m7s        Normal    Started             pod/monitoring-kube-prometheus-admission-patch-km82s           Container started
+5m7s        Normal    SuccessfulCreate    job/monitoring-kube-prometheus-admission-patch                 Created pod: monitoring-kube-prometheus-admission-patch-km82s
+5m4s        Normal    Completed           job/monitoring-kube-prometheus-admission-patch                 Job completed
+5m2s        Normal    Pulled              pod/monitoring-prometheus-node-exporter-jkk8r                  Successfully pulled image "quay.io/prometheus/node-exporter:v1.12.1-distroless" in 5.815s (5.815s including waiting). Image size: 12122915 bytes.
+5m2s        Warning   Unhealthy           pod/monitoring-prometheus-node-exporter-jkk8r                  Readiness probe failed: Get "http://172.20.0.3:9100/": dial tcp 172.20.0.3:9100: connect: connection refused
+5m2s        Normal    Started             pod/monitoring-prometheus-node-exporter-jkk8r                  Container started
+5m2s        Normal    Created             pod/monitoring-prometheus-node-exporter-jkk8r                  Container created
+5m          Normal    Pulled              pod/monitoring-kube-state-metrics-599b97c458-9sh7t             Successfully pulled image "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.20.0" in 2.367s (8.159s including waiting). Image size: 17271520 bytes.
+5m          Normal    Started             pod/monitoring-kube-state-metrics-599b97c458-9sh7t             Container started
+5m          Normal    Created             pod/monitoring-kube-state-metrics-599b97c458-9sh7t             Container created
+4m59s       Normal    Pulled              pod/monitoring-grafana-699d767c55-b28qd                        Successfully pulled image "quay.io/kiwigrid/k8s-sidecar:2.14.3" in 1.433s (9.585s including waiting). Image size: 27222917 bytes.
+4m59s       Normal    Created             pod/monitoring-grafana-699d767c55-b28qd                        Container created
+4m58s       Normal    Pulling             pod/monitoring-grafana-699d767c55-b28qd                        Pulling image "docker.io/grafana/grafana:13.3.0-distroless"
+4m58s       Normal    Started             pod/monitoring-grafana-699d767c55-b28qd                        Container started
+4m58s       Normal    Created             pod/monitoring-grafana-699d767c55-b28qd                        Container created
+4m58s       Normal    Pulled              pod/monitoring-grafana-699d767c55-b28qd                        Container image "quay.io/kiwigrid/k8s-sidecar:2.14.3" already present on machine and can be accessed by the pod
+4m58s       Normal    Started             pod/monitoring-grafana-699d767c55-b28qd                        Container started
+4m55s       Warning   Unhealthy           pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh       Readiness probe failed: Get "https://10.244.0.55:10250/healthz": dial tcp 10.244.0.55:10250: connect: connection refused
+4m55s       Normal    Pulled              pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh       Successfully pulled image "quay.io/prometheus-operator/prometheus-operator:v0.94.2" in 3.752s (13.334s including waiting). Image size: 20431199 bytes.
+4m55s       Normal    Created             pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh       Container created
+4m55s       Normal    Started             pod/monitoring-kube-prometheus-operator-6bdbc77f8b-lgjsh       Container started
+4m54s       Normal    Scheduled           pod/prometheus-monitoring-kube-prometheus-prometheus-0         Successfully assigned slo-monitoring/prometheus-monitoring-kube-prometheus-prometheus-0 to desktop-control-plane
+4m54s       Normal    SuccessfulCreate    statefulset/prometheus-monitoring-kube-prometheus-prometheus   Create Pod prometheus-monitoring-kube-prometheus-prometheus-0 in StatefulSet prometheus-monitoring-kube-prometheus-prometheus successful
+4m54s       Normal    Pulling             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Pulling image "quay.io/prometheus-operator/prometheus-config-reloader:v0.94.2"
+4m36s       Normal    Created             pod/monitoring-grafana-699d767c55-b28qd                        Container created
+4m36s       Normal    Pulled              pod/monitoring-grafana-699d767c55-b28qd                        Successfully pulled image "docker.io/grafana/grafana:13.3.0-distroless" in 18.874s (22.53s including waiting). Image size: 453832331 bytes.
+4m36s       Normal    Started             pod/monitoring-grafana-699d767c55-b28qd                        Container started
+4m35s       Warning   Unhealthy           pod/monitoring-grafana-699d767c55-b28qd                        Readiness probe failed: Get "http://10.244.0.54:3000/api/health": dial tcp 10.244.0.54:3000: connect: connection refused
+4m35s       Normal    Pulled              pod/prometheus-monitoring-kube-prometheus-prometheus-0         Successfully pulled image "quay.io/prometheus-operator/prometheus-config-reloader:v0.94.2" in 1.316s (19.469s including waiting). Image size: 13333149 bytes.
+4m35s       Normal    Created             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container created
+4m35s       Normal    Started             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container started
+4m34s       Normal    Pulling             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Pulling image "quay.io/prometheus/prometheus:v3.15.1-distroless"
+4m26s       Normal    Created             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container created
+4m26s       Normal    Started             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container started
+4m26s       Normal    Pulled              pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container image "quay.io/prometheus-operator/prometheus-config-reloader:v0.94.2" already present on machine and can be accessed by the pod
+4m26s       Normal    Created             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container created
+4m26s       Normal    Started             pod/prometheus-monitoring-kube-prometheus-prometheus-0         Container started
+4m26s       Normal    Pulled              pod/prometheus-monitoring-kube-prometheus-prometheus-0         Successfully pulled image "quay.io/prometheus/prometheus:v3.15.1-distroless" in 7.968s (7.968s including waiting). Image size: 104542337 bytes.

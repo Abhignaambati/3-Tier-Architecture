@@ -1,0 +1,82 @@
+Name:         monitoring-kube-prometheus-alertmanager
+Namespace:    slo-monitoring
+Labels:       app=kube-prometheus-stack-alertmanager
+              app.kubernetes.io/instance=monitoring
+              app.kubernetes.io/managed-by=Helm
+              app.kubernetes.io/part-of=kube-prometheus-stack
+              app.kubernetes.io/version=92.18.0
+              chart=kube-prometheus-stack-92.18.0
+              heritage=Helm
+              release=monitoring
+Annotations:  meta.helm.sh/release-name: monitoring
+              meta.helm.sh/release-namespace: slo-monitoring
+API Version:  monitoring.coreos.com/v1
+Kind:         Alertmanager
+Metadata:
+  Creation Timestamp:  2026-11-05T10:01:35Z
+  Generation:          1
+  Resource Version:    653127
+  UID:                 0173ff6e-2e08-4aef-9d3a-d82b1274c655
+Spec:
+  Affinity:
+    Pod Anti Affinity:
+      Preferred During Scheduling Ignored During Execution:
+        Pod Affinity Term:
+          Label Selector:
+            Match Expressions:
+              Key:       app.kubernetes.io/name
+              Operator:  In
+              Values:
+                alertmanager
+              Key:       alertmanager
+              Operator:  In
+              Values:
+                monitoring-kube-prometheus-alertmanager
+          Topology Key:  kubernetes.io/hostname
+        Weight:          100
+  Alertmanager Config Namespace Selector:
+  Alertmanager Config Selector:
+  Automount Service Account Token:  true
+  External URL:                     http://monitoring-kube-prometheus-alertmanager.slo-monitoring:9093
+  Image:                            quay.io/prometheus/alertmanager:v0.34.2
+  Image Pull Policy:                IfNotPresent
+  Listen Local:                     false
+  Log Format:                       logfmt
+  Log Level:                        info
+  Node Selector:
+    kubernetes.io/os:  linux
+  Paused:              false
+  Port Name:           http-web
+  Replicas:            1
+  Retention:           120h
+  Route Prefix:        /
+  Security Context:
+    Fs Group:         2000
+    Run As Group:     2000
+    Run As Non Root:  true
+    Run As User:      1000
+    Seccomp Profile:
+      Type:              RuntimeDefault
+  Service Account Name:  monitoring-kube-prometheus-alertmanager
+  Version:               v0.34.2
+Status:
+  Available Replicas:  0
+  Conditions:
+    Last Transition Time:  2026-11-05T10:01:49Z
+    Message:               
+    Observed Generation:   1
+    Reason:                StatefulSetNotFound
+    Status:                False
+    Type:                  Available
+    Last Transition Time:  2026-11-05T10:01:49Z
+    Message:               provision alertmanager configuration: failed to initialize from secret: undefined receiver "null" used in route
+    Observed Generation:   1
+    Reason:                ReconciliationFailed
+    Status:                False
+    Type:                  Reconciled
+  Paused:                  false
+  Replicas:                0
+  Selector:                alertmanager=monitoring-kube-prometheus-alertmanager,app.kubernetes.io/instance=monitoring-kube-prometheus-alertmanager,app.kubernetes.io/managed-by=prometheus-operator,app.kubernetes.io/name=alertmanager
+  Unavailable Replicas:    0
+  Updated Replicas:        0
+Events:                    <none>

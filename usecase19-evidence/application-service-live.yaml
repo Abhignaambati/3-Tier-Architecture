@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"app":"claims-slo-app","environment":"lab","service":"claims-slo-app"},"name":"claims-slo-app","namespace":"slo-lab"},"spec":{"ports":[{"name":"http","port":80,"targetPort":"http"}],"selector":{"app":"claims-slo-app"}}}
+  creationTimestamp: "2026-11-05T09:26:41Z"
+  labels:
+    app: claims-slo-app
+    environment: lab
+    service: claims-slo-app
+  name: claims-slo-app
+  namespace: slo-lab
+  resourceVersion: "649073"
+  uid: 4789da8d-1f28-4845-bc8f-478a2b172df5
+spec:
+  clusterIP: 10.96.177.124
+  clusterIPs:
+  - 10.96.177.124
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: claims-slo-app
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,44 @@
+grafana:
+  persistence:
+    enabled: false
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+
+prometheus:
+  prometheusSpec:
+    retention: 2d
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorNamespaceSelector: {}
+    ruleSelectorNilUsesHelmValues: false
+    ruleNamespaceSelector: {}
+
+alertmanager:
+  enabled: true
+
+  alertmanagerSpec:
+    replicas: 1
+
+  config:
+    global:
+      resolve_timeout: 1m
+
+    route:
+      receiver: "null"
+      group_by:
+        - alertname
+        - service
+        - environment
+      group_wait: 10s
+      group_interval: 30s
+      repeat_interval: 1h
+      routes:
+        - receiver: usecase19-lab
+          matchers:
+            - alertname="ClaimsApiHighErrorRate"
+          continue: false
+
+    receivers:
+      - name: "null"
+      - name: usecase19-lab

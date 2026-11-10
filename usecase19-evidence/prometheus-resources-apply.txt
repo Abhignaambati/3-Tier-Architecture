@@ -1,0 +1,2 @@
+servicemonitor.monitoring.coreos.com/claims-slo-app created
+prometheusrule.monitoring.coreos.com/claims-slo-alerts created

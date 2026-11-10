@@ -1,0 +1,31 @@
+USER-SUPPLIED VALUES:
+alertmanager:
+  config:
+    global:
+      resolve_timeout: 1m
+    receivers:
+    - name: usecase19-lab
+    route:
+      group_by:
+      - alertname
+      - service
+      - environment
+      group_interval: 30s
+      group_wait: 10s
+      receiver: usecase19-lab
+      repeat_interval: 1h
+  enabled: true
+grafana:
+  persistence:
+    enabled: false
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+prometheus:
+  prometheusSpec:
+    retention: 2d
+    ruleNamespaceSelector: {}
+    ruleSelectorNilUsesHelmValues: false
+    serviceMonitorNamespaceSelector: {}
+    serviceMonitorSelectorNilUsesHelmValues: false

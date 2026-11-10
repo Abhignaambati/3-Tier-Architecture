@@ -1,0 +1,5 @@
+NAME                                                  AGE
+servicemonitor.monitoring.coreos.com/claims-slo-app   3s
+
+NAME                                                     AGE
+prometheusrule.monitoring.coreos.com/claims-slo-alerts   3s

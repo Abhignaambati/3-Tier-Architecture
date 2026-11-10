@@ -1,0 +1,8 @@
+NAME                             READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS       IMAGES                 SELECTOR
+deployment.apps/claims-slo-app   1/1     1            1           15m   claims-slo-app   claims-slo-app:1.0.0   app=claims-slo-app
+
+NAME                                  READY   STATUS    RESTARTS   AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-slo-app-7cf875ff77-2qnjp   1/1     Running   0          8m8s   10.244.0.47   desktop-control-plane   <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-slo-app   ClusterIP   10.96.177.124   <none>        80/TCP    15m   app=claims-slo-app

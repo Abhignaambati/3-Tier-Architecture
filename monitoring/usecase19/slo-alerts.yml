@@ -1,0 +1,36 @@
+groups:
+  - name: claims-slo-alerts
+    rules:
+      - alert: ClaimsApiHighErrorRate
+        expr: |
+          (
+            sum(
+              rate(
+                claims_http_requests_total{
+                  path="/api/claims",
+                  status=~"5.."
+                }[1m]
+              )
+            )
+            /
+            clamp_min(
+              sum(
+                rate(
+                  claims_http_requests_total{
+                    path="/api/claims"
+                  }[1m]
+                )
+              ),
+              0.001
+            )
+          ) > 0.05
+        for: 30s
+        labels:
+          severity: critical
+          service: claims-slo-app
+          environment: lab
+          slo: availability
+        annotations:
+          summary: Claims API has a high error rate
+          description: More than 5 percent of Claims API requests have failed for 30 seconds.
+          runbook_url: runbooks/usecase19/claims-api-high-error-rate.md

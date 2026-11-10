@@ -1,0 +1,2 @@
+{"claims":[{"id":1901,"status":"approved"}],"environment":"lab","service":"claims-slo-app","version":"1.0.0"}
+pod "uc19-api-check" deleted from slo-lab namespace

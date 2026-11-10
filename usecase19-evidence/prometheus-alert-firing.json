@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"ALERTS","alertname":"ClaimsApiHighErrorRate","alertstate":"firing","environment":"lab","service":"claims-slo-app","severity":"critical","slo":"availability"},"value":[1794310862.609,"1"]}]}}

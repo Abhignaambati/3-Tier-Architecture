@@ -1,0 +1,6 @@
+LAST SEEN   TYPE      REASON              OBJECT                                MESSAGE
+7m19s       Normal    Scheduled           pod/claims-slo-app-8b64f9bdd-88fwp    Successfully assigned slo-lab/claims-slo-app-8b64f9bdd-88fwp to desktop-control-plane
+7m19s       Normal    SuccessfulCreate    replicaset/claims-slo-app-8b64f9bdd   Created pod: claims-slo-app-8b64f9bdd-88fwp
+7m19s       Normal    ScalingReplicaSet   deployment/claims-slo-app             Scaled up replica set claims-slo-app-8b64f9bdd from 0 to 1
+5m8s        Warning   Failed              pod/claims-slo-app-8b64f9bdd-88fwp    Error: ErrImageNeverPull
+2m16s       Warning   ErrImageNeverPull   pod/claims-slo-app-8b64f9bdd-88fwp    Container image "claims-slo-app:1.0.0" is not present with pull policy of Never
