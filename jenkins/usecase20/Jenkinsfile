@@ -1,0 +1,133 @@
+pipeline {
+    agent any
+
+    environment {
+        PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        HARBOR_REGISTRY = "harbor.example.com:80"
+        HARBOR_PROJECT = "claimslab"
+        APPLICATION_NAME = "claims-status-api"
+        IMAGE_REPOSITORY = "${HARBOR_REGISTRY}/${HARBOR_PROJECT}/${APPLICATION_NAME}"
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+
+                sh '''
+                    echo "Commit: ${GIT_COMMIT}"
+                    git status --short
+                '''
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                dir('app/claims-status-api') {
+                    sh '''
+                        rm -rf .jenkins-venv
+                        python3 -m venv .jenkins-venv
+                        . .jenkins-venv/bin/activate
+                        pip install --quiet -r requirements.txt
+                        pytest -v
+                    '''
+                }
+            }
+        }
+
+        stage('Build Image') {
+            steps {
+                script {
+                    env.IMAGE_TAG = env.GIT_COMMIT.take(12)
+                    env.FULL_IMAGE = "${env.IMAGE_REPOSITORY}:${env.IMAGE_TAG}"
+                }
+
+                sh '''
+                    echo "Building ${FULL_IMAGE}"
+
+                    docker build \
+                      -t "${FULL_IMAGE}" \
+                      app/claims-status-api
+                '''
+            }
+        }
+
+        stage('Scan Image') {
+            steps {
+                sh '''
+                    trivy image \
+                      --severity CRITICAL \
+                      --exit-code 1 \
+                      --no-progress \
+                      "${FULL_IMAGE}"
+                '''
+            }
+        }
+
+        stage('Push to Harbor') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'harbor-credentials',
+                        usernameVariable: 'HARBOR_USERNAME',
+                        passwordVariable: 'HARBOR_PASSWORD'
+                    )
+                ]) {
+                    sh '''
+                        echo "${HARBOR_PASSWORD}" \
+                          | docker login "${HARBOR_REGISTRY}" \
+                              --username "${HARBOR_USERNAME}" \
+                              --password-stdin
+
+                        docker push "${FULL_IMAGE}"
+
+                        docker inspect \
+                          --format='{{index .RepoDigests 0}}' \
+                          "${FULL_IMAGE}" \
+                          | tee usecase20-image-digest.txt
+
+                        docker logout "${HARBOR_REGISTRY}"
+                    '''
+                }
+            }
+        }
+
+        stage('Pipeline Proof') {
+            steps {
+                sh '''
+                    echo "Application: ${APPLICATION_NAME}"
+                    echo "Image: ${FULL_IMAGE}"
+                    echo "Commit: ${GIT_COMMIT}"
+                    echo "Test, scan, build, tag and push completed."
+                '''
+
+                archiveArtifacts(
+                    artifacts: 'usecase20-image-digest.txt',
+                    fingerprint: true
+                )
+            }
+        }
+    }
+
+    post {
+        always {
+            sh '''
+                rm -rf app/claims-status-api/.jenkins-venv
+                docker logout "${HARBOR_REGISTRY}" >/dev/null 2>&1 || true
+            '''
+        }
+
+        success {
+            echo 'ClaimsLab application image published successfully.'
+        }
+
+        failure {
+            echo 'Use Case 20 pipeline failed. Check the first failed stage.'
+        }
+    }
+}

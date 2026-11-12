@@ -1,0 +1,1 @@
+{"level": "INFO", "service": "claims-status-api", "environment": "dev", "version": "1.0.0", "request_id": "UC20-LOCAL-001", "method": "GET", "path": "/api/status", "status": 200, "duration_seconds": 0.000289, "message": "request completed"}

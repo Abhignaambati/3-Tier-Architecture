@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.15.2, pytest-8.4.2, pluggy-1.7.0 -- /Users/midhtech_01/3-Tier-Architecture-UseCase20/app/claims-status-api/.venv/bin/python3.15
+cachedir: .pytest_cache
+rootdir: /Users/midhtech_01/3-Tier-Architecture-UseCase20/app/claims-status-api
+collecting ... collected 4 items
+
+tests/test_app.py::test_health_endpoint PASSED                           [ 25%]
+tests/test_app.py::test_status_endpoint PASSED                           [ 50%]
+tests/test_app.py::test_metrics_endpoint PASSED                          [ 75%]
+tests/test_app.py::test_secure_endpoint_requires_secret PASSED           [100%]
+
+============================== 4 passed in 0.64s ===============================
