@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        PATH = "/Users/midhtech_01/.docker/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
         HARBOR_REGISTRY = "harbor.example.com:80"
         HARBOR_PROJECT = "claimslab"
         APPLICATION_NAME = "claims-status-api"
