@@ -11,7 +11,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/midhtech-group2/3-tier-architecture.git
+    repoURL: https://github.com/Abhignaambati/3-Tier-Architecture.git
     targetRevision: usecase/20-platform-onboarding
     path: helm/claims-status-api
     helm:
