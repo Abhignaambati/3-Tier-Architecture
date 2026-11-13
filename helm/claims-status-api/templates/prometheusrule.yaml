@@ -1,0 +1,44 @@
+{{- if .Values.alert.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  groups:
+    - name: claims-status-api.rules
+      rules:
+        - alert: ClaimsStatusApiHighErrorRate
+          expr: |
+            (
+              sum(
+                rate(
+                  claims_status_http_requests_total{
+                    service="claims-status-api",
+                    status=~"5.."
+                  }[5m]
+                )
+              )
+              /
+              clamp_min(
+                sum(
+                  rate(
+                    claims_status_http_requests_total{
+                      service="claims-status-api"
+                    }[5m]
+                  )
+                ),
+                0.001
+              )
+            ) > {{ .Values.alert.errorRatioThreshold }}
+          for: {{ .Values.alert.duration }}
+          labels:
+            severity: warning
+            service: claims-status-api
+            environment: {{ .Values.application.environment }}
+          annotations:
+            summary: Claims Status API has a high error rate
+            description: More than five percent of requests are returning server errors.
+{{- end }}

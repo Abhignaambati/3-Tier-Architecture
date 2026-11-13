@@ -1,0 +1,4 @@
+service/claims-status-api created (dry run)
+deployment.apps/claims-status-api created (dry run)
+prometheusrule.monitoring.coreos.com/claims-status-api created (dry run)
+servicemonitor.monitoring.coreos.com/claims-status-api created (dry run)

@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claimslab-status-api-dev
+  namespace: argocd
+  labels:
+    platform: claimslab
+    application: claims-status-api
+    environment: dev
+spec:
+  project: default
+
+  source:
+    repoURL: https://gitlab.com/midhtech-group2/3-tier-architecture.git
+    targetRevision: usecase/20-platform-onboarding
+    path: helm/claims-status-api
+    helm:
+      releaseName: claims-status-api
+      valueFiles:
+        - values-common.yaml
+        - values-dev.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: claimslab-status-dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

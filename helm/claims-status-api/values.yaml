@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  repository: harbor.example.com:80/claimslab/claims-status-api
+  tag: d07031db9967
+  pullPolicy: Always
+
+application:
+  environment: dev
+  version: "1.0.0"
+
+secret:
+  name: claims-status-api-secret
+  key: api-token
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
+
+monitoring:
+  enabled: true
+  interval: 15s
+
+alert:
+  enabled: true
+  errorRatioThreshold: 0.05
+  duration: 2m

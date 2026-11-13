@@ -1,0 +1,8 @@
+replicaCount: 1
+
+image:
+  tag: d07031db9967
+
+application:
+  environment: dev
+  version: "1.0.0"

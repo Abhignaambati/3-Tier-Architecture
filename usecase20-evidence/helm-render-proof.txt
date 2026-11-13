@@ -1,0 +1,4 @@
+53:          image: "harbor.example.com:80/claimslab/claims-status-api:d07031db9967"
+72:                secretKeyRef:
+73:                  name: claims-status-api-secret
+74:                  key: api-token

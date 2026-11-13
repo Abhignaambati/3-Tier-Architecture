@@ -1,0 +1,5 @@
+Repository: claimslab/claims-status-api
+Tag: d07031db9967
+Digest: sha256:9166ca7cbb66332cffb0167ec09d48ae6242d42e3b170a5b50634b662e8d548f
+Media type: application/vnd.oci.image.index.v1+json
+Harbor application image: VERIFIED

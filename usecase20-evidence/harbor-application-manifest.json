@@ -1,0 +1,55 @@
+{
+  "accessories": null,
+  "digest": "sha256:9166ca7cbb66332cffb0167ec09d48ae6242d42e3b170a5b50634b662e8d548f",
+  "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+  "id": 46,
+  "labels": null,
+  "manifest_media_type": "application/vnd.oci.image.index.v1+json",
+  "media_type": "application/vnd.oci.image.index.v1+json",
+  "project_id": 5,
+  "pull_time": "0001-01-01T00:00:00.000Z",
+  "push_time": "2026-11-12T12:48:30.479Z",
+  "references": [
+    {
+      "child_digest": "sha256:e3437671d03238846d6f6fef909a335db5d021150cf248a0abea478565e2d6e9",
+      "child_id": 44,
+      "parent_id": 46,
+      "platform": {
+        "OsFeatures": null,
+        "architecture": "arm64",
+        "os": "linux"
+      },
+      "urls": null
+    },
+    {
+      "annotations": {
+        "vnd.docker.reference.digest": "sha256:e3437671d03238846d6f6fef909a335db5d021150cf248a0abea478565e2d6e9",
+        "vnd.docker.reference.type": "attestation-manifest"
+      },
+      "child_digest": "sha256:2605075ed7268f7afaa0dc8ef14fadd90e9a66a59aa13ccefd42ad2af8c71ed6",
+      "child_id": 45,
+      "parent_id": 46,
+      "platform": {
+        "OsFeatures": null,
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "urls": null
+    }
+  ],
+  "repository_id": 6,
+  "repository_name": "claimslab/claims-status-api",
+  "size": 49664410,
+  "tags": [
+    {
+      "artifact_id": 46,
+      "id": 16,
+      "immutable": false,
+      "name": "d07031db9967",
+      "pull_time": "0001-01-01T00:00:00.000Z",
+      "push_time": "2026-11-12T12:48:30.499Z",
+      "repository_id": 6
+    }
+  ],
+  "type": "IMAGE"
+}

@@ -1,0 +1,164 @@
+---
+# Source: claims-status-api/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: claims-status-api
+  labels:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: claims-status-api
+    environment: dev
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: claims-status-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
+
+---
+# Source: claims-status-api/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claims-status-api
+  labels:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: claims-status-api
+    app.kubernetes.io/managed-by: Helm
+    environment: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: claims-status-api
+      app.kubernetes.io/instance: claims-status-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: claims-status-api
+        app.kubernetes.io/instance: claims-status-api
+        environment: dev
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+      containers:
+        - name: claims-status-api
+          image: "harbor.example.com:80/claimslab/claims-status-api:d07031db9967"
+          imagePullPolicy: Always
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          env:
+            - name: APP_ENVIRONMENT
+              value: "dev"
+            - name: APP_VERSION
+              value: "1.0.0"
+            - name: APP_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: claims-status-api-secret
+                  key: api-token
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            limits:
+              cpu: 250m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi
+
+---
+# Source: claims-status-api/templates/prometheusrule.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: claims-status-api
+  labels:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: claims-status-api
+spec:
+  groups:
+    - name: claims-status-api.rules
+      rules:
+        - alert: ClaimsStatusApiHighErrorRate
+          expr: |
+            (
+              sum(
+                rate(
+                  claims_status_http_requests_total{
+                    service="claims-status-api",
+                    status=~"5.."
+                  }[5m]
+                )
+              )
+              /
+              clamp_min(
+                sum(
+                  rate(
+                    claims_status_http_requests_total{
+                      service="claims-status-api"
+                    }[5m]
+                  )
+                ),
+                0.001
+              )
+            ) > 0.05
+          for: 2m
+          labels:
+            severity: warning
+            service: claims-status-api
+            environment: dev
+          annotations:
+            summary: Claims Status API has a high error rate
+            description: More than five percent of requests are returning server errors.
+
+---
+# Source: claims-status-api/templates/servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: claims-status-api
+  labels:
+    app.kubernetes.io/name: claims-status-api
+    app.kubernetes.io/instance: claims-status-api
+spec:
+  namespaceSelector:
+    matchNames:
+      - claimslab-status-dev
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: claims-status-api
+      app.kubernetes.io/instance: claims-status-api
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
