@@ -1,0 +1,11 @@
+NAMES                   STATUS                             PORTS
+harbor-jobservice       Up 12 seconds (health: starting)   
+harbor-core             Up 13 seconds (health: starting)   
+registryctl             Up 14 seconds (health: starting)   
+nginx                   Up 12 seconds (health: starting)   0.0.0.0:80->8080/tcp, [::]:80->8080/tcp
+registry                Up 15 seconds (health: starting)   
+harbor-portal           Up 14 seconds (health: starting)   
+redis                   Up 13 seconds (health: starting)   
+harbor-db               Up 15 seconds (health: starting)   
+harbor-log              Up About an hour (healthy)         127.0.0.1:1514->10514/tcp
+kind-registry-mirror    Up About an hour (healthy)         

@@ -1,0 +1,5 @@
+Phase: Pending
+Waiting reason: ImagePullBackOff
+Waiting message: Back-off pulling image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": ErrImagePull: failed to pull and unpack image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": failed to resolve reference "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": failed to do request: Head "http://harbor.example.com:80/v2/claimslab/claims-status-api/manifests/d07031db9967": dial tcp 127.0.0.1:80: connect: connection refused
+Ready: false
+Restarts: 0

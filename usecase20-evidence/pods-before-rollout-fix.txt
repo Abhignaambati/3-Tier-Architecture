@@ -1,0 +1,2 @@
+NAME                                 READY   STATUS         RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-status-api-6b9877cc67-t2fll   0/1     ErrImagePull   0          10m   10.244.0.52   desktop-control-plane   <none>           <none>

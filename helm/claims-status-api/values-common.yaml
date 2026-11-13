@@ -32,3 +32,6 @@ alert:
   enabled: true
   errorRatioThreshold: 0.05
   duration: 2m
+
+imagePullSecrets:
+  - name: harborpull

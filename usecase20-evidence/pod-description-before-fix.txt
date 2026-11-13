@@ -1,0 +1,68 @@
+Name:             claims-status-api-6b9877cc67-t2fll
+Namespace:        claimslab-status-dev
+Priority:         0
+Service Account:  default
+Node:             desktop-control-plane/172.20.0.3
+Start Time:       Fri, 13 Nov 2026 16:50:19 +0530
+Labels:           app.kubernetes.io/instance=claims-status-api
+                  app.kubernetes.io/name=claims-status-api
+                  environment=dev
+                  pod-template-hash=6b9877cc67
+Annotations:      <none>
+Status:           Pending
+IP:               10.244.0.52
+IPs:
+  IP:           10.244.0.52
+Controlled By:  ReplicaSet/claims-status-api-6b9877cc67
+Containers:
+  claims-status-api:
+    Container ID:   
+    Image:          harbor.example.com:80/claimslab/claims-status-api:d07031db9967
+    Image ID:       
+    Port:           5000/TCP (http)
+    Host Port:      0/TCP (http)
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     250m
+      memory:  256Mi
+    Requests:
+      cpu:      50m
+      memory:   64Mi
+    Liveness:   http-get http://:http/health delay=10s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/health delay=5s timeout=2s period=5s #success=1 #failure=6
+    Environment:
+      APP_ENVIRONMENT:  dev
+      APP_VERSION:      1.0.0
+      APP_API_TOKEN:    <set to the key 'api-token' in secret 'claims-status-api-secret'>  Optional: false
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vwf7l (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-vwf7l:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  11m                  default-scheduler  Successfully assigned claimslab-status-dev/claims-status-api-6b9877cc67-t2fll to desktop-control-plane
+  Normal   Pulling    8m27s (x5 over 11m)  kubelet            spec.containers{claims-status-api}: Pulling image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967"
+  Warning  Failed     8m27s (x5 over 11m)  kubelet            spec.containers{claims-status-api}: Failed to pull image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": failed to pull and unpack image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": failed to resolve reference "harbor.example.com:80/claimslab/claims-status-api:d07031db9967": failed to do request: Head "http://harbor.example.com:80/v2/claimslab/claims-status-api/manifests/d07031db9967": dial tcp 127.0.0.1:80: connect: connection refused
+  Warning  Failed     8m27s (x5 over 11m)  kubelet            spec.containers{claims-status-api}: Error: ErrImagePull
+  Normal   BackOff    60s (x42 over 11m)   kubelet            spec.containers{claims-status-api}: Back-off pulling image "harbor.example.com:80/claimslab/claims-status-api:d07031db9967"
+  Warning  Failed     60s (x42 over 11m)   kubelet            spec.containers{claims-status-api}: Error: ImagePullBackOff
