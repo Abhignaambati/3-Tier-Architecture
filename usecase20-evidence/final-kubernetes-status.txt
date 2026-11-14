@@ -1,0 +1,14 @@
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS          IMAGES                                                           SELECTOR
+deployment.apps/claims-status-api   1/1     1            1           22h   claims-status-api   harbor.example.com:80/claimslab/claims-status-api:d07031db9967   app.kubernetes.io/instance=claims-status-api,app.kubernetes.io/name=claims-status-api
+
+NAME                                     READY   STATUS    RESTARTS   AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-status-api-5488d8bd69-zhsvl   1/1     Running   0          8m5s   10.244.0.60   desktop-control-plane   <none>           <none>
+
+NAME                        TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-status-api   ClusterIP   10.96.8.219   <none>        80/TCP    22h   app.kubernetes.io/instance=claims-status-api,app.kubernetes.io/name=claims-status-api
+
+NAME                                                     AGE
+servicemonitor.monitoring.coreos.com/claims-status-api   22h
+
+NAME                                                     AGE
+prometheusrule.monitoring.coreos.com/claims-status-api   22h

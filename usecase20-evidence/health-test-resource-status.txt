@@ -1,0 +1,8 @@
+NAME                                    READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+pod/claims-status-api-b89794768-kgc87   1/1     Running   0          25m   10.244.0.54   desktop-control-plane   <none>           <none>
+
+NAME                        TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/claims-status-api   ClusterIP   10.96.8.219   <none>        80/TCP    44m   app.kubernetes.io/instance=claims-status-api,app.kubernetes.io/name=claims-status-api
+
+NAME                          ENDPOINTS          AGE
+endpoints/claims-status-api   10.244.0.54:5000   44m

@@ -1,0 +1,14 @@
+9:    discovery.kubernetes "pods" {
+13:    discovery.relabel "logging_lab_pods" {
+14:      targets = discovery.kubernetes.pods.targets
+17:        source_labels = ["__meta_kubernetes_namespace"]
+18:        regex         = "logging-lab"
+23:        source_labels = ["__meta_kubernetes_namespace"]
+24:        target_label  = "namespace"
+58:    loki.source.kubernetes "logging_lab" {
+59:      targets    = discovery.relabel.logging_lab_pods.output
+85:      forward_to = [loki.write.local.receiver]
+88:    loki.write "local" {
+90:        url = "http://loki-gateway.logging-lab.svc.cluster.local/loki/api/v1/push"
+97:    meta.helm.sh/release-namespace: logging-lab
+108:  namespace: logging-lab

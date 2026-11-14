@@ -1,0 +1,2 @@
+NAME                                 READY   STATUS    RESTARTS   AGE   IP            NODE                    NOMINATED NODE   READINESS GATES
+claims-status-api-5488d8bd69-l7xn8   1/1     Running   0          12s   10.244.0.53   desktop-control-plane   <none>           <none>

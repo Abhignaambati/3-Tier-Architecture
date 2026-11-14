@@ -1,0 +1,8 @@
+cd /Users/midhtech_01/3-Tier-Architecture-UseCase20
+
+pbpaste \
+  > usecase20-evidence/grafana-dashboard.json
+
+test -s usecase20-evidence/grafana-dashboard.json \
+  && echo "Grafana dashboard JSON: SAVED" \
+  || echo "Grafana dashboard JSON: MISSING"

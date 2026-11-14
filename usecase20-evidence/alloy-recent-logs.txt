@@ -1,0 +1,79 @@
+ts=2026-11-14T06:38:19.019821463Z level=info msg="Alloy is starting"
+ts=2026-11-14T06:38:19.019974838Z level=info msg="boringcrypto enabled" enabled=false
+ts=2026-11-14T06:38:19.020325504Z level=info msg="memory is not limited, skipping" package=github.com/KimMachineGun/automemlimit/memlimit
+ts=2026-11-14T06:38:19.020497004Z level=info msg="no peer discovery configured: both join and discover peers are empty" service=cluster
+ts=2026-11-14T06:38:19.022551129Z level=info msg="running usage stats reporter"
+ts=2026-11-14T06:38:19.022608963Z level=info msg="starting complete graph evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6
+ts=2026-11-14T06:38:19.022652796Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=livedebugging duration=33.583µs
+ts=2026-11-14T06:38:19.022660213Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=labelstore duration=3µs
+ts=2026-11-14T06:38:19.023214171Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=loki.write.local duration=551.125µs
+ts=2026-11-14T06:38:19.023404379Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=loki.process.structured_logs duration=182.958µs
+ts=2026-11-14T06:38:19.023561546Z level=info msg="Using pod service account via in-cluster config" component_path=/ component_id=discovery.kubernetes.pods
+ts=2026-11-14T06:38:19.024405629Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=discovery.kubernetes.pods duration=997µs
+ts=2026-11-14T06:38:19.024502296Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=discovery.relabel.logging_lab_pods duration=91.792µs
+ts=2026-11-14T06:38:19.024850796Z level=info msg="Using pod service account via in-cluster config" component_path=/ component_id=loki.source.kubernetes.logging_lab
+ts=2026-11-14T06:38:19.025449129Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=loki.source.kubernetes.logging_lab duration=939.75µs
+ts=2026-11-14T06:38:19.026144588Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=logging duration=686.541µs
+ts=2026-11-14T06:38:19.026239004Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=tracing duration=45.209µs
+ts=2026-11-14T06:38:19.026469171Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=remotecfg duration=182.875µs
+ts=2026-11-14T06:38:19.026568588Z level=info msg="applying non-TLS config to HTTP server" service=http
+ts=2026-11-14T06:38:19.026608671Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=http duration=72.916µs
+ts=2026-11-14T06:38:19.026620379Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=cluster duration=4.084µs
+ts=2026-11-14T06:38:19.026630796Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=ui duration=6.292µs
+ts=2026-11-14T06:38:19.026639338Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 node_id=otel duration=2.25µs
+ts=2026-11-14T06:38:19.026652046Z level=info msg="finished complete graph evaluation" controller_path=/ controller_id="" trace_id=d6b28c3092471bddd771b6eca9e2d8d6 duration=4.2285ms
+ts=2026-11-14T06:38:19.027150546Z level=info msg="{^_^} Alloy is running"
+ts=2026-11-14T06:38:19.027344504Z level=info msg="scheduling loaded components and services" controller_id=""
+ts=2026-11-14T06:38:19.028340588Z level=info msg="starting cluster node" service=cluster peers_count=0 peers="" advertise_addr=127.0.0.1:12345 minimum_cluster_size=0 minimum_size_wait_timeout=0s
+ts=2026-11-14T06:38:19.028589963Z level=info msg="peers changed" service=cluster peers_count=1 min_cluster_size=0 peers=alloy-5bbbb47849-f5pqf
+ts=2026-11-14T06:38:19.034656088Z level=info msg="now listening for http traffic" service=http addr=0.0.0.0:12345
+ts=2026-11-14T06:38:24.032815298Z level=info msg="Using pod service account via in-cluster config" component_path=/ component_id=loki.source.kubernetes.logging_lab
+ts=2026-11-14T06:38:24.03438034Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/claims-logger-6bfb55b95b-rtqpn:claims-logger
+ts=2026-11-14T06:38:24.034466882Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/alloy-5bbbb47849-f5pqf:config-reloader
+ts=2026-11-14T06:38:24.034469173Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/grafana-5454d85459-5h2vk:grafana
+ts=2026-11-14T06:38:24.034374215Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/alloy-5bbbb47849-f5pqf:alloy
+ts=2026-11-14T06:38:24.034732757Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:exporter
+ts=2026-11-14T06:38:24.034911007Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx
+ts=2026-11-14T06:38:24.035320465Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-0:loki
+ts=2026-11-14T06:38:24.03530134Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-0:loki-sc-rules
+ts=2026-11-14T06:38:24.048569673Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/alloy-5bbbb47849-f5pqf:alloy start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.048644048Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.048692798Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:exporter start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.048769465Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-0:loki-sc-rules start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.048853257Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/alloy-5bbbb47849-f5pqf:config-reloader start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.049051757Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/grafana-5454d85459-5h2vk:grafana start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.049219173Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/claims-logger-6bfb55b95b-rtqpn:claims-logger start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.04924159Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-0:loki start_time=0001-01-01T00:00:00.000Z
+ts=2026-11-14T06:38:24.074992715Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:24.43833584Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:24.838325049Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:25.238643882Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:25.735582091Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:26.328940216Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:27.3243283Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:29.806219093Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:34.08548472Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:38:42.271126585Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=logging-lab/loki-gateway-6bb98ff98b-22r92:nginx start_time=2026-11-14T06:38:22.846Z
+ts=2026-11-14T06:41:18.436144504Z level=info msg="reload requested via /-/reload endpoint" service=http
+ts=2026-11-14T06:41:18.440752087Z level=info msg="starting complete graph evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9
+ts=2026-11-14T06:41:18.441347504Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=discovery.kubernetes.pods duration=474.625µs
+ts=2026-11-14T06:41:18.445906671Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=discovery.relabel.logging_lab_pods duration=4.501542ms
+ts=2026-11-14T06:41:18.446022421Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=livedebugging duration=74.459µs
+ts=2026-11-14T06:41:18.446110254Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=tracing duration=67.583µs
+ts=2026-11-14T06:41:18.446221796Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=logging duration=91.25µs
+ts=2026-11-14T06:41:18.449317754Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=remotecfg duration=3.061166ms
+ts=2026-11-14T06:41:18.451830629Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=http duration=2.447834ms
+ts=2026-11-14T06:41:18.451904962Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=ui duration=14.583µs
+ts=2026-11-14T06:41:18.451925087Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=cluster duration=1.959µs
+ts=2026-11-14T06:41:18.451931754Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=otel duration=1.959µs
+ts=2026-11-14T06:41:18.451964004Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=labelstore duration=28.417µs
+ts=2026-11-14T06:41:18.452490879Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=loki.write.local duration=493.417µs
+ts=2026-11-14T06:41:18.453099671Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=loki.process.structured_logs duration=589.833µs
+ts=2026-11-14T06:41:18.453234671Z level=info msg="finished node evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 node_id=loki.source.kubernetes.logging_lab duration=116.416µs
+ts=2026-11-14T06:41:18.453304004Z level=info msg="finished complete graph evaluation" controller_path=/ controller_id="" trace_id=b5193fccf940d0522d150960bfb074f9 duration=13.75475ms
+ts=2026-11-14T06:41:18.453423587Z level=info msg="config reloaded" service=http
+ts=2026-11-14T06:41:18.453429212Z level=info msg="scheduling loaded components and services" controller_id=""
+ts=2026-11-14T06:38:18.424949087Z level=info caller=/workspace/cmd/prometheus-config-reloader/main.go:148 msg="Starting prometheus-config-reloader" version="(version=0.94.2, branch=, revision=0db9044)" build_context="(go=go1.26.10, platform=linux/arm64, user=, date=20261022-14:26:32, tags=unknown)"
+level=info ts=2026-11-14T06:38:18.425632546Z caller=reloader.go:282 msg="reloading via HTTP"
+level=info ts=2026-11-14T06:38:18.426152212Z caller=reloader.go:328 msg="started watching config file and directories for changes" cfg= cfgDirs= out= dirs=/etc/alloy
+level=info ts=2026-11-14T06:41:18.454109587Z caller=reloader.go:546 msg="Reload triggered" cfg_in= cfg_out= cfg_dirs= watched_dirs=/etc/alloy

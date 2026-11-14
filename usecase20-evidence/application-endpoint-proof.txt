@@ -1,0 +1,15 @@
+Path: /health
+HTTP status: 200
+Response: {"environment":"dev","service":"claims-status-api","status":"healthy","version":"1.0.0"}
+
+
+Path: /api/status
+HTTP status: 200
+Response: {"environment":"dev","message":"ClaimsLab onboarding application is running","platform":"ClaimsLab","service":"claims-status-api","version":"1.0.0"}
+
+
+Path: /api/secure-status
+HTTP status: 200
+Response: {"secret_loaded":true,"service":"claims-status-api","status":"authorized"}
+
+

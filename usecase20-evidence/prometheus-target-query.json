@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","container":"claims-status-api","endpoint":"http","instance":"10.244.0.54:5000","job":"claims-status-api","namespace":"claimslab-status-dev","pod":"claims-status-api-b89794768-kgc87","service":"claims-status-api"},"value":[1794572373.352,"1"]}]}}

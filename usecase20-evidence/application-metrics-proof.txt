@@ -1,0 +1,10 @@
+# HELP claims_status_http_requests_total Total HTTP requests
+# TYPE claims_status_http_requests_total counter
+claims_status_http_requests_total{environment="dev",method="GET",path="/metrics",service="claims-status-api",status="200",version="1.0.0"} 82.0
+claims_status_http_requests_total{environment="dev",method="GET",path="/health",service="claims-status-api",status="200",version="1.0.0"} 362.0
+claims_status_http_requests_total{environment="dev",method="GET",path="/api/status",service="claims-status-api",status="200",version="1.0.0"} 1.0
+claims_status_http_requests_total{environment="dev",method="GET",path="/api/secure-status",service="claims-status-api",status="200",version="1.0.0"} 1.0
+claims_status_http_request_duration_seconds_count{environment="dev",path="/metrics",service="claims-status-api",version="1.0.0"} 82.0
+claims_status_http_request_duration_seconds_count{environment="dev",path="/health",service="claims-status-api",version="1.0.0"} 362.0
+claims_status_http_request_duration_seconds_count{environment="dev",path="/api/status",service="claims-status-api",version="1.0.0"} 1.0
+claims_status_http_request_duration_seconds_count{environment="dev",path="/api/secure-status",service="claims-status-api",version="1.0.0"} 1.0

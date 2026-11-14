@@ -1,0 +1,2 @@
+ts=2026-11-14T07:16:31.740707177Z level=info msg="tailer running" component_path=/ component_id=loki.source.kubernetes.logging_lab target=claimslab-status-dev/claims-status-api-5488d8bd69-l7xn8:claims-status-api
+ts=2026-11-14T07:16:31.75380351Z level=info msg="opened log stream" component_path=/ component_id=loki.source.kubernetes.logging_lab target=claimslab-status-dev/claims-status-api-5488d8bd69-l7xn8:claims-status-api start_time=0001-01-01T00:00:00.000Z

@@ -1,0 +1,7 @@
+12-
+13-  rule {
+14-    source_labels = ["__meta_kubernetes_namespace"]
+15:    regex         = "(logging-lab|claimslab-status-dev)"
+16-    action        = "keep"
+17-  }
+18-

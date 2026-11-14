@@ -1,0 +1,3 @@
+Secure endpoint HTTP status: 200
+{"secret_loaded":true,"service":"claims-status-api","status":"authorized"}
+

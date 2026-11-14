@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Fri, 13 Nov 2026 12:04:46 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 89
+X-Request-ID: UC20-HEALTH-001
+
+{"environment":"dev","service":"claims-status-api","status":"healthy","version":"1.0.0"}
